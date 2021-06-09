@@ -22,7 +22,8 @@
     "space-before-function-paren": ["off"],
     "indent": ["off"],
     "react/prop-types": "off",
-    "jsx-a11y/anchor-has-content": "off"
+    "jsx-a11y/anchor-has-content": "off",
+    "multiline-ternary": "off"
   },
   "env": {
     "browser": true,

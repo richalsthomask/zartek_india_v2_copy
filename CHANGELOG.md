@@ -1,1 +1,1 @@
-
+- Home Page Welcome area background image removed to obtain FCP

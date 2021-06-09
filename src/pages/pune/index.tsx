@@ -6,8 +6,8 @@ const Home: FC<PageProps> = () => {
   return (
     <StaticQuery
       query={graphql`
-        query GET_HOME_PAGE_CONTENT_KOCHI {
-          contentfulHomePage(use: { eq: "Use This space to access Home Page - Kochi" }) {
+        query GET_HOME_PAGE_CONTENT_PUNE {
+          contentfulHomePage(use: { eq: "Use This space to access Home Page - Pune" }) {
             welcomeArea {
               title
               description {

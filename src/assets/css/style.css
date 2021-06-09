@@ -679,7 +679,7 @@ header
 --------------------------------------------- 
 */
 .header-area {
-  /* position: fixed; */
+  position: fixed;
   top: 0px;
   left: 0px;
   right: 0px;
@@ -860,7 +860,6 @@ header
 .header-area.header-sticky {
   background: #fff;
   height: 80px;
-  position: fixed;
   box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.06);
 }
 
@@ -986,6 +985,7 @@ welcome area
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-image: url(/images/welcome.jpg);
 }
 
 .welcome-area .welcome-bg:before {

@@ -4,9 +4,7 @@ import { BrandLogo } from "./Brandlogo";
 
 export const HeaderComponent: FC = () => {
   const scrolledRef = useRef<HTMLDivElement>();
-
   const [switchToStickyHeader, setSwitchToStickyHeader] = useState<boolean>(false);
-
   useIntersectionObserver(
     scrolledRef,
     () => setSwitchToStickyHeader(false),
@@ -15,12 +13,12 @@ export const HeaderComponent: FC = () => {
 
   return (
     <Fragment>
-      <header className={`header-area ${switchToStickyHeader ? "header-sticky" : ""}`}>
+      <header className={`header-area ${switchToStickyHeader ? "header-sticky" : "welcome-bg"}`}>
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
               <nav className="main-nav">
-                <BrandLogo logoMode={switchToStickyHeader ? "dark" : "light"} />
+                <BrandLogo logoMode={switchToStickyHeader ? "light" : "dark"} />
 
                 <ul className="nav">
                   <li>
