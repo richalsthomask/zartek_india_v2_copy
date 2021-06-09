@@ -12,7 +12,7 @@ export const InlineButton: FC<ButtonType> = ({ link, title, color }) => {
 
 export const ContactLinkButton: FC<ButtonType> = ({ link, title, color }) => {
   return (
-    <a className={`btn-${color}-line`} href={`tel:${link}`}>
+    <a className={`btn-${color}-line`} href={`tel:${link}`} rel="noreferrer" target="_blank">
       {title}
     </a>
   );
