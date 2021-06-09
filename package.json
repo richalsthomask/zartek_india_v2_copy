@@ -1,0 +1,92 @@
+{
+  "name": "zartek-inida-v2",
+  "description": "zartek india website v2 - from js to ts with complete dynamic content creation",
+  "version": "2.0.0",
+  "private": true,
+  "author": "Praveen Nagaraj <praveennagaraj@zartek.in> (https://praveennagaraj.online)",
+  "license": "MIT",
+  "keywords": [
+    "gatsby",
+    "zartek"
+  ],
+  "scripts": {
+    "start": "env-cmd -f .env gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "local-build": "env-cmd -f .env gatsby build",
+    "type-check": "tsc",
+    "lint": "eslint -c './.eslintrc' --fix './src/**/*.ts'",
+    "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\" --write",
+    "postinstall": "husky install"
+  },
+  "lint-staged": {
+    "./src/**/*.{ts,js,jsx,tsx}": [
+      "yarn lint --fix",
+      "yarn format"
+    ]
+  },
+  "dependencies": {
+    "@contentful/rich-text-react-renderer": "^14.1.3",
+    "@contentful/rich-text-types": "^14.1.2",
+    "@loadable/component": "^5.15.0",
+    "gatsby": "3.5.1",
+    "gatsby-plugin-canonical-urls": "^3.6.0",
+    "gatsby-plugin-google-analytics": "^3.6.0",
+    "gatsby-plugin-google-tagmanager": "^3.6.0",
+    "gatsby-plugin-html-attributes": "^1.0.5",
+    "gatsby-plugin-image": "^1.6.0",
+    "gatsby-plugin-manifest": "^3.6.0",
+    "gatsby-plugin-react-helmet": "^4.6.0",
+    "gatsby-plugin-robots-txt": "^1.6.2",
+    "gatsby-plugin-sharp": "^3.6.0",
+    "gatsby-plugin-sitemap": "3.0.0",
+    "gatsby-source-contentful": "^5.6.0",
+    "gatsby-source-filesystem": "^3.6.0",
+    "gatsby-transformer-sharp": "^3.6.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-helmet": "^6.1.0",
+    "react-modal": "^3.13.1",
+    "swiper": "^6.6.2",
+    "tsconfig-paths-webpack-plugin": "3.5.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "12.1.4",
+    "@commitlint/config-conventional": "12.1.4",
+    "@types/node": "14.17.0",
+    "@types/react": "17.0.6",
+    "@types/react-dom": "17.0.5",
+    "@types/react-helmet": "^6.1.1",
+    "@types/react-modal": "^3.12.0",
+    "@typescript-eslint/eslint-plugin": "^4.25.0",
+    "@typescript-eslint/parser": "^4.25.0",
+    "babel-plugin-root-import": "6.6.0",
+    "commitizen": "4.2.4",
+    "cz-conventional-changelog": "3.3.0",
+    "env-cmd": "^10.1.0",
+    "eslint": "^7.27.0",
+    "eslint-config-airbnb": "18.2.1",
+    "eslint-config-blvd": "^1.1.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-import-resolver-root-import": "1.0.4",
+    "eslint-plugin-import": "^2.23.3",
+    "eslint-plugin-jsx-a11y": "6.4.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "4.2.0",
+    "eslint-plugin-standard": "^5.0.0",
+    "husky": "6.0.0",
+    "lint-staged": "11.0.0",
+    "prettier": "^2.3.0",
+    "typescript": "4.2.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  }
+}
