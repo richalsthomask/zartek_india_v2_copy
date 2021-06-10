@@ -17,6 +17,13 @@
 - Portfolio can be different for particular location.
 ```
 
+## About Us
+
+```
+- About us page is integrated with dynamic content along with styled fragments.
+- Can be Different for different location.
+```
+
 ## Global
 
 ```
