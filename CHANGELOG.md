@@ -1,1 +1,2 @@
-- Home Page Welcome area background image removed to obtain FCP
+- Home Page Welcome area Applets persist same size throughtout window resize to achieve less cummulative layout shift
+- Default Home page is calculated based on baseURL location

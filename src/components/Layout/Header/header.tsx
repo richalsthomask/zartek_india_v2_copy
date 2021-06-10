@@ -26,12 +26,10 @@ export const HeaderComponent: FC = () => {
 
                 <ul className="nav">
                   <li>
-                    <Link to={url}>HOME</Link>
+                    <Link to={url + "/"}>HOME</Link>
                   </li>
                   <li>
-                    <a href="our-work.html" target="_blank">
-                      OUR WORK
-                    </a>
+                    <Link to={url + "/our-work/"}>OUR WORK</Link>
                   </li>
                   <li>
                     <a href="about-us.html" target="_blank">
@@ -55,9 +53,9 @@ export const HeaderComponent: FC = () => {
                     </a>
                   </li>
                   <li>
-                    <a href="contact.html" className="btn-nav-line" target="_blank">
+                    <Link to={url + "/contact/"} className="btn-nav-line">
                       CONTACT
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </nav>

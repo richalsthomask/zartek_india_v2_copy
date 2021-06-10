@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+import { FooterComponent } from "./Footer/Footer";
 import { HeaderComponent } from "./Header/header";
 
 interface LayoutProps {
@@ -11,6 +12,7 @@ export class Layout extends Component<LayoutProps> {
       <Fragment>
         <HeaderComponent />
         {this.props.children}
+        <FooterComponent />
       </Fragment>
     );
   }
