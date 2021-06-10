@@ -18,3 +18,7 @@
   display: flex;
   justify-content: center;
 }
+
+.grid-class {
+  display: grid;
+}

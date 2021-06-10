@@ -71,6 +71,18 @@ const Home: FC<PageProps> = () => {
                 }
               }
             }
+
+            testimonials {
+              id
+              reviewerName
+              reviewerRole
+              reviewerProfilePic {
+                file {
+                  url
+                }
+              }
+              review
+            }
           }
         }
       `}

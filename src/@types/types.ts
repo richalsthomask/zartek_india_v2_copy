@@ -48,3 +48,11 @@ export interface BulletPointsWithImageType {
   image: FileType;
   points: BulletPoint[];
 }
+
+export interface TestimonialType {
+  id?: string;
+  reviewerName: string;
+  reviewerRole: string;
+  reviewerProfilePic: FileType;
+  review: string;
+}
