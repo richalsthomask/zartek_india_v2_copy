@@ -44,12 +44,9 @@ export default class ContactUs extends Component<ContactUsProps> {
 
         <div className="pb-1 pt-0">
           <div className="map-wrapper">
-            <div className="map-canvas">
-              <img src={this.props.locationImage.file.url} alt="" />
-            </div>
             <div className="container">
               <div className="row">
-                <div className="offset-lg-8 col-lg-4 col-md-12 col-sm-12">
+                <div className="col-12">
                   <div className="contact-info">
                     <div className="item">
                       <i className="fa fa-location-arrow"></i>
