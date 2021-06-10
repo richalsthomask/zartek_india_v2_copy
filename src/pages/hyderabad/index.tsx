@@ -35,6 +35,25 @@ const Home: FC<PageProps> = () => {
                 }
               }
             }
+
+            serviceArea {
+              title
+              description {
+                description
+              }
+
+              services {
+                id
+                title
+                description
+                icon {
+                  file {
+                    url
+                  }
+                }
+                routerLink
+              }
+            }
           }
         }
       `}

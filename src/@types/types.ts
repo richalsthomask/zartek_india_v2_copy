@@ -6,8 +6,12 @@ export interface WelcomeAreaPropType {
   option2: ButtonType;
 }
 
+interface FileType {
+  file: { url: string };
+}
+
 export interface AppletType {
-  appIcon: { file: { url: string } };
+  appIcon: FileType;
   appTitle: string;
   redirectLink: string;
   id?: string;
@@ -16,5 +20,19 @@ export interface AppletType {
 export interface ButtonType {
   link: string;
   title: string;
-  color: "white";
+  color: "white" | "primary";
+}
+
+export interface ServiceCardType {
+  routerLink: string;
+  title: string;
+  description: string;
+  icon: FileType;
+  cardAdditionalClass?: string;
+}
+
+export interface ServiceAreaModelType {
+  title: string;
+  description: { description: string };
+  services: ServiceCardType[];
 }

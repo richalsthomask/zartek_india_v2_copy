@@ -1,3 +1,7 @@
 .curser-pointer {
   cursor: pointer;
 }
+
+.pre-line-text {
+  white-space: pre-line;
+}
