@@ -24,6 +24,13 @@
 - Can be Different for different location.
 ```
 
+## Contact Us
+
+```
+- Contact us page has only one option to update location image.
+- google maps is removed to reduce bundle size due to huge dependency required by GMAPS.
+```
+
 ## Global
 
 ```

@@ -6,7 +6,7 @@ export interface WelcomeAreaPropType {
   option2: ButtonType;
 }
 
-interface FileType {
+export interface FileType {
   file: { url: string };
 }
 
