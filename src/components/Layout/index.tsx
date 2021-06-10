@@ -11,7 +11,7 @@ export class Layout extends Component<LayoutProps> {
     return (
       <Fragment>
         <HeaderComponent />
-        {this.props.children}
+        <section className="page">{this.props.children}</section>
         <FooterComponent />
       </Fragment>
     );

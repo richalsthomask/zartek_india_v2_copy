@@ -16,3 +16,9 @@
 - Scrollbar Ui (native scrollbar is modified with custom css)
 - Favicons manifest for apple-touch-icon
 ```
+
+## New
+
+```
+- Partner with us is integrated within website layout
+```

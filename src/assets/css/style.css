@@ -411,10 +411,9 @@ global styles
 }
 
 .page .cover .page-top .breadcrumb li:after {
-  font-family: FontAwesome;
-  content: "\f105";
+  content: ">";
   margin-left: 10px;
-  color: #f7f8ff;
+  color: #fff;
 }
 
 .page .cover .page-top .breadcrumb li:first-child {
@@ -430,6 +429,10 @@ global styles
   font-weight: 400;
   font-size: 14px;
   color: #fff;
+}
+
+.page .cover .page-top .breadcrumb li a.active {
+  color: #f5a623;
 }
 
 .page .page-bottom {

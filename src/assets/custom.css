@@ -24,3 +24,9 @@
 .grid-class {
   display: grid;
 }
+
+.bread-crumb-cover {
+  background-image: url(/images/parallax.jpg);
+  background-position: center;
+  background-size: cover;
+}
