@@ -349,7 +349,7 @@ global styles
 }
 
 .section.background {
-  /* background: #f4f8fb url(../../images/bg-top.svg) center top no-repeat; */
+  background: #f4f8fb url(/images/bg-top.svg) center top no-repeat;
   background-size: contain;
 }
 

@@ -5,3 +5,16 @@
 .pre-line-text {
   white-space: pre-line;
 }
+
+.flex-row-dir {
+  flex-direction: row;
+}
+
+.reverse-flex-row {
+  flex-direction: row-reverse;
+}
+
+.image-withpoints {
+  display: flex;
+  justify-content: center;
+}

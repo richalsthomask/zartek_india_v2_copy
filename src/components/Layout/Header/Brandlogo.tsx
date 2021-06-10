@@ -8,7 +8,7 @@ interface BrandLogoProps {
 
 export const BrandLogo: FC<BrandLogoProps> = ({ logoMode, homeURL }) => {
   return (
-    <Link to={homeURL || "/"} className="logo">
+    <Link to={homeURL + "/"} className="logo">
       <img
         src={logoMode === "light" ? "/images/logo-dark.png" : "/images/logo-white.png"}
         alt="Zartek Technologies"

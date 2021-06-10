@@ -54,6 +54,23 @@ const Home: FC<PageProps> = () => {
                 routerLink
               }
             }
+
+            featureArea {
+              position
+              image {
+                file {
+                  url
+                }
+              }
+
+              points {
+                id
+                title
+                description {
+                  description
+                }
+              }
+            }
           }
         }
       `}

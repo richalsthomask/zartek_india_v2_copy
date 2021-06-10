@@ -36,3 +36,15 @@ export interface ServiceAreaModelType {
   description: { description: string };
   services: ServiceCardType[];
 }
+
+export interface BulletPoint {
+  id?: string;
+  title: string;
+  description: { description: string };
+}
+
+export interface BulletPointsWithImageType {
+  position: "left-image-right-points" | "right-image-left-points";
+  image: FileType;
+  points: BulletPoint[];
+}
