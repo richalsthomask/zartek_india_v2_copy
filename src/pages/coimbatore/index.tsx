@@ -83,6 +83,14 @@ const Home: FC<PageProps> = () => {
               }
               review
             }
+
+            statsContainer {
+              id
+              title
+              description {
+                description
+              }
+            }
           }
         }
       `}

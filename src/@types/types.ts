@@ -56,3 +56,11 @@ export interface TestimonialType {
   reviewerProfilePic: FileType;
   review: string;
 }
+
+export interface ParallaxStatPodType {
+  id?: string;
+  title: string;
+  description: {
+    description: string;
+  };
+}

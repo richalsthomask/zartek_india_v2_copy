@@ -1,5 +1,6 @@
 import {
   BulletPointsWithImageType,
+  ParallaxStatPodType,
   ServiceAreaModelType,
   TestimonialType,
   WelcomeAreaPropType,
@@ -7,6 +8,7 @@ import {
 import loadable from "@loadable/component";
 import React, { Component } from "react";
 import { Layout } from "../Layout";
+import { Stats } from "./Stats";
 import { Testimonials } from "./Testimonials";
 import { WelcomeArea } from "./WelcomeArea";
 
@@ -22,12 +24,14 @@ interface HomePageProps {
     serviceArea: ServiceAreaModelType;
     featureArea: BulletPointsWithImageType;
     testimonials: TestimonialType[];
+    statsContainer: ParallaxStatPodType[];
   };
 }
 
 export default class HomePage extends Component<HomePageProps> {
   render(): JSX.Element {
-    const { welcomeArea, serviceArea, featureArea, testimonials } = this.props.contentfulHomePage;
+    const { welcomeArea, serviceArea, featureArea, testimonials, statsContainer } =
+      this.props.contentfulHomePage;
 
     return (
       <Layout>
@@ -35,6 +39,7 @@ export default class HomePage extends Component<HomePageProps> {
         <ServicesOffered serviceProp={serviceArea} />
         <Features features={featureArea} />
         <Testimonials testimonials={testimonials} />
+        <Stats stats={statsContainer} />
       </Layout>
     );
   }

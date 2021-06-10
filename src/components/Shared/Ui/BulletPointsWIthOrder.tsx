@@ -18,7 +18,7 @@ export const BulletPointsWithOrder: FC<BulletPointsWithOrderProps> = ({
       </div>
       <div className="text">
         <h5 className="title">{title}</h5>
-        <p>{description}</p>
+        <p className="pre-line-text">{description}</p>
       </div>
     </li>
   );
