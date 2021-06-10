@@ -1,4 +1,6 @@
+import { useBaseURL } from "@/utils/hooks/useBaseUrl";
 import { useIntersectionObserver } from "@/utils/hooks/useIntersectionObserver";
+import { Link } from "gatsby";
 import React, { FC, Fragment, useRef, useState } from "react";
 import { BrandLogo } from "./Brandlogo";
 
@@ -11,6 +13,8 @@ export const HeaderComponent: FC = () => {
     () => setSwitchToStickyHeader(true),
   );
 
+  const url = useBaseURL();
+
   return (
     <Fragment>
       <header className={`header-area ${switchToStickyHeader ? "header-sticky" : "welcome-bg"}`}>
@@ -18,13 +22,11 @@ export const HeaderComponent: FC = () => {
           <div className="row">
             <div className="col-lg-12">
               <nav className="main-nav">
-                <BrandLogo logoMode={switchToStickyHeader ? "light" : "dark"} />
+                <BrandLogo logoMode={switchToStickyHeader ? "light" : "dark"} homeURL={url} />
 
                 <ul className="nav">
                   <li>
-                    <a href="home.html" target="_blank">
-                      HOME
-                    </a>
+                    <Link to={url}>HOME</Link>
                   </li>
                   <li>
                     <a href="our-work.html" target="_blank">

@@ -3,11 +3,12 @@ import React, { FC } from "react";
 
 interface BrandLogoProps {
   logoMode: "dark" | "light";
+  homeURL: string;
 }
 
-export const BrandLogo: FC<BrandLogoProps> = ({ logoMode }) => {
+export const BrandLogo: FC<BrandLogoProps> = ({ logoMode, homeURL }) => {
   return (
-    <Link to="/" className="logo">
+    <Link to={homeURL} className="logo">
       <img
         src={logoMode === "light" ? "/images/logo-dark.png" : "/images/logo-white.png"}
         alt="Zartek Technologies"
