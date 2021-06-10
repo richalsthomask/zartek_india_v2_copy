@@ -30,3 +30,8 @@
   background-position: center;
   background-size: cover;
 }
+
+.app-links {
+  position: relative;
+  right: 20px;
+}

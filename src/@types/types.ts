@@ -70,3 +70,15 @@ export interface FAQType {
   question: string;
   answer: { answer: string };
 }
+
+export interface OurWorkType {
+  title: string;
+  id?: string;
+  description: string;
+  links: {
+    websiteLink?: string;
+    appStoreLink?: string;
+    playStoreLink?: string;
+  };
+  icon: FileType;
+}

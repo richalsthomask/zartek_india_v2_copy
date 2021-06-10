@@ -10,6 +10,13 @@
 - FAQs shared across all locations,  can be made as independent from contentful.
 ```
 
+## Our Works
+
+```
+- Our Works Store links extended from one link to 3 sub links(appstore, playstore and web)
+- Portfolio can be different for particular location.
+```
+
 ## Global
 
 ```

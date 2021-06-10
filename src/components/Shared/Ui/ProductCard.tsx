@@ -1,0 +1,62 @@
+import { LazyImage } from "@/components/Helpers/LazyImage";
+import React, { FC } from "react";
+
+interface ProductCardProps {
+  imageSrc: string;
+  productTitle: string;
+  productDescription: string;
+  links: { iosLink?: string; androidLink: string; websiteLink: string };
+}
+
+export const ProductCard: FC<ProductCardProps> = ({
+  imageSrc,
+  productDescription,
+  productTitle,
+  links,
+}) => {
+  return (
+    <div className="col-lg-4 col-md-6 col-sm-12 grid-class ">
+      <div className="page-app">
+        <div className="icon">
+          <LazyImage alt="app" height={255} width={255} src={imageSrc} />
+        </div>
+        <div className="app-content">
+          <h5 className="title">{productTitle}</h5>
+          <div className="text">{productDescription}</div>
+          <div className="d-flex justify-content-around app-links">
+            {links?.iosLink && (
+              <a
+                href={links?.iosLink}
+                target="_blank"
+                rel="noreferrer"
+                className="col-lg-2 col-md-3 col-sm-3 p-0"
+              >
+                <LazyImage height={24} width={24} src={"/images/app-store.png"} alt="store" />
+              </a>
+            )}
+            {links?.androidLink && (
+              <a
+                href={links?.androidLink}
+                target="_blank"
+                rel="noreferrer"
+                className="col-lg-2 col-md-3 col-sm-3 p-0"
+              >
+                <LazyImage height={24} width={24} src={"/images/playstore.png"} alt="store" />
+              </a>
+            )}
+            {links?.websiteLink && (
+              <a
+                href={links?.websiteLink}
+                target="_blank"
+                rel="noreferrer"
+                className="col-lg-2 col-md-3 col-sm-3 p-0"
+              >
+                <LazyImage height={24} width={24} src={"/images/web.png"} alt="store" />
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
