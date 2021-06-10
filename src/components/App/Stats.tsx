@@ -1,5 +1,6 @@
 import { ParallaxStatPodType } from "@/@types/types";
 import React, { FC } from "react";
+import { CountUp } from "../Helpers/CountUp";
 
 export const Stats: FC<{ stats: ParallaxStatPodType[] }> = ({ stats }) => {
   return (
@@ -11,7 +12,7 @@ export const Stats: FC<{ stats: ParallaxStatPodType[] }> = ({ stats }) => {
               return (
                 <div className="col-lg-3 col-md-6 col-sm-12" key={id}>
                   <div className="count-item">
-                    <strong>{title}</strong>
+                    <CountUp count={Number(title)} />
                     <span className="pre-line-text">{description.description}</span>
                   </div>
                 </div>

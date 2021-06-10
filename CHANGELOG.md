@@ -6,6 +6,7 @@
 - Services area is divided into 4 locations.
 - Features area is shared across all locations, can also be made as independent from contentful.
 - Testimonial section shared across all locations, can also be made as independent from contentful.
+- Company Stats (Count.js) package is replaced with custom countup animation logic(Bundle size reduced)
 ```
 
 ## Global

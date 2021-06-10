@@ -3,7 +3,7 @@ import { MutableRefObject, useEffect, useRef } from "react";
 export const useIntersectionObserver = (
   element: MutableRefObject<HTMLDivElement>,
   callbackIfVisible: CallableFunction,
-  callbackIfNotVisible: CallableFunction,
+  callbackIfNotVisible?: CallableFunction,
   threshold = 1,
 ): void => {
   const observer = useRef(
@@ -14,7 +14,9 @@ export const useIntersectionObserver = (
             if (first.isIntersecting) {
               callbackIfVisible();
             } else {
-              callbackIfNotVisible();
+              if (callbackIfNotVisible) {
+                callbackIfNotVisible();
+              }
             }
           },
           { threshold },

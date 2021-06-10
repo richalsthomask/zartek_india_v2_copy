@@ -23,7 +23,8 @@
     "indent": ["off"],
     "react/prop-types": "off",
     "jsx-a11y/anchor-has-content": "off",
-    "multiline-ternary": "off"
+    "multiline-ternary": "off",
+    "no-unmodified-loop-condition": "off"
   },
   "env": {
     "browser": true,
