@@ -34,7 +34,7 @@ export class WelcomeArea extends Component<WelcomeAreaProps> {
                             key={id}
                             appIcon={appIcon}
                             appTitle={appTitle}
-                            redirectLink={redirectLink || "/our-work"}
+                            redirectLink={redirectLink || "/our-work/"}
                           />
                         );
                       })}
