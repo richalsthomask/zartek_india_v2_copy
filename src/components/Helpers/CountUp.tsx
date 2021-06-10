@@ -13,20 +13,25 @@ export const CountUp: FC<{ count: number }> = ({ count }) => {
 
   useEffect(() => {
     let isCancelled = false;
+    const ids = [];
+    let sum = 0;
 
     if (!isCancelled && start) {
-      let sum = 0;
-
-      setInterval(() => {
-        if (sum !== count + 1) {
-          setCurrentCounted(sum);
-          sum++;
-        }
-      }, 50);
+      ids.push(
+        setInterval(() => {
+          if (sum !== count + 1) {
+            setCurrentCounted(sum);
+            sum++;
+          }
+        }, 50),
+      );
     }
 
     return () => {
       isCancelled = true;
+      ids.forEach((id) => {
+        clearInterval(id);
+      });
     };
   }, [count, start]);
 

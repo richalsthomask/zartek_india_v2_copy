@@ -64,3 +64,9 @@ export interface ParallaxStatPodType {
     description: string;
   };
 }
+
+export interface FAQType {
+  id?: string;
+  question: string;
+  answer: { answer: string };
+}

@@ -8,6 +8,7 @@ const Home: FC<PageProps> = () => {
       query={graphql`
         query GET_HOME_PAGE_CONTENT_KOCHI {
           contentfulHomePage(use: { eq: "Use This space to access Home Page - Kochi" }) {
+            #     Welcome banner
             welcomeArea {
               title
               description {
@@ -36,6 +37,8 @@ const Home: FC<PageProps> = () => {
               }
             }
 
+            #     Top Services
+
             serviceArea {
               title
               description {
@@ -55,6 +58,8 @@ const Home: FC<PageProps> = () => {
               }
             }
 
+            #     Features Offered
+
             featureArea {
               position
               image {
@@ -71,6 +76,7 @@ const Home: FC<PageProps> = () => {
                 }
               }
             }
+            #     Testimonials
 
             testimonials {
               id
@@ -84,11 +90,23 @@ const Home: FC<PageProps> = () => {
               review
             }
 
+            #Company Stats
+
             statsContainer {
               id
               title
               description {
                 description
+              }
+            }
+
+            #FAQS
+
+            faQs {
+              id
+              question
+              answer {
+                answer
               }
             }
           }

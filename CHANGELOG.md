@@ -4,13 +4,15 @@
 - Home Page Welcome area Applets persist same size throughtout window resize to achieve less cummulative layout shift.
 - Default Home page and navigation-links on header is calculated based on baseURL(location).
 - Services area is divided into 4 locations.
-- Features area is shared across all locations, can also be made as independent from contentful.
-- Testimonial section shared across all locations, can also be made as independent from contentful.
+- Features area is shared across all locations, can be made as independent from contentful.
+- Testimonial section shared across all locations, can be made as independent from contentful.
 - Company Stats (Count.js) package is replaced with custom countup animation logic(Bundle size reduced)
+- FAQs shared across all locations,  can be made as independent from contentful.
 ```
 
 ## Global
 
 ```
 - Scrollbar Ui (native scrollbar is modified with custom css)
+- Favicons manifest for apple-touch-icon
 ```
