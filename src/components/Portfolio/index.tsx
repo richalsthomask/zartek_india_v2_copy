@@ -10,8 +10,6 @@ interface PortfolioProps {
 
 export class Portfolio extends Component<PortfolioProps> {
   render(): JSX.Element {
-    console.log(this.props.works);
-
     const { works } = this.props;
 
     return (

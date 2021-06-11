@@ -7,6 +7,8 @@ import { BrandLogo } from "./Brandlogo";
 export const HeaderComponent: FC = () => {
   const scrolledRef = useRef<HTMLDivElement>();
   const [switchToStickyHeader, setSwitchToStickyHeader] = useState<boolean>(false);
+  const [burgerActive, setBurgerActive] = useState<boolean>(false);
+
   useIntersectionObserver(
     scrolledRef,
     () => setSwitchToStickyHeader(false),
@@ -15,6 +17,10 @@ export const HeaderComponent: FC = () => {
 
   const url = useBaseURL();
 
+  function handleLogoType(): "light" | "dark" {
+    return switchToStickyHeader ? "light" : "dark";
+  }
+
   return (
     <Fragment>
       <header className={`header-area ${switchToStickyHeader ? "header-sticky" : "welcome-bg"}`}>
@@ -22,9 +28,9 @@ export const HeaderComponent: FC = () => {
           <div className="row">
             <div className="col-lg-12">
               <nav className="main-nav">
-                <BrandLogo logoMode={switchToStickyHeader ? "light" : "dark"} homeURL={url} />
+                <BrandLogo logoMode={handleLogoType()} homeURL={url} />
 
-                <ul className="nav">
+                <ul className={`nav ${burgerActive ? "mobile-navs" : ""}`}>
                   <li>
                     <Link to={url + "/"}>HOME</Link>
                   </li>
@@ -56,12 +62,20 @@ export const HeaderComponent: FC = () => {
                     </Link>
                   </li>
                 </ul>
+                <div
+                  onClick={() => setBurgerActive(!burgerActive)}
+                  role="button"
+                  tabIndex={0}
+                  className={`menu-trigger ${burgerActive ? "active" : ""}`}
+                >
+                  <span>Menu</span>
+                </div>
               </nav>
             </div>
           </div>
         </div>
       </header>
-      <div ref={scrolledRef}></div>
+      <div className="scroll-ref" ref={scrolledRef}></div>
     </Fragment>
   );
 };
