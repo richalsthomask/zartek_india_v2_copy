@@ -2214,16 +2214,16 @@ aside.default-aside .sidebar ul li p span {
   border-radius: 100px;
 }
 
-aside.default-aside .sidebar ul li.active a {
+aside.default-aside .sidebar ul li a.active {
   background: #f4f8fb;
   color: #6f8ba4;
 }
 
-aside.default-aside .sidebar ul li.active a:after {
+aside.default-aside .sidebar ul li a.active:after {
   color: #6f8ba4;
 }
 
-aside.default-aside .sidebar ul li.active a:hover {
+aside.default-aside .sidebar ul li a.active:hover {
   padding-left: 60px;
 }
 

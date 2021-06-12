@@ -1,35 +1,94 @@
-import React, { FC } from "react";
+import { useBaseURL } from "@/utils/hooks/useBaseUrl";
+import { graphql, Link, StaticQuery } from "gatsby";
+import React, { FC, useEffect, useState } from "react";
+
+interface OtherServicesFilterType {
+  use: string;
+  service: {
+    id: string;
+    serviceCardTitle: string;
+    slug: string;
+  }[];
+}
 
 export const OtherServices: FC = () => {
+  return (
+    <StaticQuery
+      query={graphql`
+        query {
+          allContentfulServicesPage {
+            nodes {
+              use
+              service {
+                id
+                slug
+                serviceCardTitle
+              }
+            }
+          }
+        }
+      `}
+      render={({ allContentfulServicesPage: { nodes } }) => {
+        return <OtherServicesList nodes={nodes} />;
+      }}
+    />
+  );
+};
+
+const OtherServicesList: FC<{ nodes: OtherServicesFilterType[] }> = ({ nodes }) => {
+  const url = useBaseURL();
+
+  const [services, setServices] = useState<
+    {
+      id: string;
+      serviceCardTitle: string;
+      slug: string;
+    }[]
+  >([]);
+
+  useEffect(() => {
+    if (url === "pune") {
+      setServices(
+        nodes.filter((node) => node.use === "Use This space to access Services Page - Pune")[0]
+          .service,
+      );
+    }
+
+    if (url === "coimbatore") {
+      setServices(
+        nodes.filter(
+          (node) => node.use === "Use This space to access Services Page - Coimbatore",
+        )[0].service,
+      );
+    }
+
+    if (url === "hyderabad") {
+      setServices(
+        nodes.filter((node) => node.use === "Use This space to access Services Page - Hyderabad")[0]
+          .service,
+      );
+    }
+
+    setServices(
+      nodes.filter((node) => node.use === "Use This space to access Services Page - Kochi")[0]
+        .service,
+    );
+  }, [nodes, url]);
+
   return (
     <div className="col-lg-4 col-md-12 col-sm-12">
       <aside className="default-aside">
         <div className="sidebar">
           <ul>
-            <li className="active">
-              <a href="#">Website Development</a>
-            </li>
-            <li>
-              <a href="android.html">Android App Development</a>
-            </li>
-            <li>
-              <a href="flutter.html">Flutter App Development</a>
-            </li>
-            <li>
-              <a href="uidesign.html">Design and User Experience</a>
-            </li>
-            <li>
-              <a href="ios.html">iOS App Development</a>
-            </li>
-            <li>
-              <a href="digital-marketing.html">Digital Marketing Strategy</a>
-            </li>
-            <li>
-              <a href="business-development.html">Business Development Strategy</a>
-            </li>
-            <li>
-              <a href="fundraising.html">Fund Raising strategy</a>
-            </li>
+            {services.map(({ id, serviceCardTitle, slug }) => {
+              return (
+                <li key={id}>
+                  <Link activeClassName="active" to={"/" + slug}>
+                    {serviceCardTitle}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
           <div className="home-services-item box active">
             <h5 className="services-title">
