@@ -47,7 +47,7 @@ export const HeaderComponent: FC = () => {
                   </li>
                   <li>
                     <a href="https://medium.com/zartek" target="_blank" rel="noreferrer">
-                      BLOG
+                      Blog
                     </a>
                   </li>
 

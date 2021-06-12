@@ -1057,7 +1057,7 @@ welcome area
 
 .welcome-area .welcome-content .apps .app-item {
   display: block;
-  float: right;
+  /* float: right; */
   margin-bottom: 30px;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
@@ -1091,9 +1091,6 @@ welcome area
   }
   .welcome-area .welcome-content .apps {
     margin-top: 30px;
-  }
-  .welcome-area .welcome-content .apps .app-item {
-    float: left;
   }
 }
 
