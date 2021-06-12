@@ -31,6 +31,13 @@
 - google maps is removed to reduce bundle size due to huge dependency required by GMAPS.
 ```
 
+## Services Page
+
+```
+- Services are dynamically created from contentful and service list can be varied fom loc to location.
+- Service detail can be styles from contentful using Fragments
+```
+
 ## Global
 
 ```

@@ -1,3 +1,4 @@
+import { InlineButton } from "@/components/Helpers/Buttons";
 import { useBaseURL } from "@/utils/hooks/useBaseUrl";
 import { graphql, Link, StaticQuery } from "gatsby";
 import React, { FC } from "react";
@@ -80,9 +81,7 @@ const OtherServicesList: FC<{ nodes: OtherServicesFilterType[] }> = ({ nodes }) 
               Tell us about your projects and we’ll get back to you with details on how we can make
               this work.
             </h5>
-            <a className="btn-white-line" href="contact.html">
-              Contact Us
-            </a>
+            <InlineButton color="white" link={url + "/contact/"} title="Contact Us" />
           </div>
         </div>
       </aside>
