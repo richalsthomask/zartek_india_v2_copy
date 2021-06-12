@@ -41,9 +41,9 @@ export const HeaderComponent: FC = () => {
                     <Link to={url + "/about-us/"}>About Us</Link>
                   </li>
                   <li>
-                    <a href="services.html" target="_blank">
-                      SERVICES
-                    </a>
+                    <Link to={url + "/services/"} target="_blank">
+                      Services
+                    </Link>
                   </li>
                   <li>
                     <a href="https://medium.com/zartek" target="_blank" rel="noreferrer">

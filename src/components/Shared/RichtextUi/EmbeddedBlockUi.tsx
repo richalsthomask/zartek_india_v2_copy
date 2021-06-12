@@ -20,7 +20,7 @@ export const EmbeddedBlockUi: FC<EmbeddedBlockUiProps> = ({ node, references }) 
     return null;
   }
 
-  console.log(entryAssetDocument);
+  // console.log(entryAssetDocument);
 
   if (entryAssetDocument?.__typename === "ContentfulPillarImageWithScaleToZoomRtModel") {
     return <ContentfulPillarImageWithScaleToZoomRtModel images={entryAssetDocument.images} />;

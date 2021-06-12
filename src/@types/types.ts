@@ -82,3 +82,11 @@ export interface OurWorkType {
   };
   icon: FileType;
 }
+
+export interface ServiceModelType {
+  id: string;
+  serviceCardIcon: FileType;
+  serviceCardShortDescription: string;
+  serviceCardTitle: string;
+  slug: string;
+}

@@ -4,7 +4,7 @@ import React, { FC } from "react";
 
 interface BreadcrumbProps {
   currentPageTitle: string;
-  routes: { title: string; path: string }[];
+  routes: { title: string; path: string; baseUrlOff?: boolean }[];
 }
 
 export const Breadcrumb: FC<BreadcrumbProps> = ({ currentPageTitle, routes }) => {
@@ -20,9 +20,9 @@ export const Breadcrumb: FC<BreadcrumbProps> = ({ currentPageTitle, routes }) =>
             </div>
             <div className="col-lg-12">
               <ol className="breadcrumb">
-                {routes.map(({ path, title }, i) => (
+                {routes.map(({ path, title, baseUrlOff = false }, i) => (
                   <li key={i}>
-                    <Link activeClassName="active" to={url + path}>
+                    <Link activeClassName="active" to={baseUrlOff ? path : url + path}>
                       {title}
                     </Link>
                   </li>
