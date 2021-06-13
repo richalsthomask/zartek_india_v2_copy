@@ -92,12 +92,19 @@ export default class BlogDetail extends Component<BlogPageProps> {
     console.log(this.props);
     const {
       data: {
-        contentfulBlogPostModel: { body },
+        contentfulBlogPostModel: { body, title, slug },
       },
     } = this.props;
     return (
       <Layout>
-        <Breadcrumb currentPageTitle={"Blog title"} routes={[{ path: "/", title: "Home" }]} />
+        <Breadcrumb
+          currentPageTitle={title}
+          routes={[
+            { path: "/", title: "Home" },
+            { path: "/blog/", title: "Blogs" },
+            { path: "/" + slug, title: slug },
+          ]}
+        />
         <div className="page-bottom pb-0">
           <div className="container">
             {documentToReactComponents(JSON.parse(body.raw), this.provideOptions())}
