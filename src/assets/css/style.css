@@ -1580,7 +1580,8 @@ blog
 
 .blog-post-thumb.big .img img {
   width: 100%;
-  object-fit: cover;
+
+  height: inherit;
 }
 
 .blog-post-thumb .img {

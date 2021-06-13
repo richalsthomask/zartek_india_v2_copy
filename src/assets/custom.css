@@ -50,4 +50,8 @@
   .scroll-ref {
     display: none;
   }
+
+  .blogs-container {
+    max-width: 90vw;
+  }
 }

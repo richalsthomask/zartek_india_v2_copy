@@ -38,6 +38,12 @@
 - Service detail can be styles from contentful using Fragments
 ```
 
+## Blogs Page
+
+```
+- Blogs Page share common content with replicated url for every location!!!
+```
+
 ## Global
 
 ```
