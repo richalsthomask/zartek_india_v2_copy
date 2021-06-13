@@ -1,3 +1,4 @@
+import { useBaseURL } from "@/utils/hooks/useBaseUrl";
 import { Link } from "gatsby";
 import React, { FC } from "react";
 
@@ -18,6 +19,8 @@ export const BlogCard: FC<BlogCardProps> = ({
   shortDescription,
   title,
 }) => {
+  const baseURL = useBaseURL();
+
   return (
     <div className={`col-md-6 col-sm-12 ${size === "large" ? "col-lg-6" : "col-lg-4"}`}>
       <div className={`blog-post-thumb ${size === "large" ? " big" : ""}`}>
@@ -38,10 +41,10 @@ export const BlogCard: FC<BlogCardProps> = ({
           </li>
         </ul>
         <h3>
-          <Link to={`/${slug}`}>{title}</Link>
+          <Link to={baseURL + `/${slug}`}>{title}</Link>
         </h3>
         <div className="text">{shortDescription}</div>
-        <Link to={`/${slug}`} className="btn-primary-line">
+        <Link to={baseURL + `/${slug}`} className="btn-primary-line">
           Read More
         </Link>
       </div>
