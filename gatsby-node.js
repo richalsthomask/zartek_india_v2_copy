@@ -13,17 +13,6 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const serviceComponentTemplate = resolve(`./src/templates/ServiceDetail/index.tsx`);
   const blogComponentTemplate = resolve(`./src/templates/BlogDetail/index.tsx`);
-  let baseURL = "";
-
-  if (typeof window !== "undefined") {
-    const url = window.location.href?.split("/")[3];
-
-    if (url === "pune" || url === "coimbatore" || url === "hyderabad") {
-      baseURL = `/${url}`;
-    } else {
-      baseURL = "";
-    }
-  }
 
   const serviceContext = await graphql(`
     query {
@@ -44,8 +33,6 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `);
-
-  console.log(baseURL);
 
   serviceContext.data.allContentfulServiceModel.nodes.forEach(({ slug }) => {
     createPage({
