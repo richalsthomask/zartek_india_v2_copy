@@ -30,25 +30,21 @@ export default class Blog extends Component<BlogListProps> {
         />
         <div className="page-bottom pbottom-70">
           <div className="container blogs-container">
-            <div className="row">
-              <div className="blog-list">
-                <div className="row">
-                  {blogs.map(
-                    ({ cover, shortDescription, slug, title, publishedDate, id }, index) => {
-                      return (
-                        <BlogCard
-                          imrSrc={cover.file.url}
-                          publishedDate={publishedDate}
-                          key={id}
-                          shortDescription={shortDescription}
-                          size={index === 0 || index === 1 ? "large" : "small"}
-                          slug={slug}
-                          title={title}
-                        />
-                      );
-                    },
-                  )}
-                </div>
+            <div className="blog-list">
+              <div className="row">
+                {blogs.map(({ cover, shortDescription, slug, title, publishedDate, id }, index) => {
+                  return (
+                    <BlogCard
+                      imrSrc={cover.file.url}
+                      publishedDate={publishedDate}
+                      key={id}
+                      shortDescription={shortDescription}
+                      size={index === 0 || index === 1 ? "large" : "small"}
+                      slug={slug}
+                      title={title}
+                    />
+                  );
+                })}
               </div>
             </div>
           </div>
