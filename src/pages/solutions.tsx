@@ -8,6 +8,13 @@ const Solutions: FC = () => {
       query={graphql`
         query GET_SOLUTIONS_LIST_KOCHI {
           contentfulSolutionsPage(use: { eq: "Use This space to access Solutions Page - Kochi" }) {
+            seo {
+              metaTitle
+              metaDescription
+              metaUrl
+              metaAuthor
+              metaKeywords
+            }
             solutions {
               solutions {
                 id
@@ -27,8 +34,9 @@ const Solutions: FC = () => {
       render={({
         contentfulSolutionsPage: {
           solutions: { solutions },
+          seo,
         },
-      }) => <SolutionPage solutions={solutions} />}
+      }) => <SolutionPage solutions={solutions} seo={seo} />}
     />
   );
 };
