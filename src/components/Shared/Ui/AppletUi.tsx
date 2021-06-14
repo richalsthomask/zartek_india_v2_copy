@@ -10,6 +10,7 @@ export const AppletUi: FC<AppletType> = ({
   },
   redirectLink,
   appTitle,
+  viewPort,
 }) => {
   const baseUrl = useBaseURL();
 
@@ -18,13 +19,13 @@ export const AppletUi: FC<AppletType> = ({
       {redirectLink.includes("https") ? (
         <a href={redirectLink} target="_blank" className="app-item" rel="noreferrer">
           <div className="icon">
-            <LazyImage alt={appTitle} height={65} width={65} src={url} view="1.0" />
+            <LazyImage alt={appTitle} height={65} width={65} src={url} view={viewPort || "1.0"} />
           </div>
         </a>
       ) : (
         <Link to={baseUrl + redirectLink} className="app-item">
           <div className="icon">
-            <LazyImage alt={appTitle} height={65} width={65} src={url} view="1.0" />
+            <LazyImage alt={appTitle} height={65} width={65} src={url} view={viewPort || "1.0"} />
           </div>
         </Link>
       )}

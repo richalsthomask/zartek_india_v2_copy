@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { FooterComponent } from "./Footer/Footer";
 import { HeaderComponent } from "./Header/header";
+import { Loader } from "./Loader";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -38,6 +39,7 @@ export class Layout extends Component<LayoutProps, { isMounted: boolean }> {
   render(): JSX.Element {
     return (
       <Fragment>
+        <Loader />
         <HeaderComponent />
         <section className="page">{this.props.children}</section>
         <FooterComponent />

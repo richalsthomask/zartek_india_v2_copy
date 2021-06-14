@@ -1,3 +1,5 @@
+import { viewPortOptions } from "@/components/Helpers/LazyImage";
+
 export interface WelcomeAreaPropType {
   applets: AppletType[];
   title: string;
@@ -15,6 +17,7 @@ export interface AppletType {
   appTitle: string;
   redirectLink: string;
   id?: string;
+  viewPort?: viewPortOptions;
 }
 
 export interface ButtonType {

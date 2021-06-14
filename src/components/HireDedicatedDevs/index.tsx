@@ -51,7 +51,7 @@ export default class HireDedicatedDevelopers extends Component<HireDedicatedDeve
                       cardDescription={description}
                       cardIcon={icon}
                       cardTitle={title}
-                      routerLink={"/" + slug}
+                      routerLink={"/contact/"}
                       addBaseURL={true}
                     />
                   </div>

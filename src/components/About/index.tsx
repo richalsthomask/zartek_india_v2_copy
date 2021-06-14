@@ -52,7 +52,7 @@ export default class AboutUs extends Component<AboutUsProps> {
           currentPageTitle="About Us"
           routes={[
             { path: "/", title: "Home" },
-            { path: "/about-us/", title: "About us" },
+            { path: "/about/", title: "About us" },
           ]}
         />
 

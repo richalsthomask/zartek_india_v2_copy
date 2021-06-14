@@ -35,6 +35,7 @@ export class WelcomeArea extends Component<WelcomeAreaProps> {
                             appIcon={appIcon}
                             appTitle={appTitle}
                             redirectLink={redirectLink || "/our-work/"}
+                            viewPort="0.0"
                           />
                         );
                       })}
