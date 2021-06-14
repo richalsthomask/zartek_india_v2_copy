@@ -44,6 +44,12 @@
 - Blogs Page share common content with replicated url for every location!!!
 ```
 
+## Hire Dedicated Developers Page
+
+```
+- Hire dedicated devs Page share common content with replicated url for every location!!!
+```
+
 ## Global
 
 ```

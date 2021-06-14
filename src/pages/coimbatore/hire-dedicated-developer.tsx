@@ -14,12 +14,29 @@ const HireDedicatedDevelopers: FC = () => {
             description {
               description
             }
+            list {
+              pods {
+                id
+                title
+                description
+                slug
+                icon {
+                  file {
+                    url
+                  }
+                }
+              }
+            }
           }
         }
       `}
-      render={({ contentfulHireDedicatedDevelopersPage: { title, description } }) => (
-        <HireDevelopers description={description} title={title} />
-      )}
+      render={({
+        contentfulHireDedicatedDevelopersPage: {
+          title,
+          description,
+          list: { pods },
+        },
+      }) => <HireDevelopers description={description} title={title} pods={pods} />}
     />
   );
 };

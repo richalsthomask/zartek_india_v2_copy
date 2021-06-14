@@ -1,4 +1,5 @@
 import { LazyImage } from "@/components/Helpers/LazyImage";
+import { useBaseURL } from "@/utils/hooks/useBaseUrl";
 import { Link } from "gatsby";
 import React, { FC } from "react";
 
@@ -8,6 +9,7 @@ interface ServiceInfoCardProps {
   cardDescription: string;
   cardIcon: { file: { url: string } };
   cardAdditionalClass?: string;
+  addBaseURL?: boolean;
 }
 
 export const ServiceInfoCard: FC<ServiceInfoCardProps> = ({
@@ -16,7 +18,10 @@ export const ServiceInfoCard: FC<ServiceInfoCardProps> = ({
   cardTitle,
   routerLink,
   cardAdditionalClass = "",
+  addBaseURL = false,
 }) => {
+  const baseURL = useBaseURL();
+
   const InnerContent = () => {
     return (
       <React.Fragment>
@@ -36,7 +41,10 @@ export const ServiceInfoCard: FC<ServiceInfoCardProps> = ({
   }
 
   return (
-    <Link to={routerLink} className={"home-services-item " + cardAdditionalClass}>
+    <Link
+      to={addBaseURL ? baseURL + routerLink : routerLink}
+      className={"home-services-item " + cardAdditionalClass}
+    >
       <InnerContent />
     </Link>
   );

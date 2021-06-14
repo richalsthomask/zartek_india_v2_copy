@@ -52,6 +52,7 @@ export default class HireDedicatedDevelopers extends Component<HireDedicatedDeve
                       cardIcon={icon}
                       cardTitle={title}
                       routerLink={"/" + slug}
+                      addBaseURL={true}
                     />
                   </div>
                 );
