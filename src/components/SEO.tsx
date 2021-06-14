@@ -3,13 +3,10 @@ import { Helmet } from "react-helmet";
 
 export interface SEOType {
   metaTitle: string;
-  documentTitle: string;
   metaUrl: string;
   metaAuthor?: string;
   metaKeywords: string[];
-  description: {
-    description: string;
-  };
+  metaDescription: string;
 }
 
 interface SEOProps {
@@ -19,7 +16,6 @@ interface SEOProps {
     metaUrl: string;
     metaAuthor?: string;
     metaKeywords: string[];
-    documentTitle: string;
   };
 }
 
@@ -32,11 +28,10 @@ export default function SEO({ contentfulSeo }: SEOProps): JSX.Element {
   const metaUrl = contentfulSeo.metaUrl;
   const metaAuthor = contentfulSeo.metaAuthor || "@Zartek";
   const metaKeywords = contentfulSeo.metaKeywords;
-  const docTitle = contentfulSeo.documentTitle;
   return (
     // constants for holding metadata!
     <Helmet
-      title={docTitle}
+      title={metaTitle}
       meta={[
         {
           name: "description",

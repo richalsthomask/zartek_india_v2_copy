@@ -9,6 +9,7 @@ import {
 import loadable from "@loadable/component";
 import React, { Component } from "react";
 import { Layout } from "../Layout";
+import SEO, { SEOType } from "../SEO";
 import { WelcomeArea } from "../Shared/Ui/WelcomeArea";
 import { FrequentlyAskedQuestions } from "./FAQs";
 import { Stats } from "./Stats";
@@ -22,6 +23,7 @@ const Features = loadable(() => import("@/components/Shared/Ui/Features").then((
 
 interface HomePageProps {
   contentfulHomePage: {
+    seo: SEOType;
     welcomeArea: WelcomeAreaPropType;
     serviceArea: ServiceAreaModelType;
     featureArea: BulletPointsWithImageType;
@@ -33,11 +35,13 @@ interface HomePageProps {
 
 export default class HomePage extends Component<HomePageProps> {
   render(): JSX.Element {
-    const { welcomeArea, serviceArea, featureArea, testimonials, statsContainer, faQs } =
+    const { welcomeArea, serviceArea, featureArea, testimonials, statsContainer, faQs, seo } =
       this.props.contentfulHomePage;
 
     return (
       <Layout>
+        <SEO contentfulSeo={seo} />
+
         <WelcomeArea welcomeArea={welcomeArea} />
         <ServicesOffered serviceProp={serviceArea} btnName={"SERVICES"} />
         <Features features={featureArea} />

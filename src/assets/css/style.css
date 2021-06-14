@@ -1065,9 +1065,8 @@ welcome area
   transition: all 0.3s ease 0s;
 }
 
-.welcome-area .welcome-content .apps .app-item:hover {
+.welcome-area .welcome-content .apps img:hover {
   margin-top: -10px;
-  padding-bottom: 10px;
 }
 
 .welcome-area .welcome-content .apps .app-item .icon {
