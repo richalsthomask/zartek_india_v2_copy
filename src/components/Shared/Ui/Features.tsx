@@ -1,6 +1,6 @@
 import { BulletPointsWithImageType } from "@/@types/types";
 import React, { FC } from "react";
-import { ImageWithPointsUi } from "../Shared/Ui/ImageWithPoints";
+import { ImageWithPointsUi } from "./ImageWithPoints";
 
 interface FeaturesProps {
   features: BulletPointsWithImageType;

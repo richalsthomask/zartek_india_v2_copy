@@ -988,7 +988,6 @@ welcome area
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url(/images/welcome.jpg);
 }
 
 .welcome-area .welcome-bg:before {
@@ -1053,6 +1052,7 @@ welcome area
 
 .welcome-area .welcome-content .apps {
   padding-top: 30px;
+  transition: all 0.3s;
 }
 
 .welcome-area .welcome-content .apps .app-item {

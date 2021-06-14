@@ -1,7 +1,7 @@
 import { WelcomeAreaPropType } from "@/@types/types";
 import { ContactLinkButton, InlineButton } from "@/components/Helpers/Buttons";
 import React, { Component } from "react";
-import { AppletUi } from "../Shared/Ui/AppletUi";
+import { AppletUi } from "./AppletUi";
 
 interface WelcomeAreaProps {
   welcomeArea: WelcomeAreaPropType;
@@ -9,11 +9,20 @@ interface WelcomeAreaProps {
 
 export class WelcomeArea extends Component<WelcomeAreaProps> {
   render(): JSX.Element {
-    const { applets, description, option1, option2, title } = this.props.welcomeArea;
+    const {
+      applets,
+      description,
+      option1,
+      option2,
+      title,
+      backgroundImage: {
+        file: { url },
+      },
+    } = this.props.welcomeArea;
 
     return (
       <section className="welcome-area">
-        <div className="welcome-bg" />
+        <div className="welcome-bg" style={{ backgroundImage: `url(${url})` }} />
         <div className="welcome-content">
           <div className="container">
             <div className="row">

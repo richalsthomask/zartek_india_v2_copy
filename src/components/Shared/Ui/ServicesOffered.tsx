@@ -1,14 +1,16 @@
 import { ServiceAreaModelType } from "@/@types/types";
 import { Link } from "gatsby";
 import React, { FC } from "react";
-import { ServiceInfoCard } from "../Shared/Ui/ServiceInfoCard";
+import { ServiceInfoCard } from "./ServiceInfoCard";
 
 interface ServicesOfferedProps {
   serviceProp: ServiceAreaModelType;
+  btnName: string;
 }
 
 export const ServicesOffered: FC<ServicesOfferedProps> = ({
   serviceProp: { title, description, services },
+  btnName,
 }) => {
   return (
     <section className="section services-section pbottom-70">
@@ -22,7 +24,7 @@ export const ServicesOffered: FC<ServicesOfferedProps> = ({
               <p className="dark pre-line-text">{description.description}</p>
             </div>
             <Link to={services[0].routerLink} className="btn-primary-line">
-              SERVICES
+              {btnName}{" "}
             </Link>
           </div>
 

@@ -18,8 +18,6 @@ export default class HireDedicatedDevelopers extends Component<HireDedicatedDeve
       pods,
     } = this.props;
 
-    console.log(pods);
-
     return (
       <Layout>
         <Breadcrumb

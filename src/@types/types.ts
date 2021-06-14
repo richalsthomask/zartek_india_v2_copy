@@ -6,6 +6,7 @@ export interface WelcomeAreaPropType {
   description: { description: string };
   option1: ButtonType;
   option2: ButtonType;
+  backgroundImage: FileType;
 }
 
 export interface FileType {
@@ -98,6 +99,14 @@ export interface HireDedicatedDevPodType {
   id: string;
   title: string;
   description: string;
+  slug: string;
+  icon: FileType;
+}
+
+export interface SolutionPodType {
+  id: string;
+  solutionTitle: string;
+  solutionDescription: string;
   slug: string;
   icon: FileType;
 }

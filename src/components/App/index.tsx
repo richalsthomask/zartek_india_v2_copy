@@ -9,16 +9,16 @@ import {
 import loadable from "@loadable/component";
 import React, { Component } from "react";
 import { Layout } from "../Layout";
+import { WelcomeArea } from "../Shared/Ui/WelcomeArea";
 import { FrequentlyAskedQuestions } from "./FAQs";
 import { Stats } from "./Stats";
 import { Testimonials } from "./Testimonials";
-import { WelcomeArea } from "./WelcomeArea";
 
 const ServicesOffered = loadable(() =>
-  import("@/components/App/ServicesOffered").then((c) => c.ServicesOffered),
+  import("@/components/Shared/Ui/ServicesOffered").then((c) => c.ServicesOffered),
 );
 
-const Features = loadable(() => import("@/components/App/Features").then((c) => c.Features));
+const Features = loadable(() => import("@/components/Shared/Ui/Features").then((c) => c.Features));
 
 interface HomePageProps {
   contentfulHomePage: {
@@ -39,7 +39,7 @@ export default class HomePage extends Component<HomePageProps> {
     return (
       <Layout>
         <WelcomeArea welcomeArea={welcomeArea} />
-        <ServicesOffered serviceProp={serviceArea} />
+        <ServicesOffered serviceProp={serviceArea} btnName={"SERVICES"} />
         <Features features={featureArea} />
         <Testimonials testimonials={testimonials} />
         <Stats stats={statsContainer} />

@@ -10,6 +10,11 @@ const Home: FC<PageProps> = () => {
           contentfulHomePage(use: { eq: "Use This space to access Home Page - Hyderabad" }) {
             #     Welcome banner
             welcomeArea {
+              backgroundImage {
+                file {
+                  url
+                }
+              }
               title
               description {
                 description

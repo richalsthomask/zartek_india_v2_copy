@@ -89,7 +89,6 @@ export default class BlogDetail extends Component<BlogPageProps> {
   }
 
   render(): JSX.Element {
-    console.log(this.props);
     const {
       data: {
         contentfulBlogPostModel: { body, title, slug },

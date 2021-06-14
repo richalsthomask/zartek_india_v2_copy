@@ -63,7 +63,6 @@ export default class ServiceDetailTemplate extends Component<ServicesPageProps> 
   }
 
   render(): JSX.Element {
-    // console.log(this.props);
     const {
       data: {
         contentfulServiceModel: { detailedPage, serviceCardTitle, slug },
