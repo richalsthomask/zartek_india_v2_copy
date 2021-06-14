@@ -90,3 +90,11 @@ export interface ServiceModelType {
   serviceCardTitle: string;
   slug: string;
 }
+
+export interface HireDedicatedDevPodType {
+  id: string;
+  title: string;
+  description: string;
+  slug: string;
+  icon: FileType;
+}

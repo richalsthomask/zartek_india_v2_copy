@@ -1,10 +1,13 @@
+import { HireDedicatedDevPodType } from "@/@types/types";
 import React, { Component } from "react";
 import { Layout } from "../Layout";
 import { Breadcrumb } from "../Shared/Breadcrumb";
+import { ServiceInfoCard } from "../Shared/Ui/ServiceInfoCard";
 
 interface HireDedicatedDevelopersProps {
   title: string;
   description: { description: string };
+  pods: HireDedicatedDevPodType[];
 }
 
 export default class HireDedicatedDevelopers extends Component<HireDedicatedDevelopersProps> {
@@ -12,7 +15,10 @@ export default class HireDedicatedDevelopers extends Component<HireDedicatedDeve
     const {
       description: { description },
       title,
+      pods,
     } = this.props;
+
+    console.log(pods);
 
     return (
       <Layout>
@@ -32,6 +38,24 @@ export default class HireDedicatedDevelopers extends Component<HireDedicatedDeve
                 </div>
                 <p className="pre-line-text">{description}</p>
               </div>
+            </div>
+          </div>
+        </div>
+        <div className="page-bottom pbottom-70">
+          <div className="container">
+            <div className="row">
+              {pods.map(({ id, description, icon, slug, title }) => {
+                return (
+                  <div className="col-lg-4 col-md-6 col-sm-12" key={id}>
+                    <ServiceInfoCard
+                      cardDescription={description}
+                      cardIcon={icon}
+                      cardTitle={title}
+                      routerLink={"/" + slug}
+                    />
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

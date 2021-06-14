@@ -48,7 +48,7 @@ export const HeaderComponent: FC = () => {
                   </li>
 
                   <li>
-                    <Link to={url + "/hire-dedicated-developer"}>DEDICATED DEVELOPERS</Link>
+                    <Link to={url + "/hire-dedicated-developer/"}>DEDICATED DEVELOPERS</Link>
                   </li>
                   <li>
                     <Link to={url + "/contact/"} className="btn-nav-line">

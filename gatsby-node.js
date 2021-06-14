@@ -13,6 +13,9 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const serviceComponentTemplate = resolve(`./src/templates/ServiceDetail/index.tsx`);
   const blogComponentTemplate = resolve(`./src/templates/BlogDetail/index.tsx`);
+  const hireDedicatedDeveloperTemplate = resolve(
+    "./src/templates/HireDedicatedDeveloperDetail/index.tsx",
+  );
 
   const serviceContext = await graphql(`
     query {
@@ -33,6 +36,28 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `);
+
+  const dedicatedDevelopersContext = await graphql(`
+    query {
+      allContentfulHireDedicatedDeveloperModel {
+        nodes {
+          slug
+        }
+      }
+    }
+  `);
+
+  dedicatedDevelopersContext.data.allContentfulHireDedicatedDeveloperModel.nodes.forEach(
+    ({ slug }) => {
+      createPage({
+        path: `${slug}`,
+        component: hireDedicatedDeveloperTemplate,
+        context: {
+          slug,
+        },
+      });
+    },
+  );
 
   serviceContext.data.allContentfulServiceModel.nodes.forEach(({ slug }) => {
     createPage({
