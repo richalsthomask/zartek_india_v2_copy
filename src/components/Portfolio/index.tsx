@@ -1,19 +1,22 @@
 import { OurWorkType } from "@/@types/types";
 import React, { Component } from "react";
 import { Layout } from "../Layout";
+import SEO, { SEOType } from "../SEO";
 import { Breadcrumb } from "../Shared/Breadcrumb";
 import { ProductCard } from "../Shared/Ui/ProductCard";
 
 interface PortfolioProps {
   works: OurWorkType[];
+  seo: SEOType;
 }
 
 export class Portfolio extends Component<PortfolioProps> {
   render(): JSX.Element {
-    const { works } = this.props;
+    const { works, seo } = this.props;
 
     return (
       <Layout>
+        <SEO contentfulSeo={seo} />
         <Breadcrumb
           currentPageTitle="Portfolio"
           routes={[

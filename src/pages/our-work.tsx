@@ -8,6 +8,13 @@ const OurWork: FC = () => {
       query={graphql`
         query GET_OUR_WORK_KOCHI {
           contentfulOurWorkPage(use: { eq: "Use This space to access Our Work Page - Kochi" }) {
+            seo {
+              metaTitle
+              metaDescription
+              metaUrl
+              metaAuthor
+              metaKeywords
+            }
             works {
               title
               id
@@ -27,7 +34,7 @@ const OurWork: FC = () => {
           }
         }
       `}
-      render={({ contentfulOurWorkPage: { works } }) => <Portfolio works={works} />}
+      render={({ contentfulOurWorkPage: { works, seo } }) => <Portfolio works={works} seo={seo} />}
     />
   );
 };

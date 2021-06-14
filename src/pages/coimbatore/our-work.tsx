@@ -10,6 +10,13 @@ const OurWork: FC = () => {
           contentfulOurWorkPage(
             use: { eq: "Use This space to access Our Work Page - Coimbatore" }
           ) {
+            seo {
+              metaTitle
+              metaDescription
+              metaUrl
+              metaAuthor
+              metaKeywords
+            }
             works {
               title
               id
@@ -29,7 +36,7 @@ const OurWork: FC = () => {
           }
         }
       `}
-      render={({ contentfulOurWorkPage: { works } }) => <Portfolio works={works} />}
+      render={({ contentfulOurWorkPage: { works, seo } }) => <Portfolio works={works} seo={seo} />}
     />
   );
 };
