@@ -38,19 +38,17 @@ export const HeaderComponent: FC = () => {
                     <Link to={url + "/our-work/"}>OUR WORK</Link>
                   </li>
                   <li>
-                    <Link to={url + "/about-us/"}>About Us</Link>
+                    <Link to={url + "/about-us/"}>ABOUT US</Link>
                   </li>
                   <li>
-                    <Link to={url + "/services/"}>Services</Link>
+                    <Link to={url + "/services/"}>SERVICES</Link>
                   </li>
                   <li>
-                    <Link to={url + "/blog/"}>Blog</Link>
+                    <Link to={url + "/blog/"}>BLOG</Link>
                   </li>
 
                   <li>
-                    <a href="hire-dedicated-developer.html" target="_blank">
-                      DEDICATED DEVELOPERS
-                    </a>
+                    <Link to={url + "/hire-dedicated-developer"}>DEDICATED DEVELOPERS</Link>
                   </li>
                   <li>
                     <Link to={url + "/contact/"} className="btn-nav-line">
