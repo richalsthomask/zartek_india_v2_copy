@@ -8,7 +8,14 @@ const Services: FC = () => {
       query={graphql`
         query GET_SERVICES_LIST_KOCHI {
           contentfulServicesPage(use: { eq: "Use This space to access Services Page - Kochi" }) {
-            service {
+            seo {
+              metaTitle
+              metaDescription
+              metaUrl
+              metaAuthor
+              metaKeywords
+            }
+            services {
               id
               slug
               serviceCardTitle
@@ -22,7 +29,9 @@ const Services: FC = () => {
           }
         }
       `}
-      render={({ contentfulServicesPage: { service } }) => <ServicesList services={service} />}
+      render={({ contentfulServicesPage: { services, seo } }) => (
+        <ServicesList services={services} seo={seo} />
+      )}
     />
   );
 };

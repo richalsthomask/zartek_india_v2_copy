@@ -20,7 +20,7 @@ export const OtherServices: FC = () => {
           allContentfulServicesPage {
             nodes {
               use
-              service {
+              services {
                 id
                 slug
                 serviceCardTitle

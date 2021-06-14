@@ -1,19 +1,22 @@
 import { ServiceModelType } from "@/@types/types";
 import { Layout } from "@/components/Layout";
 import React, { Component } from "react";
+import SEO, { SEOType } from "../SEO";
 import { Breadcrumb } from "../Shared/Breadcrumb";
 import { ServiceInfoCard } from "../Shared/Ui/ServiceInfoCard";
 
 interface ServicesListProps {
   services: ServiceModelType[];
+  seo: SEOType;
 }
 
 export default class ServicesList extends Component<ServicesListProps> {
   render(): JSX.Element {
-    const { services } = this.props;
+    const { services, seo } = this.props;
 
     return (
       <Layout>
+        <SEO contentfulSeo={seo} />
         <Breadcrumb
           currentPageTitle="Services"
           routes={[

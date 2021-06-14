@@ -10,7 +10,14 @@ const Services: FC = () => {
           contentfulServicesPage(
             use: { eq: "Use This space to access Services Page - Coimbatore" }
           ) {
-            service {
+            seo {
+              metaTitle
+              metaDescription
+              metaUrl
+              metaAuthor
+              metaKeywords
+            }
+            services {
               id
               slug
               serviceCardTitle
@@ -24,7 +31,9 @@ const Services: FC = () => {
           }
         }
       `}
-      render={({ contentfulServicesPage: { service } }) => <ServicesList services={service} />}
+      render={({ contentfulServicesPage: { services, seo } }) => (
+        <ServicesList services={services} seo={seo} />
+      )}
     />
   );
 };
