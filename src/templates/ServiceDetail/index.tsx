@@ -1,4 +1,5 @@
 import { Layout } from "@/components/Layout";
+import SEO, { SEOType } from "@/components/SEO";
 import { Breadcrumb } from "@/components/Shared/Breadcrumb";
 import { EmbeddedBlockUi } from "@/components/Shared/RichtextUi/EmbeddedBlockUi";
 import {
@@ -19,6 +20,13 @@ export const query = graphql`
   query GET_SERVICE_DETAIL($slug: String!) {
     contentfulServiceModel(slug: { eq: $slug }) {
       slug
+      seo {
+        metaTitle
+        metaDescription
+        metaUrl
+        metaAuthor
+        metaKeywords
+      }
       serviceCardTitle
       detailedPage {
         raw
@@ -30,6 +38,7 @@ export const query = graphql`
 interface ServicesPageProps extends PageProps {
   data: {
     contentfulServiceModel: {
+      seo: SEOType;
       slug: string;
       serviceCardTitle: string;
       detailedPage: {
@@ -65,12 +74,13 @@ export default class ServiceDetailTemplate extends Component<ServicesPageProps> 
   render(): JSX.Element {
     const {
       data: {
-        contentfulServiceModel: { detailedPage, serviceCardTitle, slug },
+        contentfulServiceModel: { detailedPage, serviceCardTitle, slug, seo },
       },
     } = this.props;
 
     return (
       <Layout>
+        <SEO contentfulSeo={seo} />
         <Breadcrumb
           currentPageTitle={serviceCardTitle}
           routes={[

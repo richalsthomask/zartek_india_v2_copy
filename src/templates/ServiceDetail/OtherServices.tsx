@@ -5,7 +5,7 @@ import React, { FC } from "react";
 
 interface OtherServicesFilterType {
   use: string;
-  service: {
+  services: {
     id: string;
     serviceCardTitle: string;
     slug: string;
@@ -42,23 +42,23 @@ const OtherServicesList: FC<{ nodes: OtherServicesFilterType[] }> = ({ nodes }) 
   function servicesFiltered() {
     if (url === "/pune") {
       return nodes.filter((node) => node.use === "Use This space to access Services Page - Pune")[0]
-        .service;
+        .services;
     }
 
     if (url === "/coimbatore") {
       return nodes.filter(
         (node) => node.use === "Use This space to access Services Page - Coimbatore",
-      )[0].service;
+      )[0].services;
     }
 
     if (url === "/hyderabad") {
       return nodes.filter(
         (node) => node.use === "Use This space to access Services Page - Hyderabad",
-      )[0].service;
+      )[0].services;
     }
 
     return nodes.filter((node) => node.use === "Use This space to access Services Page - Kochi")[0]
-      .service;
+      .services;
   }
 
   return (
