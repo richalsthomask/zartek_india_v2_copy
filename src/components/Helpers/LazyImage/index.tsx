@@ -43,10 +43,12 @@ export function LazyImage({
   }
 
   useEffect(() => {
+    let isCancelled = false;
+
     new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          if (entry.isIntersecting && !isCancelled) {
             setIsVisible(true);
           }
         });
@@ -55,6 +57,10 @@ export function LazyImage({
         threshold: parseInt(view, 10),
       },
     ).observe(isVisibleElementRef.current as Element);
+
+    return () => {
+      isCancelled = true;
+    };
   }, [view]);
 
   return (
