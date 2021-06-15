@@ -6,7 +6,7 @@ interface UnorderedListProps {
 
 export const UnorderedListRT: FC<UnorderedListProps> = ({ list }) => {
   return (
-    <div className="col-lg-12">
+    <div className="col-lg-12 mb-2">
       <ul className="unordered-list-rt">
         {list?.map(({ props }, i) => {
           return (

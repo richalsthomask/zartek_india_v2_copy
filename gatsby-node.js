@@ -58,19 +58,19 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
-  const locs = ["", "/pune", "/coimbatore", "/hyderabad"];
+  // const locs = ["", "/pune", "/coimbatore", "/hyderabad"];
 
   dedicatedDevelopersContext.data.allContentfulHireDedicatedDeveloperModel.nodes.forEach(
     ({ slug }) => {
-      locs.forEach((each) => {
-        createPage({
-          path: `${each}/${slug}`,
-          component: hireDedicatedDeveloperTemplate,
-          context: {
-            slug,
-          },
-        });
+      // locs.forEach((each) => {
+      createPage({
+        path: `${slug}`,
+        component: hireDedicatedDeveloperTemplate,
+        context: {
+          slug,
+        },
       });
+      // });
     },
   );
 
@@ -85,14 +85,14 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 
   blogContext.data.allContentfulBlogPostModel.nodes.forEach(({ slug }) => {
-    locs.forEach((each) => {
-      createPage({
-        path: `${each}/${slug}`,
-        component: blogComponentTemplate,
-        context: {
-          slug,
-        },
-      });
+    // locs.forEach((each) => {
+    createPage({
+      path: `${slug}`,
+      component: blogComponentTemplate,
+      context: {
+        slug,
+      },
+      // });
     });
   });
 
