@@ -5,7 +5,6 @@ interface UnorderedListProps {
 }
 
 export const UnorderedListRT: FC<UnorderedListProps> = ({ list }) => {
-  console.log(list);
   return (
     <div className="col-lg-12">
       <ul className="unordered-list-rt">

@@ -28,6 +28,7 @@ export const query = graphql`
         metaAuthor
         metaKeywords
       }
+      breadcrumbTitle
       serviceCardTitle
       detailedPage {
         raw
@@ -55,6 +56,7 @@ interface ServicesPageProps extends PageProps {
     contentfulServiceModel: {
       seo: SEOType;
       slug: string;
+      breadcrumbTitle?: string;
       serviceCardTitle: string;
       detailedPage: {
         raw: any;
@@ -91,7 +93,7 @@ export default class ServiceDetailTemplate extends Component<ServicesPageProps> 
   render(): JSX.Element {
     const {
       data: {
-        contentfulServiceModel: { detailedPage, serviceCardTitle, slug, seo },
+        contentfulServiceModel: { detailedPage, serviceCardTitle, breadcrumbTitle, slug, seo },
       },
     } = this.props;
 
@@ -99,7 +101,7 @@ export default class ServiceDetailTemplate extends Component<ServicesPageProps> 
       <Layout>
         <SEO contentfulSeo={seo} />
         <Breadcrumb
-          currentPageTitle={serviceCardTitle}
+          currentPageTitle={breadcrumbTitle || serviceCardTitle}
           routes={[
             { path: "/", title: "Home" },
             { path: "/services/", title: "Services" },
