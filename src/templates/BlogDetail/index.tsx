@@ -1,4 +1,5 @@
 import { Layout } from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { Breadcrumb } from "@/components/Shared/Breadcrumb";
 import { EmbeddedAssetBlockImageUi } from "@/components/Shared/RichtextUi/EmbeddedAsset";
 import { EmbeddedBlockUi } from "@/components/Shared/RichtextUi/EmbeddedBlockUi";
@@ -22,6 +23,7 @@ export const query = graphql`
       id
       title
       slug
+      breadcrumbTitle
       metaTitle
       metaDescription
       keywords
@@ -52,7 +54,11 @@ interface BlogPageProps extends PageProps {
   data: {
     contentfulBlogPostModel: {
       slug: string;
+      breadcrumbTitle: string;
       title: string;
+      metaDescription: string;
+      keywords: string[];
+      metaTitle: string;
       body: {
         raw: any;
         references: any[];
@@ -93,17 +99,36 @@ export default class BlogDetail extends Component<BlogPageProps> {
   render(): JSX.Element {
     const {
       data: {
-        contentfulBlogPostModel: { body, title, slug },
+        contentfulBlogPostModel: {
+          body,
+          title,
+          slug,
+          breadcrumbTitle,
+          metaDescription,
+          metaTitle,
+          keywords,
+        },
       },
     } = this.props;
+
+    console.log(slug);
+
     return (
       <Layout>
+        <SEO
+          contentfulSeo={{
+            metaDescription,
+            metaTitle,
+            metaUrl: "https://www.zartek.in/" + slug,
+            metaKeywords: keywords,
+          }}
+        />
         <Breadcrumb
-          currentPageTitle={title}
+          currentPageTitle={breadcrumbTitle || title}
           routes={[
             { path: "/", title: "Home" },
             { path: "/blog/", title: "Blogs" },
-            { path: "/" + slug, title: slug },
+            { path: "/" + slug, title: breadcrumbTitle || title },
           ]}
         />
         <div className="page-bottom pb-0">
