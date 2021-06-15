@@ -8,6 +8,13 @@ const Blog: FC = () => {
       query={graphql`
         query GET_BLOGS_LIST_HYDERABAD {
           contentfulBlogsPage(use: { eq: "Use This space to access Blogs Page - Hyderabad" }) {
+            seo {
+              metaTitle
+              metaDescription
+              metaUrl
+              metaAuthor
+              metaKeywords
+            }
             blogs {
               posts {
                 id
@@ -28,8 +35,9 @@ const Blog: FC = () => {
       render={({
         contentfulBlogsPage: {
           blogs: { posts },
+          seo,
         },
-      }) => <BlogList blogs={posts} />}
+      }) => <BlogList blogs={posts} seo={seo} />}
     />
   );
 };

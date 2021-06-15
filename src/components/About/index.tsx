@@ -2,6 +2,7 @@ import { documentToReactComponents, Options } from "@contentful/rich-text-react-
 import { BLOCKS } from "@contentful/rich-text-types";
 import React, { Component } from "react";
 import { Layout } from "../Layout";
+import SEO, { SEOType } from "../SEO";
 import { Breadcrumb } from "../Shared/Breadcrumb";
 import { EmbeddedBlockUi } from "../Shared/RichtextUi/EmbeddedBlockUi";
 import {
@@ -14,6 +15,7 @@ import {
 } from "../Shared/RichtextUi/Headings";
 
 interface AboutUsProps {
+  seo: SEOType;
   aboutUsContent: {
     raw: any;
     references: any[];
@@ -44,10 +46,11 @@ export default class AboutUs extends Component<AboutUsProps> {
   }
 
   render(): JSX.Element {
-    const { aboutUsContent } = this.props;
+    const { aboutUsContent, seo } = this.props;
 
     return (
       <Layout>
+        <SEO contentfulSeo={seo} />
         <Breadcrumb
           currentPageTitle="About Us"
           routes={[

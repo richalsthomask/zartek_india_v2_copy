@@ -2405,6 +2405,8 @@ contact
   padding: 40px;
   padding-top: 55px;
   color: #fff;
+  position: relative;
+  top: 32px;
 }
 
 .map-wrapper .contact-info .item {

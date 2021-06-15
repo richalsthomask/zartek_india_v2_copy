@@ -10,6 +10,13 @@ const HireDedicatedDevelopers: FC = () => {
           contentfulHireDedicatedDevelopersPage(
             use: { eq: "Use This space to access Hire Dedicated Devs Page - Coimbatore" }
           ) {
+            seo {
+              metaTitle
+              metaDescription
+              metaUrl
+              metaAuthor
+              metaKeywords
+            }
             title
             description {
               description
@@ -35,8 +42,9 @@ const HireDedicatedDevelopers: FC = () => {
           title,
           description,
           list: { pods },
+          seo,
         },
-      }) => <HireDevelopers description={description} title={title} pods={pods} />}
+      }) => <HireDevelopers description={description} title={title} pods={pods} seo={seo} />}
     />
   );
 };

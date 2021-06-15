@@ -3,8 +3,10 @@ import { Layout } from "@/components/Layout";
 import { Breadcrumb } from "@/components/Shared/Breadcrumb";
 import { BlogCard } from "@/components/Shared/Ui/BlogCard";
 import React, { Component } from "react";
+import SEO, { SEOType } from "../SEO";
 
 interface BlogListProps {
+  seo: SEOType;
   blogs: {
     id: string;
     title: string;
@@ -17,10 +19,11 @@ interface BlogListProps {
 
 export default class Blog extends Component<BlogListProps> {
   render(): JSX.Element {
-    const { blogs } = this.props;
+    const { blogs, seo } = this.props;
 
     return (
       <Layout>
+        <SEO contentfulSeo={seo} />
         <Breadcrumb
           currentPageTitle="Blogs"
           routes={[

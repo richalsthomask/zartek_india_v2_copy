@@ -8,6 +8,13 @@ const About: FC = () => {
       query={graphql`
         query GET_ABOUT_US_PAGE_KOCHI {
           contentfulAboutUsPage(use: { eq: "Use This space to access About Page - Kochi" }) {
+            seo {
+              metaTitle
+              metaDescription
+              metaUrl
+              metaAuthor
+              metaKeywords
+            }
             aboutUsContent {
               raw
               references {
@@ -54,8 +61,8 @@ const About: FC = () => {
           }
         }
       `}
-      render={({ contentfulAboutUsPage: { aboutUsContent } }) => (
-        <AboutUs aboutUsContent={aboutUsContent} />
+      render={({ contentfulAboutUsPage: { aboutUsContent, seo } }) => (
+        <AboutUs aboutUsContent={aboutUsContent} seo={seo} />
       )}
     />
   );

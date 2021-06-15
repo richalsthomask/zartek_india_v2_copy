@@ -1,16 +1,20 @@
 import { FileType } from "@/@types/types";
+import GMaps from "@/components/Helpers/Maps.jsx";
 import React, { Component } from "react";
 import { Layout } from "../Layout";
+import SEO, { SEOType } from "../SEO";
 import { Breadcrumb } from "../Shared/Breadcrumb";
 
 interface ContactUsProps {
   locationImage: FileType;
+  seo: SEOType;
 }
 
 export default class ContactUs extends Component<ContactUsProps> {
   render(): JSX.Element {
     return (
       <Layout>
+        <SEO contentfulSeo={this.props.seo} />
         <Breadcrumb
           currentPageTitle="Contact Us"
           routes={[
@@ -44,9 +48,12 @@ export default class ContactUs extends Component<ContactUsProps> {
 
         <div className="pb-1 pt-0">
           <div className="map-wrapper">
+            <div className="map-canvas">
+              <GMaps />
+            </div>
             <div className="container">
               <div className="row">
-                <div className="col-12">
+                <div className="offset-lg-8 col-lg-4 col-md-12 col-sm-12">
                   <div className="contact-info">
                     <div className="item">
                       <i className="fa fa-location-arrow"></i>

@@ -1,6 +1,7 @@
 import { HireDedicatedDevPodType } from "@/@types/types";
 import React, { Component } from "react";
 import { Layout } from "../Layout";
+import SEO, { SEOType } from "../SEO";
 import { Breadcrumb } from "../Shared/Breadcrumb";
 import { ServiceInfoCard } from "../Shared/Ui/ServiceInfoCard";
 
@@ -8,6 +9,7 @@ interface HireDedicatedDevelopersProps {
   title: string;
   description: { description: string };
   pods: HireDedicatedDevPodType[];
+  seo: SEOType;
 }
 
 export default class HireDedicatedDevelopers extends Component<HireDedicatedDevelopersProps> {
@@ -16,15 +18,17 @@ export default class HireDedicatedDevelopers extends Component<HireDedicatedDeve
       description: { description },
       title,
       pods,
+      seo,
     } = this.props;
 
     return (
       <Layout>
+        <SEO contentfulSeo={seo} />
         <Breadcrumb
           currentPageTitle="Hire dedicated developers"
           routes={[
             { path: "/", title: "Home" },
-            { path: "/hire-dedicated-developer", title: "Hire dedicated developer" },
+            { path: "/hire-dedicated-developer/", title: "Hire dedicated developer" },
           ]}
         />
         <div className="page-bottom pbottom-70">

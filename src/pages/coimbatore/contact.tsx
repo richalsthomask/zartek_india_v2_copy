@@ -10,6 +10,13 @@ const Contact: FC = () => {
           contentfulContactUsPage(
             use: { eq: "Use This space to access Contact Us Page - Coimbatore" }
           ) {
+            seo {
+              metaTitle
+              metaDescription
+              metaUrl
+              metaAuthor
+              metaKeywords
+            }
             locationImage {
               file {
                 url
@@ -18,8 +25,8 @@ const Contact: FC = () => {
           }
         }
       `}
-      render={({ contentfulContactUsPage: { locationImage } }) => (
-        <ContactUs locationImage={locationImage} />
+      render={({ contentfulContactUsPage: { locationImage, seo } }) => (
+        <ContactUs locationImage={locationImage} seo={seo} />
       )}
     />
   );

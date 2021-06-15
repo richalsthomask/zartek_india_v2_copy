@@ -8,6 +8,13 @@ const Contact: FC = () => {
       query={graphql`
         query GET_CONTACT_US_PAGE_PUNE {
           contentfulContactUsPage(use: { eq: "Use This space to access Contact Us Page - Pune" }) {
+            seo {
+              metaTitle
+              metaDescription
+              metaUrl
+              metaAuthor
+              metaKeywords
+            }
             locationImage {
               file {
                 url
@@ -16,8 +23,8 @@ const Contact: FC = () => {
           }
         }
       `}
-      render={({ contentfulContactUsPage: { locationImage } }) => (
-        <ContactUs locationImage={locationImage} />
+      render={({ contentfulContactUsPage: { locationImage, seo } }) => (
+        <ContactUs locationImage={locationImage} seo={seo} />
       )}
     />
   );
