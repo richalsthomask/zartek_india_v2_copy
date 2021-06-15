@@ -51,6 +51,7 @@ export const query = graphql`
             id
             __typename
             faqItem {
+              id
               question
               answer {
                 answer

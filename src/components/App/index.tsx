@@ -10,8 +10,8 @@ import loadable from "@loadable/component";
 import React, { Component } from "react";
 import { Layout } from "../Layout";
 import SEO, { SEOType } from "../SEO";
+import { FrequentlyAskedQuestions } from "../Shared/Ui/FAQs";
 import { WelcomeArea } from "../Shared/Ui/WelcomeArea";
-import { FrequentlyAskedQuestions } from "./FAQs";
 import { Stats } from "./Stats";
 import { Testimonials } from "./Testimonials";
 

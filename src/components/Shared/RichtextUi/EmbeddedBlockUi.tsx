@@ -1,6 +1,7 @@
 import { Block, Inline } from "@contentful/rich-text-types";
 import React, { FC } from "react";
 import { BulletPointsWithOrder } from "../Ui/BulletPointsWIthOrder";
+import { FrequentlyAskedQuestions } from "../Ui/FAQs";
 import { ContentfulParallaxSectionWithTextAndButton } from "./ContentfulParallaxSectionWithTextAndButton";
 import { ContentfulPillarImageWithScaleToZoomRtModel } from "./ContentfulPillarImageWithScaleToZoomRtModel";
 import { ContentfulQuoteUI } from "./ContentfulQuoteUi";
@@ -41,21 +42,22 @@ export const EmbeddedBlockUi: FC<EmbeddedBlockUiProps> = ({ node, references }) 
 
   if (entryAssetDocument?.__typename === "ContentfulBulletPointsListRichTextEditorModel") {
     return (
-      <ul className="features">
-        {entryAssetDocument?.points?.map(({ id, description: { description }, title }, index) => {
-          return (
-            <BulletPointsWithOrder
-              description={description}
-              count={index + 1}
-              key={id}
-              title={title}
-            />
-          );
-        })}
-      </ul>
+      <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 align-self-center">
+        <ul className="features">
+          {entryAssetDocument?.points?.map(({ id, description: { description }, title }, index) => {
+            return (
+              <BulletPointsWithOrder
+                description={description}
+                count={index + 1}
+                key={id}
+                title={title}
+              />
+            );
+          })}
+        </ul>
+      </div>
     );
   }
-  console.log(entryAssetDocument);
   if (entryAssetDocument?.__typename === "ContentfulQuoteRtModel") {
     const {
       by,
@@ -63,5 +65,11 @@ export const EmbeddedBlockUi: FC<EmbeddedBlockUiProps> = ({ node, references }) 
     } = entryAssetDocument;
     return <ContentfulQuoteUI by={by} quote={quote} />;
   }
+
+  if (entryAssetDocument?.__typename === "ContentfulFaQsListModel") {
+    console.log(entryAssetDocument);
+    return <FrequentlyAskedQuestions faQs={entryAssetDocument.faqItem} />;
+  }
+
   return <p>view missing</p>;
 };

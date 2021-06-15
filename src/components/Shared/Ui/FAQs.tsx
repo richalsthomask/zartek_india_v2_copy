@@ -1,6 +1,6 @@
 import { FAQType } from "@/@types/types";
 import React, { FC } from "react";
-import { Accordian } from "../Helpers/Accordian";
+import { Accordian } from "../../Helpers/Accordian";
 
 interface FrequentlyAskedQuestionsProps {
   faQs: FAQType[];
