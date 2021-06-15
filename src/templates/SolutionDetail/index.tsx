@@ -4,6 +4,7 @@ import {
   WelcomeAreaPropType,
 } from "@/@types/types";
 import { Layout } from "@/components/Layout";
+import SEO, { SEOType } from "@/components/SEO";
 import { Features } from "@/components/Shared/Ui/Features";
 import { ServicesOffered } from "@/components/Shared/Ui/ServicesOffered";
 import { WelcomeArea } from "@/components/Shared/Ui/WelcomeArea";
@@ -16,6 +17,14 @@ export const query = graphql`
       slug
       solutionTitle
       detailedPage {
+        seo {
+          metaTitle
+          metaDescription
+          metaUrl
+          metaAuthor
+          metaKeywords
+        }
+
         welcomeArea {
           backgroundImage {
             file {
@@ -95,6 +104,7 @@ interface SolutionDetailProps extends PageProps {
       slug: string;
       solutionTitle: string;
       detailedPage: {
+        seo: SEOType;
         welcomeArea: WelcomeAreaPropType;
         solutionArea: ServiceAreaModelType;
         featureArea: BulletPointsWithImageType;
@@ -108,13 +118,14 @@ export default class SolutionDetail extends Component<SolutionDetailProps> {
     const {
       data: {
         contentfulSolutionModel: {
-          detailedPage: { welcomeArea, solutionArea, featureArea },
+          detailedPage: { welcomeArea, solutionArea, featureArea, seo },
         },
       },
     } = this.props;
 
     return (
       <Layout>
+        <SEO contentfulSeo={seo} />
         <WelcomeArea welcomeArea={welcomeArea} />
         <ServicesOffered serviceProp={solutionArea} btnName={"Contact Us"} />
         <Features features={featureArea} />

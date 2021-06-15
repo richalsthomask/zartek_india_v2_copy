@@ -67,9 +67,9 @@ export const EmbeddedBlockUi: FC<EmbeddedBlockUiProps> = ({ node, references }) 
   }
 
   if (entryAssetDocument?.__typename === "ContentfulFaQsListModel") {
-    console.log(entryAssetDocument);
     return <FrequentlyAskedQuestions faQs={entryAssetDocument.faqItem} />;
   }
 
+  console.log(entryAssetDocument);
   return <p>view missing</p>;
 };
