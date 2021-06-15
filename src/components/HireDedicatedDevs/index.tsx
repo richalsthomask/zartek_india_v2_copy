@@ -31,7 +31,7 @@ export default class HireDedicatedDevelopers extends Component<HireDedicatedDeve
             { path: "/hire-dedicated-developer/", title: "Hire dedicated developer" },
           ]}
         />
-        <div className="page-bottom pbottom-70">
+        <div className="page-bottom pbottom-30">
           <div className="container">
             <div className="row">
               <div className="col-lg-12">
@@ -42,8 +42,6 @@ export default class HireDedicatedDevelopers extends Component<HireDedicatedDeve
               </div>
             </div>
           </div>
-        </div>
-        <div className="page-bottom pbottom-70">
           <div className="container">
             <div className="row">
               {pods.map(({ id, description, icon, slug, title }) => {
