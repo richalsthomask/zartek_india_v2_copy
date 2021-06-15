@@ -1,5 +1,6 @@
 import { Block, Inline } from "@contentful/rich-text-types";
 import React, { FC } from "react";
+import { BulletPointsWithOrder } from "../Ui/BulletPointsWIthOrder";
 import { ContentfulParallaxSectionWithTextAndButton } from "./ContentfulParallaxSectionWithTextAndButton";
 import { ContentfulPillarImageWithScaleToZoomRtModel } from "./ContentfulPillarImageWithScaleToZoomRtModel";
 import { ContentfulTeamListModelRt } from "./ContentfulTeamListModelRt";
@@ -20,7 +21,7 @@ export const EmbeddedBlockUi: FC<EmbeddedBlockUiProps> = ({ node, references }) 
     return null;
   }
 
-  // console.log(entryAssetDocument);
+  console.log(entryAssetDocument);
 
   if (entryAssetDocument?.__typename === "ContentfulPillarImageWithScaleToZoomRtModel") {
     return <ContentfulPillarImageWithScaleToZoomRtModel images={entryAssetDocument.images} />;
@@ -37,6 +38,23 @@ export const EmbeddedBlockUi: FC<EmbeddedBlockUiProps> = ({ node, references }) 
 
   if (entryAssetDocument?.__typename === "ContentfulTeamListModelRt") {
     return <ContentfulTeamListModelRt teamMembers={entryAssetDocument.teamMembers} />;
+  }
+
+  if (entryAssetDocument?.__typename === "ContentfulBulletPointsListRichTextEditorModel") {
+    return (
+      <ul className="features">
+        {entryAssetDocument?.points?.map(({ id, description: { description }, title }, index) => {
+          return (
+            <BulletPointsWithOrder
+              description={description}
+              count={index + 1}
+              key={id}
+              title={title}
+            />
+          );
+        })}
+      </ul>
+    );
   }
   return <p>view missing</p>;
 };

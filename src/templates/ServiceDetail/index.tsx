@@ -30,6 +30,20 @@ export const query = graphql`
       serviceCardTitle
       detailedPage {
         raw
+        references {
+          ... on ContentfulBulletPointsListRichTextEditorModel {
+            __typename
+            contentful_id
+            id
+            points {
+              id
+              title
+              description {
+                description
+              }
+            }
+          }
+        }
       }
     }
   }
