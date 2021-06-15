@@ -3,6 +3,7 @@ import React, { FC } from "react";
 import { BulletPointsWithOrder } from "../Ui/BulletPointsWIthOrder";
 import { ContentfulParallaxSectionWithTextAndButton } from "./ContentfulParallaxSectionWithTextAndButton";
 import { ContentfulPillarImageWithScaleToZoomRtModel } from "./ContentfulPillarImageWithScaleToZoomRtModel";
+import { ContentfulQuoteUI } from "./ContentfulQuoteUi";
 import { ContentfulTeamListModelRt } from "./ContentfulTeamListModelRt";
 
 interface EmbeddedBlockUiProps {
@@ -20,8 +21,6 @@ export const EmbeddedBlockUi: FC<EmbeddedBlockUiProps> = ({ node, references }) 
   if (!entryAssetDocument) {
     return null;
   }
-
-  console.log(entryAssetDocument);
 
   if (entryAssetDocument?.__typename === "ContentfulPillarImageWithScaleToZoomRtModel") {
     return <ContentfulPillarImageWithScaleToZoomRtModel images={entryAssetDocument.images} />;
@@ -55,6 +54,14 @@ export const EmbeddedBlockUi: FC<EmbeddedBlockUiProps> = ({ node, references }) 
         })}
       </ul>
     );
+  }
+  console.log(entryAssetDocument);
+  if (entryAssetDocument?.__typename === "ContentfulQuoteRtModel") {
+    const {
+      by,
+      quote: { quote },
+    } = entryAssetDocument;
+    return <ContentfulQuoteUI by={by} quote={quote} />;
   }
   return <p>view missing</p>;
 };

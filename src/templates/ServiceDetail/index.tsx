@@ -45,6 +45,28 @@ export const query = graphql`
               }
             }
           }
+
+          ... on ContentfulFaQsListModel {
+            contentful_id
+            id
+            __typename
+            faqItem {
+              question
+              answer {
+                answer
+              }
+            }
+          }
+
+          ... on ContentfulQuoteRtModel {
+            contentful_id
+            __typename
+            id
+            quote {
+              quote
+            }
+            by
+          }
         }
       }
     }
