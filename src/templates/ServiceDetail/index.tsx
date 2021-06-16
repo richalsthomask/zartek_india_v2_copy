@@ -1,3 +1,5 @@
+import { StructuredDataSnippet } from "@/@types/types";
+import { StructuredDataSnippetTag } from "@/components/Helpers/StructuredDataTag";
 import { Layout } from "@/components/Layout";
 import SEO, { SEOType } from "@/components/SEO";
 import { Breadcrumb } from "@/components/Shared/Breadcrumb";
@@ -20,6 +22,13 @@ import { OtherServices } from "./OtherServices";
 export const query = graphql`
   query GET_SERVICE_DETAIL($slug: String!) {
     contentfulServiceModel(slug: { eq: $slug }) {
+      structuredDataSnippets {
+        snippet {
+          id
+          snippet
+        }
+      }
+
       slug
       seo {
         metaTitle
@@ -77,6 +86,7 @@ export const query = graphql`
 interface ServicesPageProps extends PageProps {
   data: {
     contentfulServiceModel: {
+      structuredDataSnippets: StructuredDataSnippet[];
       seo: SEOType;
       slug: string;
       breadcrumbTitle?: string;
@@ -116,13 +126,21 @@ export default class ServiceDetailTemplate extends Component<ServicesPageProps> 
   render(): JSX.Element {
     const {
       data: {
-        contentfulServiceModel: { detailedPage, serviceCardTitle, breadcrumbTitle, slug, seo },
+        contentfulServiceModel: {
+          detailedPage,
+          serviceCardTitle,
+          breadcrumbTitle,
+          slug,
+          seo,
+          structuredDataSnippets,
+        },
       },
     } = this.props;
 
     return (
       <Layout>
         <SEO contentfulSeo={seo} />
+        <StructuredDataSnippetTag snippets={structuredDataSnippets} />
         <Breadcrumb
           currentPageTitle={breadcrumbTitle || serviceCardTitle}
           routes={[

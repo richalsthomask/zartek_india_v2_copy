@@ -3,12 +3,13 @@ import {
   FAQType,
   ParallaxStatPodType,
   ServiceAreaModelType,
+  StructuredDataSnippet,
   TestimonialType,
   WelcomeAreaPropType,
 } from "@/@types/types";
 import loadable from "@loadable/component";
 import React, { Component } from "react";
-import { Helmet } from "react-helmet";
+import { StructuredDataSnippetTag } from "../Helpers/StructuredDataTag";
 import { Layout } from "../Layout";
 import SEO, { SEOType } from "../SEO";
 import { FrequentlyAskedQuestions } from "../Shared/Ui/FAQs";
@@ -31,7 +32,7 @@ interface HomePageProps {
     testimonials: TestimonialType[];
     statsContainer: ParallaxStatPodType[];
     faQs: FAQType[];
-    structuredDataSnippets?: { snippet: { id: string; snippet: string } }[];
+    structuredDataSnippets?: StructuredDataSnippet[];
   };
 }
 
@@ -50,17 +51,7 @@ export default class HomePage extends Component<HomePageProps> {
 
     return (
       <Layout>
-        {structuredDataSnippets?.length && (
-          <Helmet>
-            {structuredDataSnippets.map(({ snippet: { snippet, id } }) => {
-              return (
-                <script type="application/ld+json" key={id}>
-                  {Object.freeze(snippet)}
-                </script>
-              );
-            })}
-          </Helmet>
-        )}
+        <StructuredDataSnippetTag snippets={structuredDataSnippets} />
 
         <SEO contentfulSeo={seo} />
 

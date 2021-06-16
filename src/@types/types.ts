@@ -110,3 +110,7 @@ export interface SolutionPodType {
   slug: string;
   icon: FileType;
 }
+
+export interface StructuredDataSnippet {
+  snippet: { id: string; snippet: string };
+}

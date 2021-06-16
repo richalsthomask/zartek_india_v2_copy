@@ -8,6 +8,13 @@ const Home: FC<PageProps> = () => {
       query={graphql`
         query GET_HOME_PAGE_CONTENT_COIMBATORE {
           contentfulHomePage(use: { eq: "Use This space to access Home Page - Coimbatore" }) {
+            #
+            structuredDataSnippets {
+              snippet {
+                id
+                snippet
+              }
+            }
             # SEO
             seo {
               metaTitle
