@@ -55,7 +55,7 @@ export default class HomePage extends Component<HomePageProps> {
             {structuredDataSnippets.map(({ snippet: { snippet, id } }) => {
               return (
                 <script type="application/ld+json" key={id}>
-                  {snippet}
+                  {JSON.stringify(snippet)}
                 </script>
               );
             })}
