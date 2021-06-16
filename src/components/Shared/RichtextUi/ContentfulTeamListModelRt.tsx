@@ -28,7 +28,7 @@ export const ContentfulTeamListModelRt: FC<ContentfulTeamListModelRtProps> = ({ 
           <div className="offset-lg-3 col-lg-6">
             <div className="center-text">
               <p>
-                Here is our team of experienced product startegists and developers to deliver the
+                Here is our team of experienced product strategists and developers to deliver the
                 best outcome for you.
               </p>
             </div>
