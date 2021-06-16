@@ -8,6 +8,7 @@ import {
 } from "@/@types/types";
 import loadable from "@loadable/component";
 import React, { Component } from "react";
+import { Helmet } from "react-helmet";
 import { Layout } from "../Layout";
 import SEO, { SEOType } from "../SEO";
 import { FrequentlyAskedQuestions } from "../Shared/Ui/FAQs";
@@ -30,16 +31,33 @@ interface HomePageProps {
     testimonials: TestimonialType[];
     statsContainer: ParallaxStatPodType[];
     faQs: FAQType[];
+    structuredDataSnippets?: { snippet: { snippet: string } }[];
   };
 }
 
 export default class HomePage extends Component<HomePageProps> {
   render(): JSX.Element {
-    const { welcomeArea, serviceArea, featureArea, testimonials, statsContainer, faQs, seo } =
-      this.props.contentfulHomePage;
+    const {
+      welcomeArea,
+      serviceArea,
+      featureArea,
+      testimonials,
+      statsContainer,
+      faQs,
+      seo,
+      structuredDataSnippets,
+    } = this.props.contentfulHomePage;
+
+    console.log(structuredDataSnippets);
 
     return (
       <Layout>
+        {structuredDataSnippets && (
+          <Helmet>
+            <script type="application/ld+json">{structuredDataSnippets[0].snippet.snippet}</script>
+          </Helmet>
+        )}
+
         <SEO contentfulSeo={seo} />
 
         <WelcomeArea welcomeArea={welcomeArea} />
