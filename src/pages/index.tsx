@@ -11,6 +11,7 @@ const Home: FC<PageProps> = () => {
             #
             structuredDataSnippets {
               snippet {
+                id
                 snippet
               }
             }

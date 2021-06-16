@@ -31,7 +31,7 @@ interface HomePageProps {
     testimonials: TestimonialType[];
     statsContainer: ParallaxStatPodType[];
     faQs: FAQType[];
-    structuredDataSnippets?: { snippet: { snippet: string } }[];
+    structuredDataSnippets?: { snippet: { id: string; snippet: string } }[];
   };
 }
 
@@ -48,13 +48,17 @@ export default class HomePage extends Component<HomePageProps> {
       structuredDataSnippets,
     } = this.props.contentfulHomePage;
 
-    console.log(structuredDataSnippets);
-
     return (
       <Layout>
-        {structuredDataSnippets && (
+        {structuredDataSnippets?.length && (
           <Helmet>
-            <script type="application/ld+json">{structuredDataSnippets[0].snippet.snippet}</script>
+            {structuredDataSnippets.map(({ snippet: { snippet, id } }) => {
+              return (
+                <script type="application/ld+json" key={id}>
+                  {snippet}
+                </script>
+              );
+            })}
           </Helmet>
         )}
 
