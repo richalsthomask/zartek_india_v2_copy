@@ -22,12 +22,12 @@ const helpfulLinksRoutes = [
   {
     title: "Our Work",
     path: "/our-work/",
-    addBaseURl: true,
+    addBaseURl: false,
   },
   {
     title: "About Us",
     path: "/about/",
-    addBaseURl: true,
+    addBaseURl: false,
   },
   {
     title: "Services",
@@ -47,11 +47,11 @@ const helpfulLinksRoutes = [
   {
     title: "Dedicated devs",
     path: "/hire-dedicated-developer/",
-    addBaseURl: true,
+    addBaseURl: false,
   },
   {
     title: "Partner with us",
     path: "/partner-with-us/",
-    addBaseURl: true,
+    addBaseURl: false,
   },
 ];

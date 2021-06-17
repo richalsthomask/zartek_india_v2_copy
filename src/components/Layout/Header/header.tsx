@@ -35,7 +35,7 @@ export const HeaderComponent: FC = () => {
                     <Link to={url + "/"}>HOME</Link>
                   </li>
                   <li>
-                    <Link to={url + "/our-work/"}>OUR WORK</Link>
+                    <Link to={"/our-work/"}>OUR WORK</Link>
                   </li>
                   <li>
                     <Link to={url + "/services/"}>SERVICES</Link>
@@ -44,14 +44,14 @@ export const HeaderComponent: FC = () => {
                     <Link to={"/solutions/"}>SOLUTIONS</Link>
                   </li>
                   <li>
-                    <Link to={url + "/blog/"}>BLOG</Link>
+                    <Link to={"/blog/"}>BLOG</Link>
                   </li>
 
                   <li>
-                    <Link to={url + "/hire-dedicated-developer/"}>DEDICATED DEVELOPERS</Link>
+                    <Link to={"/hire-dedicated-developer/"}>DEDICATED DEVELOPERS</Link>
                   </li>
                   <li>
-                    <Link to={url + "/contact/"} className="btn-nav-line">
+                    <Link to={"/contact/"} className="btn-nav-line">
                       CONTACT
                     </Link>
                   </li>
