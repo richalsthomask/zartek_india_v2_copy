@@ -40,7 +40,7 @@ export class Layout extends Component<
           s.setAttribute("src", "https://collectcdn.com/launcher.js");
           h.appendChild(s);
         })(window, document);
-      }, 3000),
+      }, 5000),
     });
   }
 
