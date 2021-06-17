@@ -4,9 +4,7 @@ export const Loader: FC = () => {
   const [show, setShow] = useState<boolean>(true);
 
   useEffect(() => {
-    setTimeout(() => {
-      setShow(false);
-    }, 300);
+    setShow(false);
   }, []);
 
   if (!show) {

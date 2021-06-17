@@ -7,9 +7,13 @@ interface LayoutProps {
   children: React.ReactNode;
 }
 
-export class Layout extends Component<LayoutProps, { isMounted: boolean }> {
+export class Layout extends Component<
+  LayoutProps,
+  { isMounted: boolean; timeoutId?: NodeJS.Timeout }
+> {
   state = {
     isMounted: true,
+    timeoutId: null,
   };
 
   componentDidMount(): void {
@@ -19,21 +23,30 @@ export class Layout extends Component<LayoutProps, { isMounted: boolean }> {
       return;
     }
 
-    (function (w: any, d) {
-      if (d.getElementById("chat-bot-launcher-container")) {
-        return;
-      }
-      w.CollectId = "5c0283cd001a8304e04b8070";
-      const h = d.head || d.getElementsByTagName("head")[0];
-      const s = d.createElement("script");
-      s.setAttribute("type", "text/javascript");
-      s.setAttribute("src", "https://collectcdn.com/launcher.js");
-      h.appendChild(s);
-    })(window, document);
+    if (document.getElementById("chat-bot-launcher-container")) {
+      return;
+    }
+
+    this.setState({
+      timeoutId: setTimeout(() => {
+        (function (w: any, d) {
+          if (d.getElementById("chat-bot-launcher-container")) {
+            return;
+          }
+          w.CollectId = "5c0283cd001a8304e04b8070";
+          const h = d.head || d.getElementsByTagName("head")[0];
+          const s = d.createElement("script");
+          s.setAttribute("type", "text/javascript");
+          s.setAttribute("src", "https://collectcdn.com/launcher.js");
+          h.appendChild(s);
+        })(window, document);
+      }, 3000),
+    });
   }
 
   componentWillUnmount(): void {
     this.setState({ isMounted: false });
+    clearTimeout(this.state.timeoutId);
   }
 
   render(): JSX.Element {
