@@ -17,33 +17,33 @@ export class Layout extends Component<
   };
 
   componentDidMount(): void {
-    // this.setState({ isMounted: true });
-    // if (typeof window === "undefined" || typeof document === "undefined" || !this.state.isMounted) {
-    //   return;
-    // }
-    // if (document.getElementById("chat-bot-launcher-container")) {
-    //   return;
-    // }
-    // this.setState({
-    //   timeoutId: setTimeout(() => {
-    //     (function (w: any, d) {
-    //       if (d.getElementById("chat-bot-launcher-container")) {
-    //         return;
-    //       }
-    //       w.CollectId = "5c0283cd001a8304e04b8070";
-    //       const h = d.head || d.getElementsByTagName("head")[0];
-    //       const s = d.createElement("script");
-    //       s.setAttribute("type", "text/javascript");
-    //       s.setAttribute("src", "https://collectcdn.com/launcher.js");
-    //       h.appendChild(s);
-    //     })(window, document);
-    //   }, 5000),
-    // });
+    this.setState({ isMounted: true });
+    if (typeof window === "undefined" || typeof document === "undefined" || !this.state.isMounted) {
+      return;
+    }
+    if (document.getElementById("chat-bot-launcher-container")) {
+      return;
+    }
+    this.setState({
+      timeoutId: setTimeout(() => {
+        (function (w: any, d) {
+          if (d.getElementById("chat-bot-launcher-container")) {
+            return;
+          }
+          w.CollectId = "5c0283cd001a8304e04b8070";
+          const h = d.head || d.getElementsByTagName("head")[0];
+          const s = d.createElement("script");
+          s.setAttribute("type", "text/javascript");
+          s.setAttribute("src", "https://collectcdn.com/launcher.js");
+          h.appendChild(s);
+        })(window, document);
+      }, 6000),
+    });
   }
 
   componentWillUnmount(): void {
-    // this.setState({ isMounted: false });
-    // clearTimeout(this.state.timeoutId);
+    this.setState({ isMounted: false });
+    clearTimeout(this.state.timeoutId);
   }
 
   render(): JSX.Element {
