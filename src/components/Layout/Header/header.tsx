@@ -41,7 +41,7 @@ export const HeaderComponent: FC = () => {
                     <Link to={url + "/services/"}>SERVICES</Link>
                   </li>
                   <li>
-                    <Link to={url + "/solutions/"}>SOLUTIONS</Link>
+                    <Link to={"/solutions/"}>SOLUTIONS</Link>
                   </li>
                   <li>
                     <Link to={url + "/blog/"}>BLOG</Link>
