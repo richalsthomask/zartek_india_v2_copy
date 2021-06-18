@@ -4,6 +4,3 @@
     CONTENTFUL_SPACE_ID = xri6xnn81z4a
     G_MAPS = AIzaSyAtG22nr-9ODYaQ6kpc9hsz3xQZkEEjrGY
 
-[[plugins]]
-    package = "netlify-plugin-gatsby-cache"
-    package = "netlify-plugin-image-optim"
