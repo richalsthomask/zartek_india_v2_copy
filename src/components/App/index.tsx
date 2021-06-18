@@ -14,6 +14,7 @@ import { Layout } from "../Layout";
 import SEO, { SEOType } from "../SEO";
 import { FrequentlyAskedQuestions } from "../Shared/Ui/FAQs";
 import { WelcomeArea } from "../Shared/Ui/WelcomeArea";
+import { LatestBlogs } from "./LatestBlogs";
 import { Stats } from "./Stats";
 import { Testimonials } from "./Testimonials";
 
@@ -33,6 +34,7 @@ interface HomePageProps {
     statsContainer: ParallaxStatPodType[];
     faQs: FAQType[];
     structuredDataSnippets?: StructuredDataSnippet[];
+    footerContent?: { raw: any };
   };
 }
 
@@ -47,10 +49,11 @@ export default class HomePage extends Component<HomePageProps> {
       faQs,
       seo,
       structuredDataSnippets,
+      footerContent,
     } = this.props.contentfulHomePage;
 
     return (
-      <Layout>
+      <Layout footerContent={footerContent?.raw}>
         <StructuredDataSnippetTag snippets={structuredDataSnippets} />
 
         <SEO contentfulSeo={seo} />
@@ -61,6 +64,7 @@ export default class HomePage extends Component<HomePageProps> {
         <Testimonials testimonials={testimonials} />
         <Stats stats={statsContainer} />
         <FrequentlyAskedQuestions faQs={faQs} />
+        <LatestBlogs />
       </Layout>
     );
   }

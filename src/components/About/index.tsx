@@ -27,7 +27,7 @@ export default class AboutUs extends Component<AboutUsProps> {
     const options: Options = {
       renderNode: {
         [BLOCKS.DOCUMENT]: (node, children) => (
-          <div className="page-bottom pb-0">
+          <div className="page-bottom pb-0 ">
             <div className="container">{children}</div>
           </div>
         ),

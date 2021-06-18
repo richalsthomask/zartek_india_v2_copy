@@ -5,6 +5,7 @@ import { Loader } from "./Loader";
 
 interface LayoutProps {
   children: React.ReactNode;
+  footerContent?: any;
 }
 
 export class Layout extends Component<
@@ -52,7 +53,7 @@ export class Layout extends Component<
         <Loader />
         <HeaderComponent />
         <section className="page">{this.props.children}</section>
-        <FooterComponent />
+        <FooterComponent content={this.props.footerContent} />
       </Fragment>
     );
   }

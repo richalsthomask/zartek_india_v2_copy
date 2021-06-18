@@ -131,10 +131,16 @@ const Home: FC<PageProps> = () => {
                 answer
               }
             }
+
+            footerContent {
+              raw
+            }
           }
         }
       `}
-      render={({ contentfulHomePage }) => <App contentfulHomePage={contentfulHomePage} />}
+      render={({ contentfulHomePage, allContentfulBlogPostModel }) => (
+        <App contentfulHomePage={contentfulHomePage} />
+      )}
     />
   );
 };

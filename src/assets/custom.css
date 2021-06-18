@@ -61,6 +61,10 @@
   margin-bottom: 0 !important;
 }
 
+.grey-bg {
+  background-color: #f4f8fb;
+}
+
 @media (max-width: 991px) {
   .scroll-ref {
     display: none;

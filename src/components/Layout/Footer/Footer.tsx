@@ -1,14 +1,20 @@
+import FooterContentUi from "@/components/Helpers/FooterContent";
 import { useBaseURL } from "@/utils/hooks/useBaseUrl";
 import React, { FC } from "react";
 import { BrandLogo } from "../Header/Brandlogo";
 import { HelpfulLinks } from "./HelpfulLinks";
 import { Locations } from "./Locations";
 
-export const FooterComponent: FC = () => {
+interface FooterComponentProps {
+  content?: any;
+}
+
+export const FooterComponent: FC<FooterComponentProps> = ({ content }) => {
   const url = useBaseURL();
 
   return (
-    <footer>
+    <footer className="pt-3">
+      {content && <FooterContentUi content={content} />}
       <div className="container">
         <div className="row">
           <div className="col-lg-5 col-md-12 col-sm-12">
