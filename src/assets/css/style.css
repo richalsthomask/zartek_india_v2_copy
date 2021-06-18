@@ -1955,6 +1955,7 @@ our work
   line-height: 26px;
   letter-spacing: 0.88px;
   margin-bottom: 15px;
+  min-height: 100px;
 }
 
 .page-app .app-content .btn-primary-line {
