@@ -26,6 +26,18 @@ export const LatestBlogs: FC = () => {
       render={({ allContentfulBlogPostModel: { nodes } }) => (
         <div className="grey-bg">
           <div className="container blogs-container ">
+            <div className="row">
+              <div className="col-lg-12">
+                <div className="center-heading">
+                  <h2 className="section-title">Zartek Blog Posts</h2>
+                </div>
+              </div>
+              <div className="offset-lg-3 col-lg-6">
+                <div className="center-text">
+                  <p>Read our experience and insights on how right products are built</p>
+                </div>
+              </div>
+            </div>
             <div className="blog-list">
               <div className="row">
                 {nodes.map(({ cover, shortDescription, slug, title, publishedDate, id }, index) => {
