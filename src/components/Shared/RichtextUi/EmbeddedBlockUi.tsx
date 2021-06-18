@@ -70,6 +70,6 @@ export const EmbeddedBlockUi: FC<EmbeddedBlockUiProps> = ({ node, references }) 
     return <FrequentlyAskedQuestions faQs={entryAssetDocument.faqItem} />;
   }
 
-  console.log(entryAssetDocument);
+  // console.log(entryAssetDocument);
   return <p>view missing</p>;
 };

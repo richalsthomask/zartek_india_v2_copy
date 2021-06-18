@@ -111,8 +111,6 @@ export default class BlogDetail extends Component<BlogPageProps> {
       },
     } = this.props;
 
-    console.log(slug);
-
     return (
       <Layout>
         <SEO
