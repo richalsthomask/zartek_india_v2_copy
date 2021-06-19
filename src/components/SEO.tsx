@@ -59,6 +59,7 @@ export default function SEO({ contentfulSeo }: SEOProps): JSX.Element {
           content: "website",
         },
         {
+          name: "image",
           property: "og:image",
           content:
             metaImage ||
