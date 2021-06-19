@@ -127,7 +127,7 @@ export default class BlogDetail extends Component<BlogPageProps> {
             metaTitle,
             metaUrl: "https://www.zartek.in/" + slug,
             metaKeywords: keywords,
-            metaImage: metaImage.file.url || null,
+            metaImage: metaImage?.file?.url || null,
           }}
         />
         <Breadcrumb
