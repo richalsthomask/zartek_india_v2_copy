@@ -61,15 +61,11 @@ export default function SEO({ contentfulSeo }: SEOProps): JSX.Element {
         {
           name: "image",
           property: "og:image",
-          content:
-            metaImage ||
-            "https://images.ctfassets.net/xhs8vi1fxo4s/2gXyFCk3mJWWg5UPmLTbYn/b2f02f1e428080d95ea522e16bc3de03/logo.png?w=800&q=50",
+          content: metaImage || "https://zartek-india-v2.netlify.app/icons/icon-48x48.png",
         },
         {
           property: "og:image:secure_url",
-          content:
-            metaImage ||
-            "https://images.ctfassets.net/xhs8vi1fxo4s/2gXyFCk3mJWWg5UPmLTbYn/b2f02f1e428080d95ea522e16bc3de03/logo.png?w=800&q=50",
+          content: metaImage || "https://zartek-india-v2.netlify.app/icons/icon-48x48.png",
         },
 
         {
@@ -95,14 +91,12 @@ export default function SEO({ contentfulSeo }: SEOProps): JSX.Element {
           content: metaAuthor || "@Zartek",
         },
         {
-          property: "author",
+          name: "author",
           content: metaAuthor || "@Zartek",
         },
         {
           property: "twitter:image",
-          content:
-            metaImage ||
-            "https://images.ctfassets.net/xhs8vi1fxo4s/2gXyFCk3mJWWg5UPmLTbYn/b2f02f1e428080d95ea522e16bc3de03/logo.png?w=800&q=50",
+          content: metaImage || "https://zartek-india-v2.netlify.app/icons/icon-48x48.png",
         },
         { name: "twitter:site", content: "@zartekq" },
         // Google+
@@ -116,9 +110,7 @@ export default function SEO({ contentfulSeo }: SEOProps): JSX.Element {
         },
         {
           itemprop: "image",
-          content:
-            metaImage ||
-            "https://images.ctfassets.net/xhs8vi1fxo4s/2gXyFCk3mJWWg5UPmLTbYn/b2f02f1e428080d95ea522e16bc3de03/logo.png?w=800&q=50",
+          content: metaImage || "https://zartek-india-v2.netlify.app/icons/icon-48x48.png",
         },
       ].concat(
         metaKeywords && metaKeywords.length > 0
