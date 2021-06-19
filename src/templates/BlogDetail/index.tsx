@@ -128,7 +128,7 @@ export default class BlogDetail extends Component<BlogPageProps> {
           contentfulSeo={{
             metaDescription,
             metaTitle,
-            metaUrl: "https://zartek-india-v2.netlify.app/" + slug,
+            metaUrl: "https://www.zartek.in/" + slug,
             metaKeywords: keywords,
             metaImage: metaImage?.file?.url || null,
             metaAuthor: author || "Zartek",
