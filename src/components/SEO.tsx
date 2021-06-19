@@ -71,22 +71,7 @@ export default function SEO({ contentfulSeo }: SEOProps): JSX.Element {
             metaImage ||
             "https://images.ctfassets.net/xhs8vi1fxo4s/2gXyFCk3mJWWg5UPmLTbYn/b2f02f1e428080d95ea522e16bc3de03/logo.png?w=800&q=50",
         },
-        {
-          property: "og:image:width",
-          content: "626",
-        },
-        {
-          property: "og:image:height",
-          content: "417",
-        },
-        {
-          property: "og:image:alt",
-          content: "zartek technologies",
-        },
-        {
-          property: "og:image:type",
-          content: "image/jpeg",
-        },
+
         {
           property: "og:url",
           content: metaUrl,
@@ -107,6 +92,10 @@ export default function SEO({ contentfulSeo }: SEOProps): JSX.Element {
         },
         {
           property: "twitter:creator",
+          content: metaAuthor || "@Zartek",
+        },
+        {
+          property: "author",
           content: metaAuthor || "@Zartek",
         },
         {

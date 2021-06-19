@@ -9,6 +9,7 @@ interface BlogListProps {
   seo: SEOType;
   blogs: {
     id: string;
+    author?: string;
     title: string;
     slug: string;
     shortDescription: string;
@@ -35,19 +36,22 @@ export default class Blog extends Component<BlogListProps> {
           <div className="container blogs-container">
             <div className="blog-list">
               <div className="row">
-                {blogs.map(({ cover, shortDescription, slug, title, publishedDate, id }, index) => {
-                  return (
-                    <BlogCard
-                      imrSrc={cover.file.url}
-                      publishedDate={publishedDate}
-                      key={id}
-                      shortDescription={shortDescription}
-                      size={index === 0 || index === 1 ? "large" : "small"}
-                      slug={slug}
-                      title={title}
-                    />
-                  );
-                })}
+                {blogs.map(
+                  ({ cover, shortDescription, slug, title, publishedDate, id, author }, index) => {
+                    return (
+                      <BlogCard
+                        imrSrc={cover.file.url}
+                        publishedDate={publishedDate}
+                        key={id}
+                        shortDescription={shortDescription}
+                        size={index === 0 || index === 1 ? "large" : "small"}
+                        slug={slug}
+                        title={title}
+                        author={author}
+                      />
+                    );
+                  },
+                )}
               </div>
             </div>
           </div>

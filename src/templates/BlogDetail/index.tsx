@@ -27,6 +27,7 @@ export const query = graphql`
       breadcrumbTitle
       metaTitle
       metaDescription
+
       metaImage {
         file {
           url
@@ -64,6 +65,7 @@ interface BlogPageProps extends PageProps {
       title: string;
       metaDescription: string;
       metaImage?: FileType;
+      author?: string;
       keywords: string[];
       metaTitle: string;
       body: {
@@ -113,6 +115,7 @@ export default class BlogDetail extends Component<BlogPageProps> {
           breadcrumbTitle,
           metaDescription,
           metaTitle,
+          author,
           keywords,
           metaImage,
         },
@@ -128,6 +131,7 @@ export default class BlogDetail extends Component<BlogPageProps> {
             metaUrl: "https://zartek-india-v2.netlify.app/" + slug,
             metaKeywords: keywords,
             metaImage: metaImage?.file?.url || null,
+            metaAuthor: author || "Zartek",
           }}
         />
         <Breadcrumb

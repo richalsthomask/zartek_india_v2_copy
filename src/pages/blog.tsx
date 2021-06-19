@@ -19,6 +19,7 @@ const Blog: FC = () => {
               posts {
                 id
                 publishedDate
+                author
                 cover {
                   file {
                     url

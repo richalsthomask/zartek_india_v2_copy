@@ -8,6 +8,7 @@ interface BlogCardProps {
   slug: string;
   title: string;
   shortDescription: string;
+  author?: string;
 }
 
 export const BlogCard: FC<BlogCardProps> = ({
@@ -17,6 +18,7 @@ export const BlogCard: FC<BlogCardProps> = ({
   slug,
   shortDescription,
   title,
+  author,
 }) => {
   return (
     <div
@@ -36,7 +38,7 @@ export const BlogCard: FC<BlogCardProps> = ({
         <li>
           <p>
             <span className="icon fa fa-user"></span>
-            by {"Zartek"}
+            by {author || "Zartek"}
           </p>
         </li>
       </ul>
