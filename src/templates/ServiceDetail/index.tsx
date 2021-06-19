@@ -1,4 +1,4 @@
-import { StructuredDataSnippet } from "@/@types/types";
+import { FAQType, StructuredDataSnippet } from "@/@types/types";
 import { StructuredDataSnippetTag } from "@/components/Helpers/StructuredDataTag";
 import { Layout } from "@/components/Layout";
 import SEO, { SEOType } from "@/components/SEO";
@@ -13,6 +13,7 @@ import {
   HeadingTwo,
 } from "@/components/Shared/RichtextUi/Headings";
 import { UnorderedListRT } from "@/components/Shared/RichtextUi/UnOrderedList";
+import { FrequentlyAskedQuestions } from "@/components/Shared/Ui/FAQs";
 import { documentToReactComponents, Options } from "@contentful/rich-text-react-renderer";
 import { BLOCKS } from "@contentful/rich-text-types";
 import { graphql, PageProps } from "gatsby";
@@ -54,20 +55,6 @@ export const query = graphql`
               }
             }
           }
-
-          ... on ContentfulFaQsListModel {
-            contentful_id
-            id
-            __typename
-            faqItem {
-              id
-              question
-              answer {
-                answer
-              }
-            }
-          }
-
           ... on ContentfulQuoteRtModel {
             contentful_id
             __typename
@@ -76,6 +63,16 @@ export const query = graphql`
               quote
             }
             by
+          }
+        }
+      }
+
+      faq {
+        faqItem {
+          id
+          question
+          answer {
+            answer
           }
         }
       }
@@ -95,6 +92,8 @@ interface ServicesPageProps extends PageProps {
         raw: any;
         references: any[];
       };
+
+      faq?: { faqItem: FAQType[] };
     };
   };
 }
@@ -133,6 +132,7 @@ export default class ServiceDetailTemplate extends Component<ServicesPageProps> 
           slug,
           seo,
           structuredDataSnippets,
+          faq,
         },
       },
     } = this.props;
@@ -158,6 +158,7 @@ export default class ServiceDetailTemplate extends Component<ServicesPageProps> 
               <OtherServices />
             </div>
           </div>
+          {faq && <FrequentlyAskedQuestions faQs={faq.faqItem} />}
         </div>
       </Layout>
     );

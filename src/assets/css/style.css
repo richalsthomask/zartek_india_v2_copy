@@ -432,7 +432,7 @@ global styles
 }
 
 .page .cover .page-top .breadcrumb li a.active {
-  color: #f5a623;
+  /* color: #f5a623; */
 }
 
 .page .page-bottom {
