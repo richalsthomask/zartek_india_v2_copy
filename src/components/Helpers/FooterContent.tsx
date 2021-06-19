@@ -34,7 +34,7 @@ export default class FooterContentUi extends Component<FooterContentUiProps> {
 
   render(): JSX.Element {
     return (
-      <div className="container pb-5 pt-0">
+      <div className="container pb-5 pt-0 footer-content">
         {documentToReactComponents(JSON.parse(this.props.content), this.provideOptions())}
       </div>
     );

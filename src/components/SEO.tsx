@@ -7,6 +7,7 @@ export interface SEOType {
   metaAuthor?: string;
   metaKeywords: string[];
   metaDescription: string;
+  metaImage?: string;
 }
 
 interface SEOProps {
@@ -16,6 +17,7 @@ interface SEOProps {
     metaUrl: string;
     metaAuthor?: string;
     metaKeywords: string[];
+    metaImage?: string;
   };
 }
 
@@ -23,11 +25,9 @@ export default function SEO({ contentfulSeo }: SEOProps): JSX.Element {
   if (!contentfulSeo) {
     return null;
   }
-  const metaDescription = contentfulSeo.metaDescription;
-  const metaTitle = contentfulSeo.metaTitle;
-  const metaUrl = contentfulSeo.metaUrl;
-  const metaAuthor = contentfulSeo.metaAuthor || "@Zartek";
-  const metaKeywords = contentfulSeo.metaKeywords;
+
+  const { metaDescription, metaKeywords, metaTitle, metaUrl, metaAuthor, metaImage } =
+    contentfulSeo;
   return (
     // constants for holding metadata!
     <Helmet
@@ -61,11 +61,13 @@ export default function SEO({ contentfulSeo }: SEOProps): JSX.Element {
         {
           property: "og:image",
           content:
+            metaImage ||
             "https://images.ctfassets.net/xhs8vi1fxo4s/2gXyFCk3mJWWg5UPmLTbYn/b2f02f1e428080d95ea522e16bc3de03/logo.png?w=800&q=50",
         },
         {
           property: "og:image:secure_url",
           content:
+            metaImage ||
             "https://images.ctfassets.net/xhs8vi1fxo4s/2gXyFCk3mJWWg5UPmLTbYn/b2f02f1e428080d95ea522e16bc3de03/logo.png?w=800&q=50",
         },
         {
@@ -104,11 +106,12 @@ export default function SEO({ contentfulSeo }: SEOProps): JSX.Element {
         },
         {
           property: "twitter:creator",
-          content: metaAuthor,
+          content: metaAuthor || "@Zartek",
         },
         {
           property: "twitter:image",
           content:
+            metaImage ||
             "https://images.ctfassets.net/xhs8vi1fxo4s/2gXyFCk3mJWWg5UPmLTbYn/b2f02f1e428080d95ea522e16bc3de03/logo.png?w=800&q=50",
         },
         { name: "twitter:site", content: "@zartekq" },
@@ -124,6 +127,7 @@ export default function SEO({ contentfulSeo }: SEOProps): JSX.Element {
         {
           itemprop: "image",
           content:
+            metaImage ||
             "https://images.ctfassets.net/xhs8vi1fxo4s/2gXyFCk3mJWWg5UPmLTbYn/b2f02f1e428080d95ea522e16bc3de03/logo.png?w=800&q=50",
         },
       ].concat(

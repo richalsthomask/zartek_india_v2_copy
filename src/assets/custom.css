@@ -69,6 +69,10 @@
   background-color: #f4f8fb;
 }
 
+.footer-content {
+  color: #6f8ba4;
+}
+
 @media (max-width: 991px) {
   .scroll-ref {
     display: none;

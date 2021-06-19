@@ -1,3 +1,4 @@
+import { FileType } from "@/@types/types";
 import { Layout } from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { Breadcrumb } from "@/components/Shared/Breadcrumb";
@@ -26,6 +27,11 @@ export const query = graphql`
       breadcrumbTitle
       metaTitle
       metaDescription
+      metaImage {
+        file {
+          url
+        }
+      }
       keywords
       author
       cover {
@@ -57,6 +63,7 @@ interface BlogPageProps extends PageProps {
       breadcrumbTitle: string;
       title: string;
       metaDescription: string;
+      metaImage?: FileType;
       keywords: string[];
       metaTitle: string;
       body: {
@@ -107,6 +114,7 @@ export default class BlogDetail extends Component<BlogPageProps> {
           metaDescription,
           metaTitle,
           keywords,
+          metaImage,
         },
       },
     } = this.props;
@@ -119,6 +127,7 @@ export default class BlogDetail extends Component<BlogPageProps> {
             metaTitle,
             metaUrl: "https://www.zartek.in/" + slug,
             metaKeywords: keywords,
+            metaImage: metaImage.file.url || null,
           }}
         />
         <Breadcrumb
