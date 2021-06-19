@@ -433,6 +433,7 @@ global styles
 
 .page .cover .page-top .breadcrumb li a.active {
   /* color: #f5a623; */
+  font-weight: bolder;
 }
 
 .page .page-bottom {
