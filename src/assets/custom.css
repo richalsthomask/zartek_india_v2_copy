@@ -78,6 +78,10 @@
   margin-top: 26px;
 }
 
+p {
+  letter-spacing: 1px;
+}
+
 @media (max-width: 991px) {
   .scroll-ref {
     display: none;
