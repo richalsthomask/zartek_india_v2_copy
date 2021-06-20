@@ -71,6 +71,7 @@
 
 .footer-content {
   color: #6f8ba4;
+  white-space: pre-line;
 }
 
 @media (max-width: 991px) {
