@@ -20,7 +20,7 @@ export default class FooterContentUi extends Component<FooterContentUiProps> {
       renderNode: {
         [BLOCKS.DOCUMENT]: (node, children) => <div>{children}</div>,
         [BLOCKS.HEADING_1]: (_, children) => <HeadingOne heading={children} />,
-        [BLOCKS.HEADING_2]: (_, children) => <h2 className="section-title mt-4">{children}</h2>,
+        [BLOCKS.HEADING_2]: (_, children) => <h2 className="section-title footer">{children}</h2>,
         [BLOCKS.HEADING_3]: (_, children) => <HeadingThree heading={children} />,
         [BLOCKS.HEADING_4]: (_, children) => <HeadingFour heading={children} />,
         [BLOCKS.HEADING_5]: (_, children) => <HeadingFive heading={children} />,

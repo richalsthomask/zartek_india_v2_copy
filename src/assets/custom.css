@@ -74,6 +74,10 @@
   white-space: pre-line;
 }
 
+.section-title.footer {
+  margin-top: 26px;
+}
+
 @media (max-width: 991px) {
   .scroll-ref {
     display: none;
