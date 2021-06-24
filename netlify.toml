@@ -9,3 +9,24 @@
 
 [[plugins]]
   package = "netlify-plugin-image-optim"
+
+[[redirects]]
+  from = "/app-development-hyderabad"
+  to = "/hyderabad/"
+  status = 301
+  force = false
+  conditions = {Language = ["en"], Country = ["US"]}
+
+[[redirects]]
+  from = "/app-development-coimbatore"
+  to = "/coimbatore/"
+  status = 301
+  force = false
+  conditions = {Language = ["en"], Country = ["US"]}
+
+[[redirects]]
+  from = "/app-development-pune"
+  to = "/pune/"
+  status = 301
+  force = false
+  conditions = {Language = ["en"], Country = ["US"]}
