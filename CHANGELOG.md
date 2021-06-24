@@ -61,4 +61,5 @@
 
 ```
 - Partner with us is integrated within website  layout
+- SEO tag for Linkedin Post Share Preview
 ```
