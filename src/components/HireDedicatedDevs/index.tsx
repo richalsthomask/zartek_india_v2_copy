@@ -25,10 +25,10 @@ export default class HireDedicatedDevelopers extends Component<HireDedicatedDeve
       <Layout>
         <SEO contentfulSeo={seo} />
         <Breadcrumb
-          currentPageTitle="Hire dedicated developers"
+          currentPageTitle="Hire Dedicated Developers"
           routes={[
             { path: "/", title: "Home" },
-            { path: "/hire-dedicated-developer/", title: "Hire dedicated developer" },
+            { path: "/hire-dedicated-developer/", title: "Hire Dedicated Developers" },
           ]}
         />
         <div className="page-bottom pbottom-30">
