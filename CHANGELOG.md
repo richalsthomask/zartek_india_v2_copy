@@ -60,5 +60,5 @@
 ## New
 
 ```
-- Partner with us is integrated within website layout
+- Partner with us is integrated within website  layout
 ```
