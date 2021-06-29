@@ -11,6 +11,6 @@
 
 [[redirects]]
   from = "/app-development-pune"
-  to = "/pune/android-app-development/"
+  to = "/pune/app-development/"
   status = 301
   force = true
