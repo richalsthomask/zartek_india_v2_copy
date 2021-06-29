@@ -81,7 +81,7 @@ const OtherServicesList: FC<{ nodes: OtherServicesFilterType[] }> = ({ nodes }) 
               Tell us about your projects and we’ll get back to you with details on how we can make
               this work.
             </h5>
-            <InlineButton color="white" link={url + "/contact/"} title="Contact Us" />
+            <InlineButton color="white" link={"/contact/"} title="Contact Us" />
           </div>
         </div>
       </aside>
