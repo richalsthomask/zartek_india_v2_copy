@@ -11,7 +11,7 @@ export const Testimonials: FC<{ testimonials: TestimonialType[] }> = ({ testimon
           <div className="col-lg-12">
             <div className="center-heading">
               <ClutchPromo />
-              <h2 className="section-title">Testimonials</h2>
+              <h3 className="section-title">Testimonials</h3>
             </div>
           </div>
           <div className="offset-lg-3 col-lg-6">
