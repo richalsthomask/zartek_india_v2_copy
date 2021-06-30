@@ -12,17 +12,20 @@ import React, { Component } from "react";
 import { StructuredDataSnippetTag } from "../Helpers/StructuredDataTag";
 import { Layout } from "../Layout";
 import SEO, { SEOType } from "../SEO";
-import { FrequentlyAskedQuestions } from "../Shared/Ui/FAQs";
 import { WelcomeArea } from "../Shared/Ui/WelcomeArea";
-import { LatestBlogs } from "./LatestBlogs";
-import { Stats } from "./Stats";
-import { Testimonials } from "./Testimonials";
 
 const ServicesOffered = loadable(() =>
   import("@/components/Shared/Ui/ServicesOffered").then((c) => c.ServicesOffered),
 );
-
 const Features = loadable(() => import("@/components/Shared/Ui/Features").then((c) => c.Features));
+const FrequentlyAskedQuestions = loadable(() =>
+  import("@/components/Shared/Ui/FAQs").then((c) => c.FrequentlyAskedQuestions),
+);
+const LatestBlogs = loadable(() => import("./LatestBlogs").then((c) => c.LatestBlogs));
+
+const Stats = loadable(() => import("./Stats").then((c) => c.Stats));
+
+const Testimonials = loadable(() => import("./Testimonials").then((c) => c.Testimonials));
 
 interface HomePageProps {
   contentfulHomePage: {
