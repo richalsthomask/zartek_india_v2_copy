@@ -118,6 +118,20 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-minify`,
+      options: {
+        // removeAttributeQuotes: true,
+        collapseWhitespace: true,
+        minifyCSS: true,
+        minifyJS: true,
+        removeComments: true,
+        removeEmptyAttributes: true,
+        // removeScriptTypeAttributes: true,
+        // removeStyleLinkTypeAttributes: true,
+        processConditionalComments: true,
+      },
+    },
+    {
       resolve: `gatsby-plugin-purgecss`,
       options: {
         printRejected: false, // Print removed selectors and processed file names
