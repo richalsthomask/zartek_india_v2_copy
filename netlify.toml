@@ -3,8 +3,7 @@
   command = "yarn build"
   environment = { CHAT_ID = "5c0283cd001a8304e04b8070", CONTENTFUL_ACCESS_TOKEN = "QwHkg7rHYA6PiLEM34iI07ztY7n--pmNS0kOwF3VdXc", CONTENTFUL_SPACE_ID = "xri6xnn81z4a", G_MAPS = "AIzaSyAtG22nr-9ODYaQ6kpc9hsz3xQZkEEjrGY" }
 
-[[plugins]]
-  package = "netlify-plugin-gatsby-cache"
+
 
 [[plugins]]
   package = "netlify-plugin-image-optim"
