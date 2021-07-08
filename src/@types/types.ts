@@ -114,3 +114,13 @@ export interface SolutionPodType {
 export interface StructuredDataSnippet {
   snippet: { id: string; snippet: string };
 }
+
+export interface TestimonialCardType {
+  id: string;
+  userName: string;
+  userDesignation: string;
+  profilePic: FileType;
+  feedback: {
+    feedback: string;
+  };
+}
