@@ -14,8 +14,6 @@ export default class Testimonials extends Component<TestimonialsProps> {
   render(): JSX.Element {
     const { testimonials } = this.props;
 
-    console.log(testimonials);
-
     return (
       <Layout>
         <Breadcrumb
@@ -29,7 +27,7 @@ export default class Testimonials extends Component<TestimonialsProps> {
           <div className="container">
             <div className="row">
               <div className="col-xl-12">
-                <h3 className="text-center">Testimonials</h3>
+                <h2 className="text-center">Testimonials</h2>
                 <div className="center-text">
                   <p>Read the feedback from our clients about our work performance</p>
                 </div>

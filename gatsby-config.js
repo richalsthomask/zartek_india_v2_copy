@@ -117,20 +117,7 @@ module.exports = {
         icon: `src/images/favicon.png`,
       },
     },
-    {
-      resolve: `gatsby-plugin-minify`,
-      options: {
-        // removeAttributeQuotes: true,
-        collapseWhitespace: true,
-        minifyCSS: true,
-        minifyJS: true,
-        removeComments: true,
-        removeEmptyAttributes: true,
-        // removeScriptTypeAttributes: true,
-        // removeStyleLinkTypeAttributes: true,
-        processConditionalComments: true,
-      },
-    },
+
     {
       resolve: `gatsby-plugin-purgecss`,
       options: {
