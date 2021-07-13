@@ -44,30 +44,25 @@ export const FooterComponent: FC<FooterComponentProps> = ({ content }) => {
               </p>
               <p>Phone: (+91) 7736226886</p>
               <p>
-                <span>E-Mail:</span>
+                <span>E-Mail: </span>
                 <a href="mailto:info@zartek.in">info@zartek.in</a>
               </p>
-              <ul className="social">
-                <li>
-                  <a
-                    target="_blank"
-                    href="https://www.linkedin.com/company/zartek-tech"
-                    rel="noreferrer"
-                  >
-                    <img src="/images/linkedin.png" alt="..." height="16" width="16" />
-                  </a>
-                </li>
-                <li>
-                  <a target="_blank" href="https://www.facebook.com/ZartekQ/" rel="noreferrer">
-                    <img src="/images/facebook.png" alt="..." height="16" width="16" />
-                  </a>
-                </li>
-                <li>
-                  <a target="_blank" href="https://twitter.com/zartekq" rel="noreferrer">
-                    <img src="/images/twitter.png" alt="..." height="16" width="16" />
-                  </a>
-                </li>
-              </ul>
+              <p>
+                <span>Follow Us On: </span>
+                <a
+                  target="_blank"
+                  href="https://www.linkedin.com/company/zartek-tech"
+                  rel="noreferrer"
+                >
+                  <img
+                    src="/images/linkedin.png"
+                    className="mb-1"
+                    alt="..."
+                    height="16"
+                    width="16"
+                  />
+                </a>
+              </p>
             </div>
           </div>
         </div>
