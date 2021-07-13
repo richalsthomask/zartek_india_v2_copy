@@ -49,18 +49,22 @@ export const FooterComponent: FC<FooterComponentProps> = ({ content }) => {
               </p>
               <ul className="social">
                 <li>
-                  <a href="https://www.facebook.com/ZartekQ/">
-                    <i className="fa fa-facebook-square"></i>
+                  <a
+                    target="_blank"
+                    href="https://www.linkedin.com/company/zartek-tech"
+                    rel="noreferrer"
+                  >
+                    <img src="/images/linkedin.png" alt="..." height="16" width="16" />
                   </a>
                 </li>
                 <li>
-                  <a href="https://twitter.com/zartekq">
-                    <i className="fa fa-twitter-square"></i>
+                  <a target="_blank" href="https://www.facebook.com/ZartekQ/" rel="noreferrer">
+                    <img src="/images/facebook.png" alt="..." height="16" width="16" />
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.linkedin.com/company/zartek-tech">
-                    <i className="fa fa-linkedin-square"></i>
+                  <a target="_blank" href="https://twitter.com/zartekq" rel="noreferrer">
+                    <img src="/images/twitter.png" alt="..." height="16" width="16" />
                   </a>
                 </li>
               </ul>

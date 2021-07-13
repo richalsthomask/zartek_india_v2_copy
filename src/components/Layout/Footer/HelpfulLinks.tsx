@@ -54,4 +54,9 @@ const helpfulLinksRoutes = [
     path: "/partner-with-us/",
     addBaseURl: false,
   },
+  {
+    title: "Testimonials",
+    path: "/testimonials/",
+    addBaseURl: false,
+  },
 ];

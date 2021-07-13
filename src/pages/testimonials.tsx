@@ -8,6 +8,13 @@ export default function TestimonialsPage(): JSX.Element {
       query={graphql`
         query GET_TESTIMONIALS_FOR_KOCHI {
           contentfulTestimonialsPage(use: { eq: "Use This space to access Testimonials Page" }) {
+            seo {
+              metaTitle
+              metaDescription
+              metaUrl
+              metaAuthor
+              metaKeywords
+            }
             testimonials {
               testimonial {
                 id
@@ -26,8 +33,8 @@ export default function TestimonialsPage(): JSX.Element {
           }
         }
       `}
-      render={({ contentfulTestimonialsPage: { testimonials } }) => (
-        <Testimonials testimonials={testimonials} />
+      render={({ contentfulTestimonialsPage: { testimonials, seo } }) => (
+        <Testimonials testimonials={testimonials} seo={seo} />
       )}
     />
   );

@@ -1,6 +1,7 @@
 import { TestimonialCardType } from "@/@types/types";
 import React, { Component } from "react";
 import { Layout } from "../Layout";
+import SEO, { SEOType } from "../SEO";
 import { Breadcrumb } from "../Shared/Breadcrumb";
 import { TestimonialCard } from "../Shared/Ui/TestimonialCard";
 
@@ -8,6 +9,7 @@ interface TestimonialsProps {
   testimonials: {
     testimonial: TestimonialCardType[];
   };
+  seo: SEOType;
 }
 
 export default class Testimonials extends Component<TestimonialsProps> {
@@ -16,6 +18,7 @@ export default class Testimonials extends Component<TestimonialsProps> {
 
     return (
       <Layout>
+        <SEO contentfulSeo={this.props.seo} />
         <Breadcrumb
           currentPageTitle="Testimonials"
           routes={[
