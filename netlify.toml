@@ -9,3 +9,10 @@
   to = "/pune/app-development/"
   status = 301
   force = true
+
+
+[[redirects]]
+  from = "/solutions/e-learning-app-development/"
+  to = "/solutions/education-app-development/"
+  status = 301
+  force = true
