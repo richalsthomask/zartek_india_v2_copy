@@ -42,7 +42,12 @@ export const FooterComponent: FC<FooterComponentProps> = ({ content }) => {
                 <br />
                 Kinfra Hi-tech Park, Kalamassery, Kochi, India
               </p>
-              <p>Phone: (+91) 7736226886</p>
+              <p>
+                Phone:
+                <a id="footer-phone-click" href="tel:+91 7736226886">
+                  (+91) 7736226886
+                </a>
+              </p>
               <p>
                 <span>E-Mail: </span>
                 <a href="mailto:info@zartek.in">info@zartek.in</a>

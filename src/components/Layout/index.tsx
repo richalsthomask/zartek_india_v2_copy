@@ -25,21 +25,24 @@ export class Layout extends Component<
     if (document.getElementById("chat-bot-launcher-container")) {
       return;
     }
-    this.setState({
-      timeoutId: setTimeout(() => {
-        (function (w: any, d) {
-          if (d.getElementById("chat-bot-launcher-container")) {
-            return;
-          }
-          w.CollectId = "5c0283cd001a8304e04b8070";
-          const h = d.head || d.getElementsByTagName("head")[0];
-          const s = d.createElement("script");
-          s.setAttribute("type", "text/javascript");
-          s.setAttribute("src", "https://collectcdn.com/launcher.js");
-          h.appendChild(s);
-        })(window, document);
-      }, 6000),
-    });
+    (function (w: any, d) {
+      if (d.getElementById("chat-bot-launcher-container")) {
+        return;
+      }
+      w.CollectId = "5c0283cd001a8304e04b8070";
+      const h = d.head || d.getElementsByTagName("head")[0];
+      const s = d.createElement("script");
+      s.setAttribute("type", "text/javascript");
+      s.setAttribute("src", "https://collectcdn.com/launcher.js");
+      s.onload = function (ev) {
+        const collectchat = w.collectchat || {};
+
+        collectchat.on("complete", function () {
+          // console.log("User just opened the chatbot widget");
+        });
+      };
+      h.appendChild(s);
+    })(window, document);
   }
 
   componentWillUnmount(): void {
