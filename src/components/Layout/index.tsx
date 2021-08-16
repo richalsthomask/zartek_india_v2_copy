@@ -38,7 +38,7 @@ export class Layout extends Component<
         const collectchat = w.collectchat || {};
 
         collectchat.on("complete", function () {
-          // console.log("User just opened the chatbot widget");
+          w.ga("send", "event", ["Chat Bot Form Submit Event"], ["ChatBotSubmit"]);
         });
       };
       h.appendChild(s);

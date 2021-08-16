@@ -50,7 +50,9 @@ export const FooterComponent: FC<FooterComponentProps> = ({ content }) => {
               </p>
               <p>
                 <span>E-Mail: </span>
-                <a href="mailto:info@zartek.in">info@zartek.in</a>
+                <a id="email-click-ref" href="mailto:info@zartek.in">
+                  info@zartek.in
+                </a>
               </p>
               <p>
                 <span>Follow Us On: </span>
