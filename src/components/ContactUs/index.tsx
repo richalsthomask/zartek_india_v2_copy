@@ -69,9 +69,9 @@ export default class ContactUs extends Component<ContactUsProps> {
                       <i className="fa fa-phone"></i>
                       <div className="txt">
                         <span>
-                          (+91) 9176107417
+                          <a href="tel:+91 9176107417">+91 9176107417</a>
                           <br />
-                          (+91) 7722047027
+                          <a href="tel:+91 9176107417">+91 9176107417</a>
                         </span>
                       </div>
                     </div>
