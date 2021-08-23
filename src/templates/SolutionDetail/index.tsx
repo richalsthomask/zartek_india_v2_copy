@@ -1,10 +1,14 @@
 import {
   BulletPointsWithImageType,
+  FAQType,
+  ParallaxStatPodType,
   ServiceAreaModelType,
   WelcomeAreaPropType,
 } from "@/@types/types";
+import { Stats } from "@/components/App/Stats";
 import { Layout } from "@/components/Layout";
 import SEO, { SEOType } from "@/components/SEO";
+import { FrequentlyAskedQuestions } from "@/components/Shared/Ui/FAQs";
 import { Features } from "@/components/Shared/Ui/Features";
 import { ServicesOffered } from "@/components/Shared/Ui/ServicesOffered";
 import { WelcomeArea } from "@/components/Shared/Ui/WelcomeArea";
@@ -93,6 +97,26 @@ export const query = graphql`
             }
           }
         }
+
+        #Company Stats
+
+        statsContainer {
+          id
+          title
+          description {
+            description
+          }
+        }
+
+        #FAQS
+
+        faQs {
+          id
+          question
+          answer {
+            answer
+          }
+        }
       }
     }
   }
@@ -108,6 +132,8 @@ interface SolutionDetailProps extends PageProps {
         welcomeArea: WelcomeAreaPropType;
         solutionArea: ServiceAreaModelType;
         featureArea: BulletPointsWithImageType;
+        statsContainer?: ParallaxStatPodType[];
+        faQs?: FAQType[];
       };
     };
   };
@@ -118,7 +144,7 @@ export default class SolutionDetail extends Component<SolutionDetailProps> {
     const {
       data: {
         contentfulSolutionModel: {
-          detailedPage: { welcomeArea, solutionArea, featureArea, seo },
+          detailedPage: { welcomeArea, solutionArea, featureArea, seo, faQs, statsContainer },
         },
       },
     } = this.props;
@@ -129,6 +155,8 @@ export default class SolutionDetail extends Component<SolutionDetailProps> {
         <WelcomeArea welcomeArea={welcomeArea} />
         <ServicesOffered serviceProp={solutionArea} btnName={"Contact Us"} />
         <Features features={featureArea} />
+        {statsContainer ? <Stats stats={statsContainer} /> : ""}
+        {faQs ? <FrequentlyAskedQuestions faQs={faQs} /> : ""}
       </Layout>
     );
   }
