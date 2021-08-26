@@ -117,6 +117,10 @@ export const query = graphql`
             answer
           }
         }
+        # Footer Content
+        footerContent {
+          raw
+        }
       }
     }
   }
@@ -134,6 +138,7 @@ interface SolutionDetailProps extends PageProps {
         featureArea: BulletPointsWithImageType;
         statsContainer?: ParallaxStatPodType[];
         faQs?: FAQType[];
+        footerContent?: { raw: any };
       };
     };
   };
@@ -144,13 +149,21 @@ export default class SolutionDetail extends Component<SolutionDetailProps> {
     const {
       data: {
         contentfulSolutionModel: {
-          detailedPage: { welcomeArea, solutionArea, featureArea, seo, faQs, statsContainer },
+          detailedPage: {
+            welcomeArea,
+            solutionArea,
+            featureArea,
+            seo,
+            faQs,
+            statsContainer,
+            footerContent,
+          },
         },
       },
     } = this.props;
 
     return (
-      <Layout>
+      <Layout footerContent={footerContent?.raw}>
         <SEO contentfulSeo={seo} />
         <WelcomeArea welcomeArea={welcomeArea} />
         <ServicesOffered serviceProp={solutionArea} btnName={"Contact Us"} />
