@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component, createRef, Fragment } from "react";
 import { FooterComponent } from "./Footer/Footer";
 import { HeaderComponent } from "./Header/header";
 import { Loader } from "./Loader";
@@ -17,15 +17,18 @@ export class Layout extends Component<
     timeoutId: null,
   };
 
+  private chatSubmitRef = createRef<HTMLButtonElement>();
+
   componentDidMount(): void {
     this.setState({ isMounted: true });
+
     if (typeof window === "undefined" || typeof document === "undefined" || !this.state.isMounted) {
       return;
     }
     if (document.getElementById("chat-bot-launcher-container")) {
       return;
     }
-    (function (w: any, d) {
+    (function (w: any, d, chatSubBtn: HTMLButtonElement) {
       if (d.getElementById("chat-bot-launcher-container")) {
         return;
       }
@@ -37,12 +40,12 @@ export class Layout extends Component<
       s.onload = function (ev) {
         const collectchat = w.collectchat || {};
 
-        collectchat.on("complete", function () {
-          w.ga("send", "event", ["Chat Bot Form Submit Event"], ["ChatBotSubmit"]);
+        collectchat.on("complete", () => {
+          chatSubBtn?.click();
         });
       };
       h.appendChild(s);
-    })(window, document);
+    })(window, document, this.chatSubmitRef.current);
   }
 
   componentWillUnmount(): void {
@@ -57,6 +60,7 @@ export class Layout extends Component<
         <HeaderComponent />
         <section className="page">{this.props.children}</section>
         <FooterComponent content={this.props.footerContent} />
+        <button style={{ display: "none" }} id="chat-bot-submit" ref={this.chatSubmitRef} />
       </Fragment>
     );
   }
