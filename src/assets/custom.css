@@ -92,3 +92,7 @@ p {
     max-width: 90vw;
   }
 }
+
+.typeform-widget iframe {
+  height: 515px !important;
+}
