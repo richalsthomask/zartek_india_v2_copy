@@ -61,11 +61,11 @@ export default function SEO({ contentfulSeo }: SEOProps): JSX.Element {
         {
           name: "image",
           property: "og:image",
-          content: metaImage || "https://zartek-india-v2.netlify.app/icons/icon-48x48.png",
+          content: metaImage || "https://zartek.in/icons/icon-48x48.png",
         },
         {
           property: "og:image:secure_url",
-          content: metaImage || "https://zartek-india-v2.netlify.app/icons/icon-48x48.png",
+          content: metaImage || "https://zartek.in/icons/icon-48x48.png",
         },
 
         {
