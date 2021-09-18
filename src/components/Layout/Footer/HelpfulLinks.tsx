@@ -55,6 +55,11 @@ const helpfulLinksRoutes = [
     addBaseURl: false,
   },
   {
+    title: "Purpose",
+    path: "/purpose/",
+    addBaseURl: false,
+  },
+  {
     title: "Testimonials",
     path: "/testimonials/",
     addBaseURl: false,
