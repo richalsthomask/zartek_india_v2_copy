@@ -1,6 +1,7 @@
 import {
   BulletPointsWithImageType,
   FAQType,
+  MoreSolutionWeOffer,
   ParallaxStatPodType,
   ServiceAreaModelType,
   WelcomeAreaPropType,
@@ -14,6 +15,7 @@ import { ServicesOffered } from "@/components/Shared/Ui/ServicesOffered";
 import { WelcomeArea } from "@/components/Shared/Ui/WelcomeArea";
 import { graphql, PageProps } from "gatsby";
 import React, { Component } from "react";
+import SolutionsWeAlsoOffer from "./MoreSolutionWeOffer";
 
 export const query = graphql`
   query GET_SOLUTION_DETAIL($slug: String!) {
@@ -98,6 +100,23 @@ export const query = graphql`
           }
         }
 
+        #Sub solutions
+        moreSultionsWeOffer {
+          title
+          description
+          solutions {
+            id
+            slug
+            title
+            shortDescription
+            coverImage {
+              file {
+                url
+              }
+            }
+          }
+        }
+
         #Company Stats
 
         statsContainer {
@@ -136,6 +155,7 @@ interface SolutionDetailProps extends PageProps {
         welcomeArea: WelcomeAreaPropType;
         solutionArea: ServiceAreaModelType;
         featureArea: BulletPointsWithImageType;
+        moreSultionsWeOffer: MoreSolutionWeOffer;
         statsContainer?: ParallaxStatPodType[];
         faQs?: FAQType[];
         footerContent?: { raw: any };
@@ -157,6 +177,7 @@ export default class SolutionDetail extends Component<SolutionDetailProps> {
             faQs,
             statsContainer,
             footerContent,
+            moreSultionsWeOffer,
           },
         },
       },
@@ -169,6 +190,8 @@ export default class SolutionDetail extends Component<SolutionDetailProps> {
         <ServicesOffered serviceProp={solutionArea} btnName={"Contact Us"} />
         <Features features={featureArea} />
         {statsContainer ? <Stats stats={statsContainer} /> : ""}
+        {moreSultionsWeOffer ? <SolutionsWeAlsoOffer data={moreSultionsWeOffer} /> : ""}
+
         {faQs ? <FrequentlyAskedQuestions faQs={faQs} /> : ""}
       </Layout>
     );

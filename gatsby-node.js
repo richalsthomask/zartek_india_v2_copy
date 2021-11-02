@@ -19,6 +19,9 @@ exports.createPages = async ({ graphql, actions }) => {
   const solutionComponentTemplate = resolve(`./src/templates/SolutionDetail/index.tsx`);
   const customePageComponentTemplate = resolve(`./src/templates/Custom/index.tsx`);
   const customePageComponentRichTextTemplate = resolve(`./src/templates/Custom/RichTextView.tsx`);
+  const moreSolutionComponentRichTextTemplate = resolve(
+    `./src/templates/SolutionDetail/MoreSolutionDetailModel/index.tsx`,
+  );
 
   const serviceContext = await graphql(`
     query {
@@ -73,6 +76,16 @@ exports.createPages = async ({ graphql, actions }) => {
   const customPagesWithRichTextContext = await graphql(`
     query {
       allContentfulCustomPagesWithRichTextTemplate {
+        nodes {
+          slug
+        }
+      }
+    }
+  `);
+
+  const moreSolutionsWeOfferContext = await graphql(`
+    query {
+      allContentfulSubSolutionModel {
         nodes {
           slug
         }
@@ -151,4 +164,14 @@ exports.createPages = async ({ graphql, actions }) => {
       });
     },
   );
+
+  moreSolutionsWeOfferContext.data.allContentfulSubSolutionModel.nodes.forEach(({ slug }) => {
+    createPage({
+      path: `${slug}`,
+      context: {
+        slug,
+      },
+      component: moreSolutionComponentRichTextTemplate,
+    });
+  });
 };

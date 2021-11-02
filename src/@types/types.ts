@@ -124,3 +124,15 @@ export interface TestimonialCardType {
     feedback: string;
   };
 }
+
+export interface MoreSolutionWeOffer {
+  title: string;
+  description: string;
+  solutions: {
+    slug: string;
+    id: string;
+    title: string;
+    shortDescription: string;
+    coverImage: FileType;
+  }[];
+}
