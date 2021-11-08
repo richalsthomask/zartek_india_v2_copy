@@ -16,3 +16,9 @@
   to = "/solutions/education-app-development/"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/dedicated-developers/"
+  to = "/services/hire-dedicated-developers/"
+  status = 301
+  force = true
