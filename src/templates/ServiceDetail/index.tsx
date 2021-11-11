@@ -1,4 +1,4 @@
-import { FAQType, StructuredDataSnippet } from "@/@types/types";
+import { FAQType, ServiceModelType, StructuredDataSnippet } from "@/@types/types";
 import { StructuredDataSnippetTag } from "@/components/Helpers/StructuredDataTag";
 import { Layout } from "@/components/Layout";
 import SEO, { SEOType } from "@/components/SEO";
@@ -14,6 +14,7 @@ import {
 } from "@/components/Shared/RichtextUi/Headings";
 import { UnorderedListRT } from "@/components/Shared/RichtextUi/UnOrderedList";
 import { FrequentlyAskedQuestions } from "@/components/Shared/Ui/FAQs";
+import { ServiceInfoCard } from "@/components/Shared/Ui/ServiceInfoCard";
 import { documentToReactComponents, Options } from "@contentful/rich-text-react-renderer";
 import { BLOCKS } from "@contentful/rich-text-types";
 import { graphql, PageProps } from "gatsby";
@@ -76,6 +77,18 @@ export const query = graphql`
           }
         }
       }
+
+      relatedServices {
+        id
+        slug
+        serviceCardTitle
+        serviceCardShortDescription
+        serviceCardIcon {
+          file {
+            url
+          }
+        }
+      }
     }
   }
 `;
@@ -94,6 +107,7 @@ interface ServicesPageProps extends PageProps {
       };
 
       faq?: { faqItem: FAQType[] };
+      relatedServices: ServiceModelType[];
     };
   };
 }
@@ -133,6 +147,7 @@ export default class ServiceDetailTemplate extends Component<ServicesPageProps> 
           seo,
           structuredDataSnippets,
           faq,
+          relatedServices,
         },
       },
     } = this.props;
@@ -158,6 +173,38 @@ export default class ServiceDetailTemplate extends Component<ServicesPageProps> 
               <OtherServices />
             </div>
           </div>
+          {
+            /* {relatedServices} */
+            relatedServices?.length ? (
+              <div className="container pt-3 pb-3">
+                <h3 className="text-center">More Services You Might Like </h3>
+                <div className="row " style={{ marginTop: "70px" }}>
+                  {relatedServices.map(
+                    ({
+                      serviceCardIcon,
+                      serviceCardShortDescription,
+                      serviceCardTitle,
+                      slug,
+                      id,
+                    }) => {
+                      return (
+                        <div className="col-lg-4 col-md-6 col-sm-12" key={id}>
+                          <ServiceInfoCard
+                            cardDescription={serviceCardShortDescription}
+                            cardIcon={serviceCardIcon}
+                            cardTitle={serviceCardTitle}
+                            routerLink={"/" + slug}
+                          />
+                        </div>
+                      );
+                    },
+                  )}
+                </div>
+              </div>
+            ) : (
+              ""
+            )
+          }
           {faq && <FrequentlyAskedQuestions faQs={faq.faqItem} />}
         </div>
       </Layout>
