@@ -1,5 +1,6 @@
 import FooterContentUi from "@/components/Helpers/FooterContent";
 import { useBaseURL } from "@/utils/hooks/useBaseUrl";
+import { Link } from "gatsby";
 import React, { FC } from "react";
 import { BrandLogo } from "../Header/Brandlogo";
 import { HelpfulLinks } from "./HelpfulLinks";
@@ -69,6 +70,9 @@ export const FooterComponent: FC<FooterComponentProps> = ({ content }) => {
                     width="16"
                   />
                 </a>
+              </p>
+              <p>
+                <Link to="/why-join-us/">Why Join Us</Link>
               </p>
             </div>
           </div>
