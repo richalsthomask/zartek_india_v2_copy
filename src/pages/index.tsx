@@ -122,6 +122,16 @@ const Home: FC<PageProps> = () => {
               }
             }
 
+            onBoardedClients {
+              id
+              clientName
+              clientBrandLogo {
+                file {
+                  url
+                }
+              }
+            }
+
             #FAQS
 
             faQs {
@@ -138,9 +148,7 @@ const Home: FC<PageProps> = () => {
           }
         }
       `}
-      render={({ contentfulHomePage, allContentfulBlogPostModel }) => (
-        <App contentfulHomePage={contentfulHomePage} />
-      )}
+      render={({ contentfulHomePage }) => <App contentfulHomePage={contentfulHomePage} />}
     />
   );
 };

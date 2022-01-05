@@ -1,6 +1,7 @@
 import {
   BulletPointsWithImageType,
   FAQType,
+  onBoardedClient,
   ParallaxStatPodType,
   ServiceAreaModelType,
   StructuredDataSnippet,
@@ -13,6 +14,7 @@ import { StructuredDataSnippetTag } from "../Helpers/StructuredDataTag";
 import { Layout } from "../Layout";
 import SEO, { SEOType } from "../SEO";
 import { WelcomeArea } from "../Shared/Ui/WelcomeArea";
+import OnBoardedClients from "./Clients";
 
 const ServicesOffered = loadable(() =>
   import("@/components/Shared/Ui/ServicesOffered").then((c) => c.ServicesOffered),
@@ -32,6 +34,7 @@ interface HomePageProps {
     seo: SEOType;
     welcomeArea: WelcomeAreaPropType;
     serviceArea: ServiceAreaModelType;
+    onBoardedClients: onBoardedClient[];
     featureArea: BulletPointsWithImageType;
     testimonials: TestimonialType[];
     statsContainer: ParallaxStatPodType[];
@@ -53,6 +56,7 @@ export default class HomePage extends Component<HomePageProps> {
       seo,
       structuredDataSnippets,
       footerContent,
+      onBoardedClients,
     } = this.props.contentfulHomePage;
 
     return (
@@ -63,6 +67,7 @@ export default class HomePage extends Component<HomePageProps> {
 
         <WelcomeArea welcomeArea={welcomeArea} />
         <ServicesOffered serviceProp={serviceArea} btnName={"SERVICES"} />
+        <OnBoardedClients clients={onBoardedClients} />
         <Features features={featureArea} />
         <Testimonials testimonials={testimonials} />
         <Stats stats={statsContainer} />

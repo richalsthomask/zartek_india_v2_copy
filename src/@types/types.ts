@@ -136,3 +136,13 @@ export interface MoreSolutionWeOffer {
     coverImage: FileType;
   }[];
 }
+
+export type onBoardedClient = {
+  id: string;
+  clientName: string;
+  clientBrandLogo: {
+    file: {
+      url: string;
+    };
+  };
+};
