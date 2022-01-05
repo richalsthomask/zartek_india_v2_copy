@@ -67,7 +67,7 @@ export default class HomePage extends Component<HomePageProps> {
 
         <WelcomeArea welcomeArea={welcomeArea} />
         <ServicesOffered serviceProp={serviceArea} btnName={"SERVICES"} />
-        <OnBoardedClients clients={onBoardedClients} />
+        {onBoardedClients ? <OnBoardedClients clients={onBoardedClients} /> : ""}
         <Features features={featureArea} />
         <Testimonials testimonials={testimonials} />
         <Stats stats={statsContainer} />
