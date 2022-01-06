@@ -7,12 +7,7 @@ const OnBoardedClients: FC<{ clients: onBoardedClient[] }> = ({ clients }) => {
       <div className="row">
         <div className="col-lg-12">
           <div className="center-heading">
-            <h3 className="section-title">Clients</h3>
-          </div>
-        </div>
-        <div className="offset-lg-3 col-lg-12 m-auto">
-          <div className="center-text">
-            <p>Professionals of following notable companies have availed our services.</p>
+            <h3 className="section-title">Our Clients</h3>
           </div>
         </div>
       </div>
