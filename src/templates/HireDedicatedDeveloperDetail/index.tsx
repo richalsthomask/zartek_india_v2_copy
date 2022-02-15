@@ -1,3 +1,4 @@
+import { FAQType } from "@/@types/types";
 import { Layout } from "@/components/Layout";
 import SEO, { SEOType } from "@/components/SEO";
 import { Breadcrumb } from "@/components/Shared/Breadcrumb";
@@ -11,6 +12,7 @@ import {
   HeadingTwo,
 } from "@/components/Shared/RichtextUi/Headings";
 import { UnorderedListRT } from "@/components/Shared/RichtextUi/UnOrderedList";
+import { FrequentlyAskedQuestions } from "@/components/Shared/Ui/FAQs";
 import { documentToReactComponents, Options } from "@contentful/rich-text-react-renderer";
 import { BLOCKS } from "@contentful/rich-text-types";
 import { graphql, PageProps } from "gatsby";
@@ -34,6 +36,14 @@ export const query = graphql`
         content {
           raw
         }
+
+        frequentlyAskedQuestions {
+          id
+          question
+          answer {
+            answer
+          }
+        }
       }
     }
   }
@@ -50,6 +60,7 @@ interface HireDedicatedDeveloperDetailProps extends PageProps {
         content: {
           raw: any;
         };
+        frequentlyAskedQuestions: FAQType[];
       };
     };
   };
@@ -80,7 +91,7 @@ export default class HireDedicatedDeveloperDetail extends Component<HireDedicate
         contentfulHireDedicatedDeveloperModel: {
           title,
           slug,
-          detailedPage: { seo, breadcrumbTitle, content },
+          detailedPage: { seo, breadcrumbTitle, content, frequentlyAskedQuestions },
         },
       },
     } = this.props;
@@ -104,6 +115,11 @@ export default class HireDedicatedDeveloperDetail extends Component<HireDedicate
               </div>
             </div>
           </div>
+          {frequentlyAskedQuestions?.length ? (
+            <FrequentlyAskedQuestions faQs={frequentlyAskedQuestions} />
+          ) : (
+            ""
+          )}
         </div>
       </Layout>
     );

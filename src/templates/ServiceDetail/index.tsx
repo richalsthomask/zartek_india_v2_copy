@@ -68,13 +68,11 @@ export const query = graphql`
         }
       }
 
-      faq {
-        faqItem {
-          id
-          question
-          answer {
-            answer
-          }
+      frequentlyAskedQuestions {
+        id
+        question
+        answer {
+          answer
         }
       }
 
@@ -106,7 +104,7 @@ interface ServicesPageProps extends PageProps {
         references: any[];
       };
 
-      faq?: { faqItem: FAQType[] };
+      frequentlyAskedQuestions: FAQType[];
       relatedServices: ServiceModelType[];
     };
   };
@@ -146,7 +144,7 @@ export default class ServiceDetailTemplate extends Component<ServicesPageProps> 
           slug,
           seo,
           structuredDataSnippets,
-          faq,
+          frequentlyAskedQuestions,
           relatedServices,
         },
       },
@@ -205,7 +203,11 @@ export default class ServiceDetailTemplate extends Component<ServicesPageProps> 
               ""
             )
           }
-          {faq && <FrequentlyAskedQuestions faQs={faq.faqItem} />}
+          {frequentlyAskedQuestions.length ? (
+            <FrequentlyAskedQuestions faQs={frequentlyAskedQuestions} />
+          ) : (
+            ""
+          )}
         </div>
       </Layout>
     );
