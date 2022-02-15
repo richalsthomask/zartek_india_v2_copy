@@ -203,7 +203,7 @@ export default class ServiceDetailTemplate extends Component<ServicesPageProps> 
               ""
             )
           }
-          {frequentlyAskedQuestions.length ? (
+          {frequentlyAskedQuestions?.length ? (
             <FrequentlyAskedQuestions faQs={frequentlyAskedQuestions} />
           ) : (
             ""

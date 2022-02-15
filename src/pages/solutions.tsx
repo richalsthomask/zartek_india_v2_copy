@@ -15,28 +15,24 @@ const Solutions: FC = () => {
               metaAuthor
               metaKeywords
             }
-            solutions {
-              solutions {
-                id
-                solutionTitle
-                solutionDescription
-                slug
-                icon {
-                  file {
-                    url
-                  }
+
+            list {
+              id
+              solutionTitle
+              solutionDescription
+              slug
+              icon {
+                file {
+                  url
                 }
               }
             }
           }
         }
       `}
-      render={({
-        contentfulSolutionsPage: {
-          solutions: { solutions },
-          seo,
-        },
-      }) => <SolutionPage solutions={solutions} seo={seo} />}
+      render={({ contentfulSolutionsPage: { list, seo } }) => (
+        <SolutionPage solutions={list} seo={seo} />
+      )}
     />
   );
 };
