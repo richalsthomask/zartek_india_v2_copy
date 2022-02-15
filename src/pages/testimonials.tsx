@@ -15,26 +15,24 @@ export default function TestimonialsPage(): JSX.Element {
               metaAuthor
               metaKeywords
             }
-            testimonials {
-              testimonial {
-                id
-                userName
-                userDesignation
-                profilePic {
-                  file {
-                    url
-                  }
+            list {
+              id
+              userName
+              userDesignation
+              profilePic {
+                file {
+                  url
                 }
-                feedback {
-                  feedback
-                }
+              }
+              feedback {
+                feedback
               }
             }
           }
         }
       `}
-      render={({ contentfulTestimonialsPage: { testimonials, seo } }) => (
-        <Testimonials testimonials={testimonials} seo={seo} />
+      render={({ contentfulTestimonialsPage: { list, seo } }) => (
+        <Testimonials testimonials={list} seo={seo} />
       )}
     />
   );

@@ -6,9 +6,7 @@ import { Breadcrumb } from "../Shared/Breadcrumb";
 import { TestimonialCard } from "../Shared/Ui/TestimonialCard";
 
 interface TestimonialsProps {
-  testimonials: {
-    testimonial: TestimonialCardType[];
-  };
+  testimonials: TestimonialCardType[];
   seo: SEOType;
 }
 
@@ -37,20 +35,18 @@ export default class Testimonials extends Component<TestimonialsProps> {
               </div>
             </div>
             <div className="row mb-4 row-eq-height">
-              {testimonials.testimonial.map(
-                ({ feedback, id, profilePic, userDesignation, userName }) => {
-                  return (
-                    <TestimonialCard
-                      feedback={feedback}
-                      id={id}
-                      key={id}
-                      profilePic={profilePic}
-                      userDesignation={userDesignation}
-                      userName={userName}
-                    />
-                  );
-                },
-              )}
+              {testimonials?.map(({ feedback, id, profilePic, userDesignation, userName }) => {
+                return (
+                  <TestimonialCard
+                    feedback={feedback}
+                    id={id}
+                    key={id}
+                    profilePic={profilePic}
+                    userDesignation={userDesignation}
+                    userName={userName}
+                  />
+                );
+              })}
             </div>
           </div>
         </div>
