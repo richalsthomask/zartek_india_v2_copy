@@ -15,30 +15,25 @@ const Blog: FC = () => {
               metaAuthor
               metaKeywords
             }
-            blogs {
-              posts {
-                id
-                publishedDate
-                author
-                cover {
-                  file {
-                    url
-                  }
+            blogsList {
+              id
+              publishedDate
+              author
+              cover {
+                file {
+                  url
                 }
-                title
-                slug
-                shortDescription
               }
+              title
+              slug
+              shortDescription
             }
           }
         }
       `}
-      render={({
-        contentfulBlogsPage: {
-          blogs: { posts },
-          seo,
-        },
-      }) => <BlogList blogs={posts} seo={seo} />}
+      render={({ contentfulBlogsPage: { blogsList, seo } }) => (
+        <BlogList blogs={blogsList} seo={seo} />
+      )}
     />
   );
 };
