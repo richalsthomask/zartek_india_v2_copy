@@ -36,7 +36,7 @@ const helpfulLinksRoutes = [
   },
   {
     title: "Training",
-    path: "/flutter-course-kochi/",
+    path: "/training/",
     addBaseURl: false,
   },
   {
