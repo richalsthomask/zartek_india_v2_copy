@@ -95,6 +95,14 @@ export interface ServiceModelType {
   slug: string;
 }
 
+export interface TrainingModelType {
+  id: string;
+  trainingCardIcon: FileType;
+  trainingCardShortDescription: string;
+  trainingCardTitle: string;
+  slug: string;
+}
+
 export interface HireDedicatedDevPodType {
   id: string;
   title: string;

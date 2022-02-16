@@ -12,6 +12,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const serviceComponentTemplate = resolve(`./src/templates/ServiceDetail/index.tsx`);
+  const trainingComponentTemplate = resolve(`./src/templates/TrainingDetail/index.tsx`);
   const blogComponentTemplate = resolve(`./src/templates/BlogDetail/index.tsx`);
   const hireDedicatedDeveloperTemplate = resolve(
     "./src/templates/HireDedicatedDeveloperDetail/index.tsx",
@@ -26,6 +27,16 @@ exports.createPages = async ({ graphql, actions }) => {
   const serviceContext = await graphql(`
     query {
       allContentfulServiceModel {
+        nodes {
+          slug
+        }
+      }
+    }
+  `);
+
+  const trainingContext = await graphql(`
+    query {
+      allContentfulTrainingModel {
         nodes {
           slug
         }
@@ -113,6 +124,16 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       path: `${slug}`,
       component: serviceComponentTemplate,
+      context: {
+        slug,
+      },
+    });
+  });
+
+  trainingContext.data.allContentfulTrainingModel.nodes.forEach(({ slug }) => {
+    createPage({
+      path: `${slug}`,
+      component: trainingComponentTemplate,
       context: {
         slug,
       },
