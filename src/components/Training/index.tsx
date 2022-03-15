@@ -18,10 +18,10 @@ export default class TrainingList extends Component<TrainingListProps> {
       <Layout>
         <SEO contentfulSeo={seo} />
         <Breadcrumb
-          currentPageTitle="Services"
+          currentPageTitle="Training"
           routes={[
             { path: "/", title: "Home" },
-            { path: "/services/", title: "Services" },
+            { path: "/training/", title: "Training" },
           ]}
         />
         <div className="page-bottom pbottom-70">
