@@ -129,6 +129,10 @@ const Home: FC<PageProps> = () => {
                 answer
               }
             }
+
+            footerContent {
+              raw
+            }
           }
         }
       `}

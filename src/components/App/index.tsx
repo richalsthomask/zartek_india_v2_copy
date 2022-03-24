@@ -34,7 +34,7 @@ interface HomePageProps {
     seo: SEOType;
     welcomeArea: WelcomeAreaPropType;
     serviceArea: ServiceAreaModelType;
-    onBoardedClients: onBoardedClient[];
+    onBoardedClients?: onBoardedClient[];
     featureArea: BulletPointsWithImageType;
     testimonials: TestimonialType[];
     statsContainer: ParallaxStatPodType[];
