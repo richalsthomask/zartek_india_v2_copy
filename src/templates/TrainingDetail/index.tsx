@@ -36,6 +36,14 @@ export const query = graphql`
       detailedPage {
         raw
       }
+
+      frequentlyAskedQuestions {
+        id
+        question
+        answer {
+          answer
+        }
+      }
     }
   }
 `;
@@ -118,11 +126,6 @@ export default class TrainingDetailTemplate extends Component<TrainingPageProps>
             {documentToReactComponents(JSON.parse(detailedPage.raw), this.provideOptions())}
           </div>
 
-          {frequentlyAskedQuestions?.length ? (
-            <FrequentlyAskedQuestions faQs={frequentlyAskedQuestions} />
-          ) : (
-            ""
-          )}
           {typeformLink ? (
             <div
               className="typeform-widget"
@@ -146,6 +149,11 @@ export default class TrainingDetailTemplate extends Component<TrainingPageProps>
                 </div>
               </div>
             </div>
+          ) : (
+            ""
+          )}
+          {frequentlyAskedQuestions?.length ? (
+            <FrequentlyAskedQuestions faQs={frequentlyAskedQuestions} />
           ) : (
             ""
           )}
