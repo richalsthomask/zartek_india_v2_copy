@@ -37,6 +37,13 @@ export const query = graphql`
         raw
       }
 
+      structuredDataSnippets {
+        snippet {
+          id
+          snippet
+        }
+      }
+
       frequentlyAskedQuestions {
         id
         question
@@ -106,8 +113,6 @@ export default class TrainingDetailTemplate extends Component<TrainingPageProps>
         },
       },
     } = this.props;
-
-    console.log(typeformLink);
 
     return (
       <Layout>
