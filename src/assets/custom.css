@@ -96,3 +96,9 @@ p {
 .typeform-widget iframe {
   height: 515px !important;
 }
+
+@media (min-width: 992px) {
+  .homepage-services-offered {
+    margin-top: 10em;
+  }
+}

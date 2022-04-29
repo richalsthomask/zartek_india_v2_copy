@@ -16,7 +16,7 @@ export const ServicesOffered: FC<ServicesOfferedProps> = ({
     <section className="section services-section pbottom-70">
       <div className="container">
         <div className="row">
-          <div className="col-lg-5 col-md-12 col-sm-12 align-self-bottom">
+          <div className="col-lg-5 col-md-12 col-sm-12 homepage-services-offered">
             <div className="left-heading">
               <h2 className="section-title">{title}</h2>
             </div>
