@@ -41,6 +41,14 @@ export default class Career extends Component {
                     style={{ minHeight: "100vh" }}
                   ></iframe>
                 </div>
+
+                <div className="container mt-3">
+                  <strong>Note</strong> : Zartek or any or employee will never ask any candidate
+                  favours, gifts, money. If you come across any suspicious behaviour, please send a
+                  mail to info@zartek.in. Please ignore job advertisements of a dubious nature. Do
+                  not share personal information, including OTPs sent to your mobile phone. Never
+                  transfer money to strangers or anyone you have never met.
+                </div>
               </div>
             </Fragment>
           )}
