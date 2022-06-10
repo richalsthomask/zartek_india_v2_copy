@@ -1,4 +1,5 @@
 import { FAQType } from "@/@types/types";
+import { StructuredDataSnippetTag } from "@/components/Helpers/StructuredDataTag";
 import { Layout } from "@/components/Layout";
 import SEO, { SEOType } from "@/components/SEO";
 import { Breadcrumb } from "@/components/Shared/Breadcrumb";
@@ -16,7 +17,7 @@ import { FrequentlyAskedQuestions } from "@/components/Shared/Ui/FAQs";
 import { documentToReactComponents, Options } from "@contentful/rich-text-react-renderer";
 import { BLOCKS } from "@contentful/rich-text-types";
 import { graphql, PageProps } from "gatsby";
-import React, { Component } from "react";
+import React from "react";
 
 export const query = graphql`
   query GET_HIRE_DEDICATED_DEV_DETAIL_PAGE($slug: String!) {
@@ -44,6 +45,14 @@ export const query = graphql`
             answer
           }
         }
+
+        #
+        structuredDataSnippets {
+          snippet {
+            id
+            snippet
+          }
+        }
       }
     }
   }
@@ -61,12 +70,13 @@ interface HireDedicatedDeveloperDetailProps extends PageProps {
           raw: any;
         };
         frequentlyAskedQuestions: FAQType[];
+        structuredDataSnippets: any;
       };
     };
   };
 }
 
-export default class HireDedicatedDeveloperDetail extends Component<HireDedicatedDeveloperDetailProps> {
+export default class HireDedicatedDeveloperDetail extends React.Component<HireDedicatedDeveloperDetailProps> {
   private provideOptions(): Options {
     const options: Options = {
       renderNode: {
@@ -91,13 +101,20 @@ export default class HireDedicatedDeveloperDetail extends Component<HireDedicate
         contentfulHireDedicatedDeveloperModel: {
           title,
           slug,
-          detailedPage: { seo, breadcrumbTitle, content, frequentlyAskedQuestions },
+          detailedPage: {
+            seo,
+            breadcrumbTitle,
+            content,
+            frequentlyAskedQuestions,
+            structuredDataSnippets,
+          },
         },
       },
     } = this.props;
 
     return (
       <Layout>
+        <StructuredDataSnippetTag snippets={structuredDataSnippets} />
         <SEO contentfulSeo={seo} />
         <Breadcrumb
           currentPageTitle={breadcrumbTitle || title}
