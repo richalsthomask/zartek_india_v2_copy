@@ -89,9 +89,9 @@ export interface OurWorkType {
 
 export interface ServiceModelType {
   id: string;
-  serviceCardIcon: FileType;
-  serviceCardShortDescription: string;
-  serviceCardTitle: string;
+  icon: FileType;
+  serviceDescription: string;
+  serviceTitle: string;
   slug: string;
 }
 
