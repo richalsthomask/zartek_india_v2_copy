@@ -1,6 +1,6 @@
 import { ServiceModelType } from "@/@types/types";
 import { Layout } from "@/components/Layout";
-import React, { Component } from "react";
+import React from "react";
 import SEO, { SEOType } from "../SEO";
 import { Breadcrumb } from "../Shared/Breadcrumb";
 import { ServiceInfoCard } from "../Shared/Ui/ServiceInfoCard";
@@ -10,7 +10,7 @@ interface ServicesListProps {
   seo: SEOType;
 }
 
-export default class ServicesList extends Component<ServicesListProps> {
+export default class ServicesList extends React.Component<ServicesListProps> {
   render(): JSX.Element {
     const { services, seo } = this.props;
 
@@ -27,20 +27,18 @@ export default class ServicesList extends Component<ServicesListProps> {
         <div className="page-bottom pbottom-70">
           <div className="container">
             <div className="row">
-              {services.map(
-                ({ serviceCardIcon, serviceCardShortDescription, serviceCardTitle, slug, id }) => {
-                  return (
-                    <div className="col-lg-4 col-md-6 col-sm-12" key={id}>
-                      <ServiceInfoCard
-                        cardDescription={serviceCardShortDescription}
-                        cardIcon={serviceCardIcon}
-                        cardTitle={serviceCardTitle}
-                        routerLink={"/" + slug}
-                      />
-                    </div>
-                  );
-                },
-              )}
+              {services.map(({ icon, serviceDescription, serviceTitle, slug, id }) => {
+                return (
+                  <div className="col-lg-4 col-md-6 col-sm-12" key={id}>
+                    <ServiceInfoCard
+                      cardDescription={serviceDescription}
+                      cardIcon={icon}
+                      cardTitle={serviceTitle}
+                      routerLink={"/" + slug}
+                    />
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

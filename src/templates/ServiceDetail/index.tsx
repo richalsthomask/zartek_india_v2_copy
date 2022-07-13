@@ -1,214 +1,198 @@
-import { FAQType, ServiceModelType, StructuredDataSnippet } from "@/@types/types";
-import { StructuredDataSnippetTag } from "@/components/Helpers/StructuredDataTag";
+import {
+  BulletPointsWithImageType,
+  FAQType,
+  MoreSolutionWeOffer,
+  ParallaxStatPodType,
+  ServiceAreaModelType,
+  WelcomeAreaPropType,
+} from "@/@types/types";
+import { Stats } from "@/components/App/Stats";
 import { Layout } from "@/components/Layout";
 import SEO, { SEOType } from "@/components/SEO";
-import { Breadcrumb } from "@/components/Shared/Breadcrumb";
-import { EmbeddedBlockUi } from "@/components/Shared/RichtextUi/EmbeddedBlockUi";
-import {
-  HeadingFive,
-  HeadingFour,
-  HeadingOne,
-  HeadingSix,
-  HeadingThree,
-  HeadingTwo,
-} from "@/components/Shared/RichtextUi/Headings";
-import { UnorderedListRT } from "@/components/Shared/RichtextUi/UnOrderedList";
 import { FrequentlyAskedQuestions } from "@/components/Shared/Ui/FAQs";
-import { ServiceInfoCard } from "@/components/Shared/Ui/ServiceInfoCard";
-import { documentToReactComponents, Options } from "@contentful/rich-text-react-renderer";
-import { BLOCKS } from "@contentful/rich-text-types";
+import { Features } from "@/components/Shared/Ui/Features";
+import { ServicesOffered } from "@/components/Shared/Ui/ServicesOffered";
+import { WelcomeArea } from "@/components/Shared/Ui/WelcomeArea";
 import { graphql, PageProps } from "gatsby";
-import React, { Component } from "react";
-import { OtherServices } from "./OtherServices";
+import React from "react";
+import SolutionsWeAlsoOffer from "../SolutionDetail/MoreSolutionWeOffer";
 
 export const query = graphql`
   query GET_SERVICE_DETAIL($slug: String!) {
-    contentfulServiceModel(slug: { eq: $slug }) {
-      structuredDataSnippets {
-        snippet {
-          id
-          snippet
-        }
-      }
-
+    contentfulServiceDataModel(slug: { eq: $slug }) {
       slug
-      seo {
-        metaTitle
-        metaDescription
-        metaUrl
-        metaAuthor
-        metaKeywords
-      }
-      breadcrumbTitle
-      serviceCardTitle
+      serviceTitle
       detailedPage {
-        raw
-        references {
-          ... on ContentfulBulletPointsListRichTextEditorModel {
-            __typename
-            contentful_id
+        seo {
+          metaTitle
+          metaDescription
+          metaUrl
+          metaAuthor
+          metaKeywords
+        }
+
+        welcomeArea {
+          backgroundImage {
+            file {
+              url
+            }
+          }
+          title
+          description {
+            description
+          }
+
+          option1 {
+            title
+            link
+          }
+
+          option2 {
+            title
+            link
+          }
+
+          applets {
             id
-            points {
-              id
-              title
-              description {
-                description
+            appTitle
+            redirectLink
+            appIcon {
+              file {
+                url
               }
             }
           }
-          ... on ContentfulQuoteRtModel {
-            contentful_id
-            __typename
+        }
+
+        solutionArea {
+          title
+          description {
+            description
+          }
+
+          services {
             id
-            quote {
-              quote
+            title
+            description
+            icon {
+              file {
+                url
+              }
             }
-            by
+            routerLink
           }
         }
-      }
 
-      frequentlyAskedQuestions {
-        id
-        question
-        answer {
-          answer
-        }
-      }
-
-      relatedServices {
-        id
-        slug
-        serviceCardTitle
-        serviceCardShortDescription
-        serviceCardIcon {
-          file {
-            url
+        featureArea {
+          position
+          image {
+            file {
+              url
+            }
           }
+
+          points {
+            id
+            title
+            description {
+              description
+            }
+          }
+        }
+
+        #Sub solutions
+        moreSultionsWeOffer {
+          title
+          description
+          solutions {
+            id
+            slug
+            title
+            shortDescription
+            coverImage {
+              file {
+                url
+              }
+            }
+          }
+        }
+
+        #Company Stats
+
+        statsContainer {
+          id
+          title
+          description {
+            description
+          }
+        }
+
+        #FAQS
+
+        faQs {
+          id
+          question
+          answer {
+            answer
+          }
+        }
+        # Footer Content
+        footerContent {
+          raw
         }
       }
     }
   }
 `;
 
-interface ServicesPageProps extends PageProps {
+interface ServiceDetailProps extends PageProps {
   data: {
-    contentfulServiceModel: {
-      structuredDataSnippets: StructuredDataSnippet[];
-      seo: SEOType;
+    contentfulServiceDataModel: {
       slug: string;
-      breadcrumbTitle?: string;
-      serviceCardTitle: string;
+      serviceTitle: string;
       detailedPage: {
-        raw: any;
-        references: any[];
+        seo: SEOType;
+        welcomeArea: WelcomeAreaPropType;
+        solutionArea: ServiceAreaModelType;
+        featureArea: BulletPointsWithImageType;
+        moreSultionsWeOffer: MoreSolutionWeOffer;
+        statsContainer?: ParallaxStatPodType[];
+        faQs?: FAQType[];
+        footerContent?: { raw: any };
       };
-
-      frequentlyAskedQuestions: FAQType[];
-      relatedServices: ServiceModelType[];
     };
   };
 }
 
-export default class ServiceDetailTemplate extends Component<ServicesPageProps> {
-  private provideOptions(): Options {
-    const options: Options = {
-      renderNode: {
-        [BLOCKS.DOCUMENT]: (node, children) => <div>{children}</div>,
-        [BLOCKS.HEADING_1]: (_, children) => <HeadingOne heading={children} />,
-        [BLOCKS.HEADING_2]: (_, children) => <HeadingTwo heading={children} />,
-        [BLOCKS.HEADING_3]: (_, children) => <HeadingThree heading={children} />,
-        [BLOCKS.HEADING_4]: (_, children) => <HeadingFour heading={children} />,
-        [BLOCKS.HEADING_5]: (_, children) => <HeadingFive heading={children} />,
-        [BLOCKS.HEADING_6]: (_, children) => <HeadingSix heading={children} />,
-        [BLOCKS.UL_LIST]: (_, children) => <UnorderedListRT list={children} />,
-
-        "embedded-entry-block": (node) => (
-          <EmbeddedBlockUi
-            node={node}
-            references={this.props.data.contentfulServiceModel.detailedPage.references}
-          />
-        ),
-      },
-    };
-    return options;
-  }
-
+export default class ServiceDetail extends React.Component<ServiceDetailProps> {
   render(): JSX.Element {
     const {
       data: {
-        contentfulServiceModel: {
-          detailedPage,
-          serviceCardTitle,
-          breadcrumbTitle,
-          slug,
-          seo,
-          structuredDataSnippets,
-          frequentlyAskedQuestions,
-          relatedServices,
+        contentfulServiceDataModel: {
+          detailedPage: {
+            welcomeArea,
+            solutionArea,
+            featureArea,
+            seo,
+            faQs,
+            statsContainer,
+            footerContent,
+            moreSultionsWeOffer,
+          },
         },
       },
     } = this.props;
 
     return (
-      <Layout>
+      <Layout footerContent={footerContent?.raw}>
         <SEO contentfulSeo={seo} />
-        <StructuredDataSnippetTag snippets={structuredDataSnippets} />
-        <Breadcrumb
-          currentPageTitle={breadcrumbTitle || serviceCardTitle}
-          routes={[
-            { path: "/", title: "Home" },
-            { path: "/services/", title: "Services" },
-            { path: "/" + slug, title: serviceCardTitle, baseUrlOff: true },
-          ]}
-        />
-        <div className="page-bottom pb-0">
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-8 col-md-12 col-sm-12">
-                {documentToReactComponents(JSON.parse(detailedPage.raw), this.provideOptions())}
-              </div>
-              <OtherServices />
-            </div>
-          </div>
-          {
-            /* {relatedServices} */
-            relatedServices?.length ? (
-              <div className="container pt-3 pb-3">
-                <h3 className="text-center">More Services You Might Like </h3>
-                <div className="row " style={{ marginTop: "70px" }}>
-                  {relatedServices.map(
-                    ({
-                      serviceCardIcon,
-                      serviceCardShortDescription,
-                      serviceCardTitle,
-                      slug,
-                      id,
-                    }) => {
-                      return (
-                        <div className="col-lg-4 col-md-6 col-sm-12" key={id}>
-                          <ServiceInfoCard
-                            cardDescription={serviceCardShortDescription}
-                            cardIcon={serviceCardIcon}
-                            cardTitle={serviceCardTitle}
-                            routerLink={"/" + slug}
-                          />
-                        </div>
-                      );
-                    },
-                  )}
-                </div>
-              </div>
-            ) : (
-              ""
-            )
-          }
-          {frequentlyAskedQuestions?.length ? (
-            <FrequentlyAskedQuestions faQs={frequentlyAskedQuestions} />
-          ) : (
-            ""
-          )}
-        </div>
+        <WelcomeArea welcomeArea={welcomeArea} />
+        <ServicesOffered serviceProp={solutionArea} btnName={"Contact Us"} />
+        <Features features={featureArea} />
+        {statsContainer ? <Stats stats={statsContainer} /> : ""}
+        {moreSultionsWeOffer ? <SolutionsWeAlsoOffer data={moreSultionsWeOffer} /> : ""}
+
+        {faQs ? <FrequentlyAskedQuestions faQs={faQs} /> : ""}
       </Layout>
     );
   }

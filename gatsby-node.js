@@ -26,7 +26,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const serviceContext = await graphql(`
     query {
-      allContentfulServiceModel {
+      allContentfulServiceDataModel {
         nodes {
           slug
         }
@@ -120,7 +120,7 @@ exports.createPages = async ({ graphql, actions }) => {
     },
   );
 
-  serviceContext.data.allContentfulServiceModel.nodes.forEach(({ slug }) => {
+  serviceContext.data.allContentfulServiceDataModel.nodes.forEach(({ slug }) => {
     createPage({
       path: `${slug}`,
       component: serviceComponentTemplate,

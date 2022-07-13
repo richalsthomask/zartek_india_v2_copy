@@ -1,8 +1,8 @@
 import ServicesList from "@/components/Services";
 import { graphql, StaticQuery } from "gatsby";
-import React, { FC } from "react";
+import React from "react";
 
-const Services: FC = () => {
+const Services: React.FC = () => {
   return (
     <StaticQuery
       query={graphql`
@@ -17,10 +17,10 @@ const Services: FC = () => {
             }
             services {
               id
+              serviceTitle
+              serviceDescription
               slug
-              serviceCardTitle
-              serviceCardShortDescription
-              serviceCardIcon {
+              icon {
                 file {
                   url
                 }
