@@ -1,10 +1,10 @@
 import { graphql, StaticQuery } from "gatsby";
-import React, { Component, Fragment } from "react";
+import React, { Fragment } from "react";
 import { Layout } from "../Layout";
 import SEO from "../SEO";
 import { Breadcrumb } from "../Shared/Breadcrumb";
 
-export default class Career extends Component {
+export default class Career extends React.Component {
   render(): JSX.Element {
     return (
       <Layout>
@@ -30,10 +30,10 @@ export default class Career extends Component {
           render={({ contentfulSeo }) => (
             <Fragment>
               <SEO contentfulSeo={contentfulSeo} />
-              <div className="page-bottom pbottom-70">
-                <div className="container pt-3">
+              <div className="pb-5">
+                <div className="pt-3 ">
                   <iframe
-                    src="https://zartek.kekahire.com/api/embedjobs/a8fa4f07-15d0-4f59-a265-5d701fae059d"
+                    src="https://recruitcareers.zappyhire.com/en/zartek"
                     title="zartek careers"
                     frameBorder="0"
                     height="100%"
