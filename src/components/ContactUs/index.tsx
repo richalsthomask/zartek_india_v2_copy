@@ -1,7 +1,7 @@
 import { FileType } from "@/@types/types";
 import GMaps from "@/components/Helpers/Maps.jsx";
 import { Widget } from "@typeform/embed-react";
-import React, { FC, useRef } from "react";
+import React, { useRef } from "react";
 import { Layout } from "../Layout";
 import SEO, { SEOType } from "../SEO";
 import { Breadcrumb } from "../Shared/Breadcrumb";
@@ -11,7 +11,7 @@ interface ContactUsProps {
   seo: SEOType;
 }
 
-const ContactUs: FC<ContactUsProps> = (props) => {
+const ContactUs: React.FC<ContactUsProps> = (props) => {
   const typeFormRef = useRef<HTMLButtonElement>(null);
 
   return (
@@ -56,9 +56,7 @@ const ContactUs: FC<ContactUsProps> = (props) => {
                     <i className="fa fa-phone"></i>
                     <div className="txt">
                       <span>
-                        <a href="tel:+91 9176107417">+91 9176107417</a>
-                        <br />
-                        <a href="tel:+91 9176107417">+91 9176107417</a>
+                        <a href="tel:+91 9778125731">+91 9778125731</a>
                       </span>
                     </div>
                   </div>
