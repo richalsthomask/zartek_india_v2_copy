@@ -1,3 +1,4 @@
+import { Link } from "gatsby";
 import React from "react";
 
 const Locations: React.FC = () => {
@@ -19,7 +20,10 @@ const Locations: React.FC = () => {
                 <img src="/images/location-icon.svg" style={{ width: "14px" }} alt="..." />
               </span>
               <span>
-                Mobile App Development Company in <strong>Pune</strong>
+                Mobile App Development Company in{" "}
+                <strong>
+                  <Link to="/pune/">Pune</Link>
+                </strong>
               </span>
             </p>
             <p className="text-white">
@@ -27,7 +31,10 @@ const Locations: React.FC = () => {
                 <img src="/images/location-icon.svg" style={{ width: "14px" }} alt="..." />
               </span>
               <span>
-                Mobile App Development Company in <strong>Kochi</strong>
+                Mobile App Development Company in{" "}
+                <strong>
+                  <Link to="/">Kochi</Link>
+                </strong>
               </span>
             </p>
             <p className="text-white">
@@ -35,7 +42,12 @@ const Locations: React.FC = () => {
                 <img src="/images/location-icon.svg" style={{ width: "14px" }} alt="..." />
               </span>
               <span>
-                Mobile App Development Company in <strong>Qatar</strong>
+                Mobile App Development Company in{" "}
+                <strong>
+                  <a href="https://www.zartek.qa/" target="_blank" rel="noreferrer">
+                    Qatar
+                  </a>
+                </strong>
               </span>
             </p>
           </div>
@@ -45,7 +57,10 @@ const Locations: React.FC = () => {
                 <img src="/images/location-icon.svg" style={{ width: "14px" }} alt="..." />
               </span>
               <span>
-                Mobile App Development Company in <strong>Coimbatore</strong>
+                Mobile App Development Company in{" "}
+                <strong>
+                  <Link to="/coimbatore/">Coimbatore</Link>
+                </strong>
               </span>
             </p>
             <p className="text-white">
@@ -53,7 +68,10 @@ const Locations: React.FC = () => {
                 <img src="/images/location-icon.svg" style={{ width: "14px" }} alt="..." />
               </span>
               <span>
-                Mobile App Development Company in <strong>Hyderabad</strong>
+                Mobile App Development Company in{" "}
+                <strong>
+                  <Link to="/hyderabad/">Hyderabad</Link>
+                </strong>
               </span>
             </p>
             <p className="text-white">
@@ -61,7 +79,12 @@ const Locations: React.FC = () => {
                 <img src="/images/location-icon.svg" style={{ width: "14px" }} alt="..." />
               </span>
               <span>
-                Mobile App Development Company in <strong>Toronto</strong>
+                Mobile App Development Company in{" "}
+                <strong>
+                  <a href="https://www.zartek.ca/" target="_blank" rel="noreferrer">
+                    Toronto
+                  </a>
+                </strong>
               </span>
             </p>
           </div>
