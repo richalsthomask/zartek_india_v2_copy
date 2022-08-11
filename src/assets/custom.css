@@ -102,3 +102,52 @@ p {
     margin-top: 10em;
   }
 }
+
+#location-bg {
+  background-image: url(./img/location-bg.png);
+  background-size: cover;
+  padding: 30px 30px;
+  position: relative;
+}
+
+@media (max-width: 400px) {
+  #location-bg {
+    padding: 30px 2px;
+  }
+}
+
+#location-bg::before {
+  content: "";
+  background-color: rgba(38, 50, 56, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+}
+
+.z-index {
+  z-index: 1;
+  position: relative;
+}
+
+.border {
+  background-color: #fff;
+  height: 1px;
+  width: 250px;
+}
+.location-icon {
+  background-color: #fff;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  float: left;
+  margin-right: 20px;
+  height: 32px;
+  width: 32px;
+}
+.location p {
+  margin-bottom: 40px;
+  font-size: 18px;
+}
