@@ -15,78 +15,77 @@ const Locations: React.FC = () => {
         </div>
         <div className="row">
           <div className="col-xl-6 col-sm-6 col-md-6 col-lg-6 col-12 mt-5 location">
-            <p className="text-white">
-              <span className="location-icon">
-                <img src="/images/location-icon.svg" style={{ width: "14px" }} alt="..." />
-              </span>
-              <span>
-                Mobile App Development Company in{" "}
-                <strong>
-                  <Link to="/pune/">Pune</Link>
-                </strong>
-              </span>
-            </p>
-            <p className="text-white">
-              <span className="location-icon">
-                <img src="/images/location-icon.svg" style={{ width: "14px" }} alt="..." />
-              </span>
-              <span>
-                Mobile App Development Company in{" "}
-                <strong>
-                  <Link to="/">Kochi</Link>
-                </strong>
-              </span>
-            </p>
-            <p className="text-white">
-              <span className="location-icon">
-                <img src="/images/location-icon.svg" style={{ width: "14px" }} alt="..." />
-              </span>
-              <span>
-                Mobile App Development Company in{" "}
-                <strong>
-                  <a href="https://www.zartek.qa/" target="_blank" rel="noreferrer">
-                    Qatar
-                  </a>
-                </strong>
-              </span>
-            </p>
+            <Link to="/pune/" className="text-white">
+              <p>
+                <span className="location-icon">
+                  <img src="/images/location-icon.svg" style={{ width: "14px" }} alt="..." />
+                </span>
+                <span>
+                  Mobile App Development Company in <strong>Pune</strong>
+                </span>
+              </p>
+            </Link>
+
+            <Link to="/" className="text-white">
+              <p>
+                <span className="location-icon">
+                  <img src="/images/location-icon.svg" style={{ width: "14px" }} alt="..." />
+                </span>
+                <span>
+                  Mobile App Development Company in <strong>Kochi</strong>
+                </span>
+              </p>
+            </Link>
+
+            <a
+              href="https://www.zartek.qa/"
+              target="_blank"
+              rel="noreferrer"
+              className="text-white"
+            >
+              <p>
+                <span className="location-icon">
+                  <img src="/images/location-icon.svg" style={{ width: "14px" }} alt="..." />
+                </span>
+                <span>
+                  Mobile App Development Company in <strong>Qatar</strong>
+                </span>
+              </p>
+            </a>
           </div>
           <div className="col-xl-6 col-sm-6 col-md-6 col-lg-6 col-12 mt-5 location">
-            <p className="text-white">
-              <span className="location-icon">
-                <img src="/images/location-icon.svg" style={{ width: "14px" }} alt="..." />
-              </span>
-              <span>
-                Mobile App Development Company in{" "}
-                <strong>
-                  <Link to="/coimbatore/">Coimbatore</Link>
-                </strong>
-              </span>
-            </p>
-            <p className="text-white">
-              <span className="location-icon">
-                <img src="/images/location-icon.svg" style={{ width: "14px" }} alt="..." />
-              </span>
-              <span>
-                Mobile App Development Company in{" "}
-                <strong>
-                  <Link to="/hyderabad/">Hyderabad</Link>
-                </strong>
-              </span>
-            </p>
-            <p className="text-white">
-              <span className="location-icon">
-                <img src="/images/location-icon.svg" style={{ width: "14px" }} alt="..." />
-              </span>
-              <span>
-                Mobile App Development Company in{" "}
-                <strong>
-                  <a href="https://www.zartek.ca/" target="_blank" rel="noreferrer">
-                    Toronto
-                  </a>
-                </strong>
-              </span>
-            </p>
+            <Link to="/coimbatore/">
+              <p className="text-white">
+                <span className="location-icon">
+                  <img src="/images/location-icon.svg" style={{ width: "14px" }} alt="..." />
+                </span>
+                <span>
+                  Mobile App Development Company in <strong>Coimbatore</strong>
+                </span>
+              </p>
+            </Link>
+
+            <Link to="/hyderabad/">
+              <p className="text-white">
+                <span className="location-icon">
+                  <img src="/images/location-icon.svg" style={{ width: "14px" }} alt="..." />
+                </span>
+                <span>
+                  Mobile App Development Company in <strong>Hyderabad</strong>
+                </span>
+              </p>
+            </Link>
+
+            <a href="https://www.zartek.ca/" target="_blank" rel="noreferrer">
+              <p className="text-white">
+                <span className="location-icon">
+                  <img src="/images/location-icon.svg" style={{ width: "14px" }} alt="..." />
+                </span>
+                <span>
+                  Mobile App Development Company in <strong>Toronto</strong>
+                </span>
+              </p>
+            </a>
           </div>
         </div>
       </div>
