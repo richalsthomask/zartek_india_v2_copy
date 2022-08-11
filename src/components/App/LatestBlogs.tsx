@@ -1,8 +1,8 @@
 import { graphql, StaticQuery } from "gatsby";
-import React, { FC } from "react";
+import React from "react";
 import { BlogCard } from "../Shared/Ui/BlogCard";
 
-export const LatestBlogs: FC = () => {
+export const LatestBlogs: React.FC = () => {
   return (
     <StaticQuery
       query={graphql`
@@ -24,7 +24,7 @@ export const LatestBlogs: FC = () => {
         }
       `}
       render={({ allContentfulBlogPostModel: { nodes } }) => (
-        <div className="grey-bg">
+        <div className="grey-bg pt-4">
           <div className="container blogs-container ">
             <div className="row">
               <div className="col-lg-12">

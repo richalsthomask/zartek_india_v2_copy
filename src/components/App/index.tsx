@@ -9,12 +9,13 @@ import {
   WelcomeAreaPropType,
 } from "@/@types/types";
 import loadable from "@loadable/component";
-import React, { Component } from "react";
+import React from "react";
 import { StructuredDataSnippetTag } from "../Helpers/StructuredDataTag";
 import { Layout } from "../Layout";
 import SEO, { SEOType } from "../SEO";
 import { WelcomeArea } from "../Shared/Ui/WelcomeArea";
 import OnBoardedClients from "./Clients";
+import Locations from "./Locations";
 
 const ServicesOffered = loadable(() =>
   import("@/components/Shared/Ui/ServicesOffered").then((c) => c.ServicesOffered),
@@ -44,7 +45,7 @@ interface HomePageProps {
   };
 }
 
-export default class HomePage extends Component<HomePageProps> {
+export default class HomePage extends React.Component<HomePageProps> {
   render(): JSX.Element {
     const {
       welcomeArea,
@@ -72,6 +73,7 @@ export default class HomePage extends Component<HomePageProps> {
         <Testimonials testimonials={testimonials} />
         <Stats stats={statsContainer} />
         <FrequentlyAskedQuestions faQs={faQs} />
+        <Locations />
         <LatestBlogs />
       </Layout>
     );
