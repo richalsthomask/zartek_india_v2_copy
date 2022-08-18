@@ -1,10 +1,10 @@
 import { useBaseURL } from "@/utils/hooks/useBaseUrl";
 import { useIntersectionObserver } from "@/utils/hooks/useIntersectionObserver";
 import { Link } from "gatsby";
-import React, { FC, Fragment, useRef, useState } from "react";
+import React, { Fragment, useRef, useState } from "react";
 import { BrandLogo } from "./Brandlogo";
 
-export const HeaderComponent: FC = () => {
+export const HeaderComponent: React.FC = () => {
   const scrolledRef = useRef<HTMLDivElement>();
   const [switchToStickyHeader, setSwitchToStickyHeader] = useState<boolean>(false);
   const [burgerActive, setBurgerActive] = useState<boolean>(false);
@@ -24,7 +24,7 @@ export const HeaderComponent: FC = () => {
   return (
     <Fragment>
       <header className={`header-area ${switchToStickyHeader ? "header-sticky" : "welcome-bg"}`}>
-        <div className="container">
+        <div className="header-padding">
           <div className="row">
             <div className="col-lg-12">
               <nav className="main-nav">
@@ -46,9 +46,11 @@ export const HeaderComponent: FC = () => {
                   <li>
                     <Link to={"/blog/"}>BLOG</Link>
                   </li>
-
                   <li>
                     <Link to={"/hire-dedicated-developer/"}>DEDICATED DEVELOPERS</Link>
+                  </li>
+                  <li>
+                    <Link to={"/careers/"}>CAREERS</Link>
                   </li>
                   <li>
                     <Link to={"/contact/"} className="btn-nav-line">

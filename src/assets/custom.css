@@ -151,3 +151,15 @@ p {
   margin-bottom: 40px;
   font-size: 18px;
 }
+
+.header-padding {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+@media (max-width: 1048px) {
+  .header-padding {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
