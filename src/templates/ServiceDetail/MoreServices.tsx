@@ -18,7 +18,7 @@ const MoreServicesOffered: React.FC<{
         <div className="row mt-5">
           {serviceOption.map((option) => {
             return (
-              <div className="col-xl-4 col-sm-6 col-md-6 col-lg-6 col-12 location" key={option.id}>
+              <div className="col-xl-6 col-sm-6 col-md-6 col-lg-6 col-12 location" key={option.id}>
                 <a href={option.link} target="_blank" rel="noreferrer" className="text-white">
                   <p>
                     <span className="location-icon">
