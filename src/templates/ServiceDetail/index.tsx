@@ -16,6 +16,7 @@ import { WelcomeArea } from "@/components/Shared/Ui/WelcomeArea";
 import { graphql, PageProps } from "gatsby";
 import React from "react";
 import SolutionsWeAlsoOffer from "../SolutionDetail/MoreSolutionWeOffer";
+import MoreServicesOffered from "./MoreServices";
 
 export const query = graphql`
   query GET_SERVICE_DETAIL($slug: String!) {
@@ -140,6 +141,16 @@ export const query = graphql`
         footerContent {
           raw
         }
+
+        # More Services Offered
+        moreServicesOffered {
+          title
+          serviceOption {
+            id
+            title
+            link
+          }
+        }
       }
     }
   }
@@ -159,6 +170,10 @@ interface ServiceDetailProps extends PageProps {
         statsContainer?: ParallaxStatPodType[];
         faQs?: FAQType[];
         footerContent?: { raw: any };
+        moreServicesOffered: {
+          title: string;
+          serviceOption: { id: string; title: string; link: string }[];
+        };
       };
     };
   };
@@ -178,6 +193,7 @@ export default class ServiceDetail extends React.Component<ServiceDetailProps> {
             statsContainer,
             footerContent,
             moreSultionsWeOffer,
+            moreServicesOffered,
           },
         },
       },
@@ -193,6 +209,14 @@ export default class ServiceDetail extends React.Component<ServiceDetailProps> {
         {moreSultionsWeOffer ? <SolutionsWeAlsoOffer data={moreSultionsWeOffer} /> : ""}
 
         {faQs ? <FrequentlyAskedQuestions faQs={faQs} /> : ""}
+        {moreServicesOffered ? (
+          <MoreServicesOffered
+            serviceOption={moreServicesOffered.serviceOption}
+            title={moreServicesOffered.title}
+          />
+        ) : (
+          ""
+        )}
       </Layout>
     );
   }
