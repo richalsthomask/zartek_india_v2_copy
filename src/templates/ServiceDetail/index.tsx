@@ -208,7 +208,8 @@ export default class ServiceDetail extends React.Component<ServiceDetailProps> {
         {statsContainer ? <Stats stats={statsContainer} /> : ""}
         {moreSultionsWeOffer ? <SolutionsWeAlsoOffer data={moreSultionsWeOffer} /> : ""}
 
-        {faQs ? <FrequentlyAskedQuestions faQs={faQs} /> : ""}
+        {faQs ? <FrequentlyAskedQuestions faQs={faQs} /> : <br />}
+
         {moreServicesOffered ? (
           <MoreServicesOffered
             serviceOption={moreServicesOffered.serviceOption}

@@ -22,3 +22,77 @@
   to = "/services/hire-dedicated-developers/"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/dedicated-angular-developer/"
+  to = "/hire-dedicated-angular-developers/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/dedicated-flutter-developer/"
+  to = "/hire-dedicated-flutter-developers/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/dedicated-android-developers/"
+  to = "/hire-dedicated-android-developers/"
+  status = 301
+  force = true
+
+
+[[redirects]]
+  from = "/dedicated-ios-developer/"
+  to = "/hire-dedicated-ios-developers/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/dedicated-node-js-developers/"
+  to = "/hire-dedicated-node-js-developers/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/dedicated-product-manager/"
+  to = "/hire-dedicated-product-managers/"
+  status = 301
+  force = true
+
+
+[[redirects]]
+  from = "/dedicated-python-developer/"
+  to = "/hire-dedicated-python-developers/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/dedicated-react-native-developers/"
+  to = "/hire-dedicated-react-native-developers/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/dedicated-tester/"
+  to = "/hire-dedicated-tester/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/dedicated-ui-designer/"
+  to = "/hire-dedicated-ui-designers/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/dedicated-xamarin-developer/"
+  to = "/hire-dedicated-xamarin-developers/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/dedicated-dot-net-developers/"
+  to = "/hire-dedicated-dot-net-developers/"
+  status = 301
+  force = true
