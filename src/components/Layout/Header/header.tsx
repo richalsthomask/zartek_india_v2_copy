@@ -1,3 +1,4 @@
+import ConnectHeader from "@/components/Shared/ConnectHeader";
 import { useBaseURL } from "@/utils/hooks/useBaseUrl";
 import { useIntersectionObserver } from "@/utils/hooks/useIntersectionObserver";
 import { Link } from "gatsby";
@@ -23,7 +24,12 @@ export const HeaderComponent: React.FC = () => {
 
   return (
     <Fragment>
-      <header className={`header-area ${switchToStickyHeader ? "header-sticky" : "welcome-bg"}`}>
+      <ConnectHeader />
+      <header
+        className={`header-area header-margin ${
+          switchToStickyHeader ? "header-sticky" : "welcome-bg"
+        }`}
+      >
         <div className="header-padding">
           <div className="row">
             <div className="col-lg-12">
