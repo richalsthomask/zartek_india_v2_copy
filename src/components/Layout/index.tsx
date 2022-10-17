@@ -58,7 +58,7 @@ export class Layout extends Component<
       <Fragment>
         <Loader />
         <HeaderComponent />
-        <section className="page main-content-margin">{this.props.children}</section>
+        <section className="page">{this.props.children}</section>
         <FooterComponent content={this.props.footerContent} />
         <button style={{ display: "none" }} id="chat-bot-submit" ref={this.chatSubmitRef} />
       </Fragment>
