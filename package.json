@@ -1,5 +1,5 @@
 {
-  "name": "zartek-inida-v2",
+  "name": "zartek-india-v2",
   "description": "zartek india website v2",
   "version": "2.0.0",
   "private": true,
@@ -91,5 +91,8 @@
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
+  },
+  "resolutions": {
+    "webpack": "5.52.1"
   }
 }
