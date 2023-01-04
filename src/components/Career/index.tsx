@@ -4,7 +4,28 @@ import { Layout } from "../Layout";
 import SEO from "../SEO";
 import { Breadcrumb } from "../Shared/Breadcrumb";
 
-export default class Career extends React.Component {
+export default class Career extends React.Component<
+  any,
+  {
+    isScriptadded: boolean;
+  }
+> {
+  state = {
+    isScriptadded: false,
+  };
+
+  componentDidMount(): void {
+    const script = document.createElement("script");
+    script.src = "https://app.pyjamahr.com/asset-objects/careers-page-integration.js";
+
+    script.onload = () => {
+      this.setState({
+        isScriptadded: true,
+      });
+    };
+    document.body?.append(script);
+  }
+
   render(): JSX.Element {
     return (
       <Layout>
@@ -31,15 +52,16 @@ export default class Career extends React.Component {
             <Fragment>
               <SEO contentfulSeo={contentfulSeo} />
               <div className="pb-5">
-                <div className="pt-3 ">
-                  <iframe
-                    src="https://recruitcareers.zappyhire.com/en/zartek"
-                    title="zartek careers"
-                    frameBorder="0"
-                    height="100%"
-                    width="100%"
-                    style={{ minHeight: "100vh" }}
-                  ></iframe>
+                <div style={{ height: "100vh" }}>
+                  {this.state.isScriptadded ? (
+                    <iframe
+                      id="careers-page"
+                      width="100%"
+                      title="jobs"
+                      height="100%"
+                      src="https://app.pyjamahr.com/careers?company=Zartek Technologies&amp;company_uuid=4121BE33C7&amp;isHeaderVisible=false&amp;is_careers_page=true"
+                    ></iframe>
+                  ) : null}
                 </div>
 
                 <div className="container mt-3">
