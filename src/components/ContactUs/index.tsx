@@ -26,16 +26,18 @@ const ContactUs: React.FC<ContactUsProps> = (props) => {
       />
 
       <Widget
+        height={515}
         id="u4L7Sl"
-        style={{ border: "0px", minHeight: "515px" }}
+        className="p-2"
+        style={{ border: "0px" }}
         onSubmit={() => {
           typeFormRef.current?.click();
         }}
       />
 
-      <div className="pb-1 pt-0">
+      <div className="pb-1 pt-0 mt-2">
         <div className="map-wrapper">
-          <div className="map-canvas">
+          <div className="map-canvas p-2">
             <GMaps />
           </div>
           <div className="container">
