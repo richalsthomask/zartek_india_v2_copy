@@ -2632,3 +2632,524 @@ footer .copyright {
     margin-bottom: 30px;
   }
 }
+
+/* By Jestin */
+.learn-more-btn {
+  text-decoration: none;
+}
+.learn-more-btn .svg-icon {
+  filter: invert(41%) sepia(54%) saturate(5732%) hue-rotate(145deg) brightness(99%) contrast(106%);
+}
+.btn:active:focus,
+.learn-more-btn:focus {
+  box-shadow: none;
+}
+
+.button-blue,
+.button-white,
+.button-light-blue,
+.hire-btn {
+  background-color: #428dec;
+  box-shadow: 0 0.3rem 0.8rem rgba(66, 141, 236, 0.6) !important;
+  border: transparent;
+  font-size: 24px;
+}
+
+.button-white,
+.hire-btn {
+  background-color: #fff;
+  color: #428dec;
+  border: transparent;
+  font-size: 24px;
+  font-weight: bold;
+}
+.button-light-blue {
+  background-color: #42d0fd;
+  box-shadow: 0 0.3rem 0.8rem rgba(66, 141, 236, 0.25) !important;
+}
+.hire-btn {
+  color: #42d0fd;
+  box-shadow: 0 0.3rem 0.8rem rgba(66, 141, 236, 0.25) !important;
+}
+
+/*common css close*/
+/*======================================================================================================================================================*/
+
+/*---------- our-clients &c lients-logo-bottom section css ----------*/
+#our-clients,
+#clients-logo-bottom {
+  background: #f9f9f9;
+  position: relative;
+  padding: 16px 0 16px 0;
+}
+#our-clients .our-clients-logo img,
+#clients-logo-bottom .our-clients-logo img {
+  filter: grayscale(100%);
+}
+#our-clients .our-clients-logo:hover img,
+#clients-logo-bottom .our-clients-logo:hover img {
+  cursor: pointer;
+  filter: grayscale(0%);
+}
+#our-clients h5 {
+  font-family: "nunito-regular";
+}
+
+/*---------- our-clients &c lients-logo-bottom section css close ----------*/
+
+#dedicated_developers .dedicated_developers-box,
+#flutter-development .dedicated_developers-box,
+#perks-Of-zartek .careers-section {
+  background: #fff;
+  border: 1px solid #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+#dedicated_developers .dedicated_developers-box .services-icon-1,
+#dedicated_developers .dedicated_developers-box .services-icon-2,
+#dedicated_developers .dedicated_developers-box .services-icon-3,
+#flutter-development .dedicated_developers-box .flutterservices-icon-1,
+#flutter-development .dedicated_developers-box .flutterservices-icon-2,
+#flutter-development .dedicated_developers-box .flutterservices-icon-3,
+#flutter-development .dedicated_developers-box .flutterservices-icon-4,
+#flutter-development .dedicated_developers-box .flutterservices-icon-5,
+#flutter-development .dedicated_developers-box .flutterservices-icon-6,
+#perks-Of-zartek .careers-section .careers-icon-box-1,
+#perks-Of-zartek .careers-section .careers-icon-box-2,
+#perks-Of-zartek .careers-section .careers-icon-box-3,
+#perks-Of-zartek .careers-section .careers-icon-box-4,
+#perks-Of-zartek .careers-section .careers-icon-box-5,
+#perks-Of-zartek .careers-section .careers-icon-box-6,
+#perks-Of-zartek .careers-section .careers-icon-box-7,
+#perks-Of-zartek .careers-section .careers-icon-box-8 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  height: 90px;
+  width: 90px;
+}
+
+#dedicated_developers .dedicated_developers-box .services-icon-1 {
+  background-color: rgba(77, 70, 199, 0.2);
+  box-shadow: 0 0.155rem 0.95rem rgba(77, 70, 199, 0.11) !important;
+}
+
+#dedicated_developers .dedicated_developers-box .services-icon-2 {
+  background-color: rgba(238, 42, 82, 0.2);
+  box-shadow: 0 0.155rem 0.95rem rgba(238, 42, 82, 0.12) !important;
+}
+
+#dedicated_developers .dedicated_developers-box .services-icon-3 {
+  background-color: rgba(250, 179, 63, 0.2);
+  box-shadow: 0 0.155rem 0.95rem rgba(250, 179, 63, 0.15) !important;
+}
+
+#flutter-development h3 span {
+  color: #42d0fd;
+}
+
+#flutter-development .dedicated_developers-box .flutterservices-icon-1,
+#flutter-development .dedicated_developers-box .flutterservices-icon-2,
+#flutter-development .dedicated_developers-box .flutterservices-icon-3,
+#flutter-development .dedicated_developers-box .flutterservices-icon-4,
+#flutter-development .dedicated_developers-box .flutterservices-icon-5,
+#flutter-development .dedicated_developers-box .flutterservices-icon-6,
+#perks-Of-zartek .careers-section .careers-icon-box-1,
+#perks-Of-zartek .careers-section .careers-icon-box-2,
+#perks-Of-zartek .careers-section .careers-icon-box-3,
+#perks-Of-zartek .careers-section .careers-icon-box-4,
+#perks-Of-zartek .careers-section .careers-icon-box-5,
+#perks-Of-zartek .careers-section .careers-icon-box-6,
+#perks-Of-zartek .careers-section .careers-icon-box-7,
+#perks-Of-zartek .careers-section .careers-icon-box-8 {
+  box-shadow: 0 0.155rem 0.95rem rgba(77, 70, 199, 0.11) !important;
+}
+
+#flutter-development .dedicated_developers-box .flutterservices-icon-1 {
+  background-color: rgba(66, 0, 255, 0.5);
+}
+
+#flutter-development .dedicated_developers-box .flutterservices-icon-2 {
+  background-color: rgba(255, 0, 0, 0.5);
+}
+#flutter-development .dedicated_developers-box .flutterservices-icon-3 {
+  background-color: rgba(0, 210, 46, 0.5);
+}
+
+#flutter-development .dedicated_developers-box .flutterservices-icon-4 {
+  background-color: rgba(255, 0, 199, 0.5);
+}
+
+#flutter-development .dedicated_developers-box .flutterservices-icon-5 {
+  background-color: rgba(255, 199, 0, 0.5);
+}
+
+#flutter-development .dedicated_developers-box .flutterservices-icon-6 {
+  background-color: rgba(0, 117, 255, 0.5);
+}
+
+/*careers-section box icon section*/
+
+#perks-Of-zartek .careers-section .careers-icon-box-1 {
+  background-color: rgba(77, 70, 199, 0.2);
+}
+
+#perks-Of-zartek .careers-section .careers-icon-box-2 {
+  background-color: rgba(0, 26, 255, 0.1);
+}
+
+#perks-Of-zartek .careers-section .careers-icon-box-3 {
+  background-color: rgba(255, 0, 153, 0.1);
+}
+
+#perks-Of-zartek .careers-section .careers-icon-box-3 {
+  background-color: rgba(255, 0, 153, 0.1);
+}
+
+#perks-Of-zartek .careers-section .careers-icon-box-4 {
+  background-color: rgba(255, 192, 174, 0.5);
+}
+
+#perks-Of-zartek .careers-section .careers-icon-box-5 {
+  background-color: rgba(70, 199, 91, 0.2);
+}
+
+#perks-Of-zartek .careers-section .careers-icon-box-6 {
+  background-color: rgba(255, 0, 0, 0.2);
+}
+
+#perks-Of-zartek .careers-section .careers-icon-box-7 {
+  background-color: rgba(255, 199, 0, 0.2);
+}
+
+#perks-Of-zartek .careers-section .careers-icon-box-8 {
+  background-color: rgba(0, 194, 255, 0.2);
+}
+
+#dedicated_developers .dedicated_developers-box:hover,
+#flutter-development .dedicated_developers-box:hover,
+#perks-Of-zartek .careers-section:hover {
+  background: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(20, 20, 21, 0.06) !important;
+  border: 1px solid #f5f5f5;
+  cursor: pointer;
+}
+
+#services .services-box,
+#services-section .services-box {
+  height: 100%;
+  display: flex;
+  align-content: center;
+  flex-flow: wrap;
+}
+
+/*testimonial  css section*/
+
+.testimonial {
+  border: 1px solid #f5f5f5;
+  padding: 30px;
+  margin: 0 15px 30px 15px;
+  overflow: hidden;
+  position: relative;
+}
+
+.owl-theme .owl-controls .owl-page span {
+  border: 2px solid #2a3d7d;
+  background: #fff !important;
+  border-radius: 0 !important;
+  opacity: 1;
+}
+.owl-theme .owl-controls .owl-page.active span,
+.owl-theme .owl-controls .owl-page:hover span {
+  background: #29d18b !important;
+  border-color: #29d18b;
+}
+.owl-pagination {
+  display: none;
+}
+@media only screen and (max-width: 767px) {
+  .testimonial {
+    padding: 20px;
+  }
+  .testimonial .pic {
+    display: block;
+    position: static;
+    margin: 0 auto 15px;
+  }
+}
+
+/*testimonial  css section close*/
+
+.hire_developers-one,
+.hire_developers-two,
+.hire_developers-three {
+  position: relative;
+}
+
+.hire_developers-one::after,
+.hire_developers-two::after,
+.hire_developers-three::after {
+  content: "";
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 72%;
+  top: 33px;
+  height: 9px;
+  width: 175px;
+}
+.hire_developers-one::after {
+  background-image: url(/img/developers-line-1.svg);
+}
+.hire_developers-two::after {
+  background-image: url(/img/developers-line-2.svg);
+}
+.hire_developers-three::after {
+  background-image: url(/img/developers-line-3.svg);
+}
+
+.hire_developers-box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.hire_developers-icon_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 73px;
+  width: 73px;
+}
+
+.developers-icon-one {
+  background-color: #9672ff;
+  box-shadow: 0 0.5rem 1rem rgba(150, 114, 255, 0.3) !important;
+}
+
+.developers-icon-two {
+  background-color: #4ddffd;
+  box-shadow: 0 0.5rem 1rem rgba(77, 223, 253, 0.3) !important;
+}
+.developers-icon-three {
+  background-color: #fc72ff;
+  box-shadow: 0 0.5rem 1rem rgba(252, 114, 255, 0.3) !important;
+}
+
+.developers-icon-four {
+  background-color: #fcc101;
+  box-shadow: 0 0.5rem 1rem rgba(252, 193, 1, 0.3) !important;
+}
+
+#get_started,
+#get_started_flutter {
+  background-color: #428dec;
+  padding: 20px;
+  position: relative;
+}
+#get_started_flutter {
+  background-color: #42d0fd;
+}
+
+#get_started::before,
+#get_started_flutter::before {
+  content: "";
+  background-image: url(/img/get_started-icon-2.svg);
+  background-repeat: no-repeat;
+  bottom: 24px;
+  position: absolute;
+  height: 105px;
+  width: 17px;
+}
+#get_started::after,
+#get_started_flutter::after {
+  content: "";
+  background-image: url(/img/get_started-icon-3.svg);
+  background-repeat: no-repeat;
+  top: 24px;
+  position: absolute;
+  height: 17px;
+  right: 24px;
+  width: 110px;
+}
+
+#get_started h1,
+#get_started_flutter h1 {
+  color: #fff;
+  font-weight: bolder;
+  font-size: 3.5rem;
+  text-align: center;
+  z-index: 1;
+  position: relative;
+}
+#get_started h1::before,
+#get_started_flutter h1::before {
+  content: "";
+  background-image: url(/img/get_started-icon-1.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  height: 148px;
+  left: 0;
+  width: 152px;
+  z-index: -1;
+}
+
+#hire_services {
+  /*position: relative;*/
+}
+
+#hire_services .hire_services-box,
+.android-developer,
+.ios-developer,
+.angular-developer,
+.node_js-developer,
+.python-developer,
+.react-js-developer,
+.xamarin-developer,
+.net_developer,
+.product-manager,
+.ui-designer,
+.qa-tester {
+  background: #fff;
+  border: 1px solid #f5f5f5;
+  height: 100%;
+  transition: 0.5s;
+  position: relative;
+}
+
+#hire_services .hire_services-box:hover,
+.android-developer:hover,
+.ios-developer:hover,
+.angular-developer:hover,
+.node_js-developer:hover,
+.python-developer:hover,
+.react-js-developer:hover,
+.xamarin-developer:hover,
+.net_developer:hover,
+.product-manager:hover,
+.ui-designer:hover,
+.qa-tester:hover {
+  background: #fff;
+  border: 1px solid #f5f5f5;
+  box-shadow: 0 0.5rem 1rem rgba(20, 20, 21, 0.06) !important;
+  cursor: pointer;
+  transform: translateY(-6px);
+}
+#hire_services .hire_services-box::before,
+.android-developer::before,
+.ios-developer::before,
+.angular-developer::before,
+.node_js-developer::before,
+.python-developer::before,
+.react-js-developer::before,
+.xamarin-developer::before,
+.net_developer::before,
+.product-manager::before,
+.ui-designer::before,
+.qa-tester::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 6px;
+  width: 100%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+#hire_services .hire_services-box:hover::before {
+  background-color: #a3ccff;
+}
+/* 
+#hire_services .android-developer:hover::before {
+  background-color: rgba(76, 175, 80, 0.7);
+}
+#hire_services .ios-developer:hover::before {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+#hire_services .angular-developer:hover::before {
+  background-color: rgba(166, 18, 13, 0.7);
+}
+#hire_services .node_js-developer:hover::before {
+  background-color: rgba(104, 159, 99, 0.7);
+}
+#hire_services .python-developer:hover::before {
+  background-color: rgba(56, 126, 184, 0.7);
+}
+#hire_services .react-js-developer:hover::before {
+  background-color: rgba(97, 218, 251, 0.7);
+}
+#hire_services .xamarin-developer:hover::before {
+  background-color: rgba(52, 152, 219, 0.7);
+}
+
+#hire_services .net_developer:hover::before {
+  background-color: rgba(13, 130, 202, 0.7);
+}
+
+#hire_services .product-manager:hover::before {
+  background-color: rgba(255, 193, 7, 0.7);
+}
+
+#hire_services .ui-designer:hover::before {
+  background-color: rgba(250, 100, 80, 0.7);
+}
+
+#hire_services .qa-tester:hover::before {
+  background-color: rgba(212, 230, 231, 1);
+} */
+
+#hire_services .hire_services-box .learn-more-btn {
+  color: #4141a5;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+/*-------------------- Media queries -------------------- */
+
+@media (max-width: 1400px) {
+  #get_started h1,
+  #get_started_flutter h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  #get_started h1,
+  #get_started_flutter h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 1199px) {
+  .hire_developers-one::after,
+  .hire_developers-two::after,
+  .hire_developers-three::after {
+    display: none;
+  }
+}
+
+@media (max-width: 992px) {
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 576px) {
+  .button-blue,
+  .button-white {
+    font-size: 18px;
+  }
+  #get_started h1,
+  #get_started_flutter h1 {
+    font-size: 1.5rem;
+  }
+  #get_started h1::before,
+  #get_started_flutter h1::before {
+    height: 90px;
+    width: 98px;
+  }
+}

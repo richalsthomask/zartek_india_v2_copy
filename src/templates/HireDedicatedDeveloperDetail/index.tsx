@@ -1,7 +1,10 @@
-import { FAQType } from "@/@types/types";
-import { StructuredDataSnippetTag } from "@/components/Helpers/StructuredDataTag";
+import GetStarted from "@/components/HireDedicatedDevs/get-started";
+import HowToHire from "@/components/HireDedicatedDevs/how-to";
+import HireDedicatedDevelopersServices from "@/components/HireDedicatedDevs/services";
+import Testimonials from "@/components/HireDedicatedDevs/testimonials";
 import { Layout } from "@/components/Layout";
 import SEO, { SEOType } from "@/components/SEO";
+import AllClientsList from "@/components/Shared/AllClients";
 import { Breadcrumb } from "@/components/Shared/Breadcrumb";
 import { EmbeddedBlockUi } from "@/components/Shared/RichtextUi/EmbeddedBlockUi";
 import {
@@ -13,46 +16,64 @@ import {
   HeadingTwo,
 } from "@/components/Shared/RichtextUi/Headings";
 import { UnorderedListRT } from "@/components/Shared/RichtextUi/UnOrderedList";
-import { FrequentlyAskedQuestions } from "@/components/Shared/Ui/FAQs";
-import { documentToReactComponents, Options } from "@contentful/rich-text-react-renderer";
+import TopClients from "@/components/Shared/TopClients";
+import { Options } from "@contentful/rich-text-react-renderer";
 import { BLOCKS } from "@contentful/rich-text-types";
-import { graphql, PageProps } from "gatsby";
+import { graphql, Link, PageProps } from "gatsby";
 import React from "react";
+import Advantages from "./advantages";
 
 export const query = graphql`
   query GET_HIRE_DEDICATED_DEV_DETAIL_PAGE($slug: String!) {
     contentfulHireDedicatedDeveloperModel(slug: { eq: $slug }) {
-      title
+      seo {
+        metaTitle
+        metaDescription
+        metaUrl
+        metaAuthor
+        metaKeywords
+      }
       slug
-      detailedPage {
-        seo {
-          metaTitle
-          metaDescription
-          metaUrl
-          metaAuthor
-          metaKeywords
+      cardTitle
+      breadcrumbTitle
+      advantagesTitle
+      advantages {
+        id
+        icon {
+          file {
+            url
+          }
         }
-        breadcrumbTitle
+        title
+      }
 
+      contentSection {
+        title
+        position
+        image {
+          file {
+            url
+          }
+        }
         content {
-          raw
+          content
         }
+        learnMoreLink
+      }
 
-        frequentlyAskedQuestions {
-          id
-          question
-          answer {
-            answer
+      testimonials {
+        id
+        userName
+        userDesignation
+        profilePic {
+          file {
+            url
           }
         }
-
-        #
-        structuredDataSnippets {
-          snippet {
-            id
-            snippet
-          }
+        feedback {
+          feedback
         }
+        rating
       }
     }
   }
@@ -61,17 +82,14 @@ export const query = graphql`
 interface HireDedicatedDeveloperDetailProps extends PageProps {
   data: {
     contentfulHireDedicatedDeveloperModel: {
-      title: string;
       slug: string;
-      detailedPage: {
-        breadcrumbTitle?: string;
-        seo: SEOType;
-        content: {
-          raw: any;
-        };
-        frequentlyAskedQuestions: FAQType[];
-        structuredDataSnippets: any;
-      };
+      seo: SEOType;
+      breadcrumbTitle: string;
+      cardTitle: string;
+      advantagesTitle: string;
+      advantages: any[];
+      contentSection: any[];
+      testimonials: any[];
     };
   };
 }
@@ -99,45 +117,63 @@ export default class HireDedicatedDeveloperDetail extends React.Component<HireDe
     const {
       data: {
         contentfulHireDedicatedDeveloperModel: {
-          title,
+          seo,
           slug,
-          detailedPage: {
-            seo,
-            breadcrumbTitle,
-            content,
-            frequentlyAskedQuestions,
-            structuredDataSnippets,
-          },
+          breadcrumbTitle,
+          cardTitle,
+          advantagesTitle,
+          advantages,
+          contentSection,
+          testimonials,
         },
       },
     } = this.props;
 
     return (
       <Layout>
-        <StructuredDataSnippetTag snippets={structuredDataSnippets} />
         <SEO contentfulSeo={seo} />
         <Breadcrumb
-          currentPageTitle={breadcrumbTitle || title}
+          currentPageTitle={breadcrumbTitle || cardTitle}
           routes={[
             { path: "/", title: "Home" },
             { path: "/hire-dedicated-developer/", title: "Hire dedicated developers" },
-            { path: "/" + slug, title: title },
+            { path: "/" + slug, title: cardTitle },
           ]}
         />
-        <div className="page-bottom pb-0">
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-12 col-md-12 col-sm-12">
-                {documentToReactComponents(JSON.parse(content.raw), this.provideOptions())}
-              </div>
+        <TopClients />
+        <div id="flutter-development">
+          <div className="container my-5">
+            <div className="col-12">
+              <h3 className="text-center">
+                Let’s take you to the advantages of <br /> <span>{advantagesTitle}</span>
+              </h3>
+            </div>
+            <Advantages data={advantages} />
+          </div>
+        </div>
+        <div className="col-12">
+          <div className="d-flex justify-content-center">
+            <div className="d-grid gap-2 col-xl-3 col-lg-5 col-sm-6 col-8 mx-auto">
+              <Link to="/contact/">
+                <button
+                  className="btn btn-primary button-blue button-light-blue py-3 px-5 rounded-5"
+                  style={{ borderRadius: "2rem" }}
+                >
+                  Hire Developers
+                </button>
+              </Link>
             </div>
           </div>
-          {frequentlyAskedQuestions?.length ? (
-            <FrequentlyAskedQuestions faQs={frequentlyAskedQuestions} />
-          ) : (
-            ""
-          )}
         </div>
+        {contentSection.map((section, idx) => {
+          return <HireDedicatedDevelopersServices data={section} key={idx} />;
+        })}
+
+        <Testimonials list={testimonials} title="What Our Happy Clients Says" />
+
+        <HowToHire />
+        <GetStarted />
+        <AllClientsList />
       </Layout>
     );
   }

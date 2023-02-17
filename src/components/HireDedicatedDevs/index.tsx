@@ -1,24 +1,27 @@
-import { HireDedicatedDevPodType } from "@/@types/types";
-import React, { Component } from "react";
+import React from "react";
 import { Layout } from "../Layout";
-import SEO, { SEOType } from "../SEO";
+import SEO from "../SEO";
+import AllClientsList from "../Shared/AllClients";
 import { Breadcrumb } from "../Shared/Breadcrumb";
-import { ServiceInfoCard } from "../Shared/Ui/ServiceInfoCard";
+import TopClients from "../Shared/TopClients";
+import DedicatedHireServices from "./dedicated-hire-service";
+import GetStarted from "./get-started";
+import HowToHire from "./how-to";
+import HireDedicatedDevelopersServices from "./services";
+import Testimonials from "./testimonials";
+import HireDedicatedDevelopersWhyHire from "./why-hire";
 
-interface HireDedicatedDevelopersProps {
-  title: string;
-  description: { description: string };
-  pods: HireDedicatedDevPodType[];
-  seo: SEOType;
-}
-
-export default class HireDedicatedDevelopers extends Component<HireDedicatedDevelopersProps> {
+export default class HireDedicatedDevelopers extends React.Component<any> {
   render(): JSX.Element {
     const {
-      description: { description },
-      title,
-      pods,
       seo,
+      whyHireTitle,
+      whyHireCards,
+      testimonialTitle,
+      testimonials,
+      contentSectionTop,
+      contentSectionBottom,
+      list,
     } = this.props;
 
     return (
@@ -31,34 +34,17 @@ export default class HireDedicatedDevelopers extends Component<HireDedicatedDeve
             { path: "/hire-dedicated-developer/", title: "Hire Dedicated Developers" },
           ]}
         />
-        <div className="page-bottom pbottom-30">
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-12">
-                <div className="center-heading">
-                  <h2 className="section-title">{title}</h2>
-                </div>
-                <p className="pre-line-text">{description}</p>
-              </div>
-            </div>
-          </div>
-          <div className="container">
-            <div className="row">
-              {pods.map(({ id, description, icon, slug, title }) => {
-                return (
-                  <div className="col-lg-4 col-md-6 col-sm-12" key={id}>
-                    <ServiceInfoCard
-                      cardDescription={description}
-                      cardIcon={icon}
-                      cardTitle={title}
-                      routerLink={"/" + slug}
-                      addBaseURL={true}
-                    />
-                  </div>
-                );
-              })}
-            </div>
-          </div>
+
+        <div id="dedicated-developers">
+          <TopClients />
+          <HireDedicatedDevelopersWhyHire cards={whyHireCards} title={whyHireTitle} />
+          <HireDedicatedDevelopersServices data={contentSectionTop} />
+          <Testimonials list={testimonials} title={testimonialTitle} />
+          <HowToHire />
+          <HireDedicatedDevelopersServices data={contentSectionBottom} />
+          <GetStarted />
+          <DedicatedHireServices data={list} />
+          <AllClientsList />
         </div>
       </Layout>
     );

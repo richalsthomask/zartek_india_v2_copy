@@ -1,8 +1,8 @@
 import HireDevelopers from "@/components/HireDedicatedDevs";
 import { graphql, StaticQuery } from "gatsby";
-import React, { FC } from "react";
+import React from "react";
 
-const HireDedicatedDevelopers: FC = () => {
+const HireDedicatedDevelopers: React.FC = () => {
   return (
     <StaticQuery
       query={graphql`
@@ -17,27 +17,77 @@ const HireDedicatedDevelopers: FC = () => {
               metaAuthor
               metaKeywords
             }
-            title
-            description {
-              description
-            }
-
-            types {
+            whyHireTitle
+            whyHireCards {
               id
-              title
-              description
-              slug
               icon {
                 file {
                   url
                 }
               }
+              title
+              description
+            }
+            contentSectionTop {
+              title
+              position
+              image {
+                file {
+                  url
+                }
+              }
+              content {
+                content
+              }
+              learnMoreLink
+            }
+            testimonialTitle
+            testimonials {
+              id
+              userName
+              userDesignation
+              profilePic {
+                file {
+                  url
+                }
+              }
+              feedback {
+                feedback
+              }
+              rating
+            }
+
+            contentSectionBottom {
+              title
+              position
+              image {
+                file {
+                  url
+                }
+              }
+              content {
+                content
+              }
+              learnMoreLink
+            }
+
+            list {
+              id
+              slug
+
+              cardIcon {
+                file {
+                  url
+                }
+              }
+              cardTitle
+              cardDescription
             }
           }
         }
       `}
-      render={({ contentfulHireDedicatedDevelopersPage: { title, description, types, seo } }) => (
-        <HireDevelopers description={description} title={title} pods={types} seo={seo} />
+      render={({ contentfulHireDedicatedDevelopersPage }) => (
+        <HireDevelopers {...contentfulHireDedicatedDevelopersPage} />
       )}
     />
   );
