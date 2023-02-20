@@ -36,7 +36,7 @@ const DedicatedHireServices: React.FC<DedicatedHireServicesProps> = ({ data }) =
                   <h5 className="my-3">{each.cardTitle}</h5>
                   <p className="cut-text-2">{each.cardDescription}</p>
                   <Link
-                    to={"/" + each.slug + "/"}
+                    to={"/" + each.slug}
                     className="btn btn-link ps-0 learn-more-btn"
                     role="button"
                   >
