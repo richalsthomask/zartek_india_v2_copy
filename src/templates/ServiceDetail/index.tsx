@@ -4,9 +4,11 @@ import {
   MoreSolutionWeOffer,
   ParallaxStatPodType,
   ServiceAreaModelType,
+  StructuredDataSnippet,
   WelcomeAreaPropType,
 } from "@/@types/types";
 import { Stats } from "@/components/App/Stats";
+import { StructuredDataSnippetTag } from "@/components/Helpers/StructuredDataTag";
 import { Layout } from "@/components/Layout";
 import SEO, { SEOType } from "@/components/SEO";
 import { FrequentlyAskedQuestions } from "@/components/Shared/Ui/FAQs";
@@ -24,6 +26,12 @@ export const query = graphql`
       slug
       serviceTitle
       detailedPage {
+        structuredDataSnippets {
+          snippet {
+            id
+            snippet
+          }
+        }
         seo {
           metaTitle
           metaDescription
@@ -174,6 +182,7 @@ interface ServiceDetailProps extends PageProps {
           title: string;
           serviceOption: { id: string; title: string; link: string }[];
         };
+        structuredDataSnippets: StructuredDataSnippet[];
       };
     };
   };
@@ -194,6 +203,7 @@ export default class ServiceDetail extends React.Component<ServiceDetailProps> {
             footerContent,
             moreSultionsWeOffer,
             moreServicesOffered,
+            structuredDataSnippets,
           },
         },
       },
@@ -201,6 +211,7 @@ export default class ServiceDetail extends React.Component<ServiceDetailProps> {
 
     return (
       <Layout footerContent={footerContent?.raw}>
+        <StructuredDataSnippetTag snippets={structuredDataSnippets} />
         <SEO contentfulSeo={seo} />
         <WelcomeArea welcomeArea={welcomeArea} />
         <ServicesOffered serviceProp={solutionArea} btnName={"Contact Us"} />
