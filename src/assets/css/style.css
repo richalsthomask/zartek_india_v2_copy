@@ -2976,7 +2976,7 @@ footer .copyright {
   width: 110px;
 }
 
-#get_started h1,
+#get_started h2,
 #get_started_flutter h1 {
   color: #fff;
   font-weight: bolder;
@@ -2985,7 +2985,7 @@ footer .copyright {
   z-index: 1;
   position: relative;
 }
-#get_started h1::before,
+#get_started h2::before,
 #get_started_flutter h1::before {
   content: "";
   background-image: url(/img/get_started-icon-1.svg);
@@ -3111,14 +3111,14 @@ footer .copyright {
 /*-------------------- Media queries -------------------- */
 
 @media (max-width: 1400px) {
-  #get_started h1,
+  #get_started h2,
   #get_started_flutter h1 {
     font-size: 2.5rem;
   }
 }
 
 @media (max-width: 1200px) {
-  #get_started h1,
+  #get_started h2,
   #get_started_flutter h1 {
     font-size: 2.5rem;
   }
@@ -3143,11 +3143,11 @@ footer .copyright {
   .button-white {
     font-size: 18px;
   }
-  #get_started h1,
+  #get_started h2,
   #get_started_flutter h1 {
     font-size: 1.5rem;
   }
-  #get_started h1::before,
+  #get_started h2::before,
   #get_started_flutter h1::before {
     height: 90px;
     width: 98px;

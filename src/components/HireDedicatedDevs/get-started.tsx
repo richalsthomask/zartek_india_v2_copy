@@ -6,10 +6,10 @@ const GetStarted: React.FC = () => {
     <div className="container my-5">
       <div id="get_started" className="rounded-5 py-5" style={{ borderRadius: "2rem" }}>
         <div className="col-xl-8 col-lg-10 m-auto">
-          <h1 className="my-5">
+          <h2 className="my-5">
             Get Started with your <br />
             Dream Team
-          </h1>
+          </h2>
         </div>
         <div className="col-12">
           <div className="d-flex justify-content-center">
