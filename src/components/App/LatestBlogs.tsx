@@ -13,6 +13,7 @@ export const LatestBlogs: React.FC = () => {
               title
               slug
               shortDescription
+              author
               cover {
                 file {
                   url
@@ -40,19 +41,22 @@ export const LatestBlogs: React.FC = () => {
             </div>
             <div className="blog-list">
               <div className="row">
-                {nodes.map(({ cover, shortDescription, slug, title, publishedDate, id }, index) => {
-                  return (
-                    <BlogCard
-                      imrSrc={cover.file.url}
-                      publishedDate={publishedDate}
-                      key={id}
-                      shortDescription={shortDescription}
-                      size={"small"}
-                      slug={slug}
-                      title={title}
-                    />
-                  );
-                })}
+                {nodes.map(
+                  ({ cover, shortDescription, slug, title, publishedDate, id, author }, index) => {
+                    return (
+                      <BlogCard
+                        imrSrc={cover.file.url}
+                        publishedDate={publishedDate}
+                        key={id}
+                        shortDescription={shortDescription}
+                        size={"small"}
+                        slug={slug}
+                        title={title}
+                        author={author}
+                      />
+                    );
+                  },
+                )}
               </div>
             </div>
           </div>
