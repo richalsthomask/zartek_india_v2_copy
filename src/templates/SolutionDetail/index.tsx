@@ -4,9 +4,11 @@ import {
   MoreSolutionWeOffer,
   ParallaxStatPodType,
   ServiceAreaModelType,
+  StructuredDataSnippet,
   WelcomeAreaPropType,
 } from "@/@types/types";
 import { Stats } from "@/components/App/Stats";
+import { StructuredDataSnippetTag } from "@/components/Helpers/StructuredDataTag";
 import { Layout } from "@/components/Layout";
 import SEO, { SEOType } from "@/components/SEO";
 import { FrequentlyAskedQuestions } from "@/components/Shared/Ui/FAQs";
@@ -14,7 +16,7 @@ import { Features } from "@/components/Shared/Ui/Features";
 import { ServicesOffered } from "@/components/Shared/Ui/ServicesOffered";
 import { WelcomeArea } from "@/components/Shared/Ui/WelcomeArea";
 import { graphql, PageProps } from "gatsby";
-import React, { Component } from "react";
+import React from "react";
 import SolutionsWeAlsoOffer from "./MoreSolutionWeOffer";
 
 export const query = graphql`
@@ -30,7 +32,6 @@ export const query = graphql`
           metaAuthor
           metaKeywords
         }
-
         welcomeArea {
           backgroundImage {
             file {
@@ -41,17 +42,14 @@ export const query = graphql`
           description {
             description
           }
-
           option1 {
             title
             link
           }
-
           option2 {
             title
             link
           }
-
           applets {
             id
             appTitle
@@ -63,13 +61,11 @@ export const query = graphql`
             }
           }
         }
-
         solutionArea {
           title
           description {
             description
           }
-
           services {
             id
             title
@@ -82,7 +78,6 @@ export const query = graphql`
             routerLink
           }
         }
-
         featureArea {
           position
           image {
@@ -90,7 +85,6 @@ export const query = graphql`
               url
             }
           }
-
           points {
             id
             title
@@ -99,8 +93,6 @@ export const query = graphql`
             }
           }
         }
-
-        #Sub solutions
         moreSultionsWeOffer {
           title
           description
@@ -116,9 +108,6 @@ export const query = graphql`
             }
           }
         }
-
-        #Company Stats
-
         statsContainer {
           id
           title
@@ -126,9 +115,6 @@ export const query = graphql`
             description
           }
         }
-
-        #FAQS
-
         faQs {
           id
           question
@@ -136,9 +122,14 @@ export const query = graphql`
             answer
           }
         }
-        # Footer Content
         footerContent {
           raw
+        }
+        structuredDataSnippets {
+          snippet {
+            id
+            snippet
+          }
         }
       }
     }
@@ -159,12 +150,13 @@ interface SolutionDetailProps extends PageProps {
         statsContainer?: ParallaxStatPodType[];
         faQs?: FAQType[];
         footerContent?: { raw: any };
+        structuredDataSnippets: StructuredDataSnippet[];
       };
     };
   };
 }
 
-export default class SolutionDetail extends Component<SolutionDetailProps> {
+export default class SolutionDetail extends React.Component<SolutionDetailProps> {
   render(): JSX.Element {
     const {
       data: {
@@ -178,6 +170,7 @@ export default class SolutionDetail extends Component<SolutionDetailProps> {
             statsContainer,
             footerContent,
             moreSultionsWeOffer,
+            structuredDataSnippets,
           },
         },
       },
@@ -185,6 +178,7 @@ export default class SolutionDetail extends Component<SolutionDetailProps> {
 
     return (
       <Layout footerContent={footerContent?.raw}>
+        <StructuredDataSnippetTag snippets={structuredDataSnippets} />
         <SEO contentfulSeo={seo} />
         <WelcomeArea welcomeArea={welcomeArea} />
         <ServicesOffered serviceProp={solutionArea} btnName={"Contact Us"} />
