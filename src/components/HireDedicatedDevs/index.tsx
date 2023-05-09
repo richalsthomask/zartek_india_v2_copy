@@ -22,10 +22,11 @@ export default class HireDedicatedDevelopers extends React.Component<any> {
       contentSectionTop,
       contentSectionBottom,
       list,
+      footerContent,
     } = this.props;
 
     return (
-      <Layout>
+      <Layout footerContent={footerContent?.raw}>
         <SEO contentfulSeo={seo} />
         <Breadcrumb
           currentPageTitle="Hire Dedicated Developers"

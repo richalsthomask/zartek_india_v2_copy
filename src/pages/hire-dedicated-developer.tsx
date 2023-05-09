@@ -83,6 +83,11 @@ const HireDedicatedDevelopers: React.FC = () => {
               cardTitle
               cardDescription
             }
+
+            # Footer Content
+            footerContent {
+              raw
+            }
           }
         }
       `}
