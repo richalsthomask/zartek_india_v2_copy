@@ -19,7 +19,7 @@ import { UnorderedListRT } from "@/components/Shared/RichtextUi/UnOrderedList";
 import TopClients from "@/components/Shared/TopClients";
 import { Options } from "@contentful/rich-text-react-renderer";
 import { BLOCKS } from "@contentful/rich-text-types";
-import { graphql, Link, PageProps } from "gatsby";
+import { Link, PageProps, graphql } from "gatsby";
 import React from "react";
 import Advantages from "./advantages";
 
@@ -75,6 +75,11 @@ export const query = graphql`
         }
         rating
       }
+
+      # Footer Content
+      footerContent {
+        raw
+      }
     }
   }
 `;
@@ -90,6 +95,7 @@ interface HireDedicatedDeveloperDetailProps extends PageProps {
       advantages: any[];
       contentSection: any[];
       testimonials: any[];
+      footerContent?: { raw: any };
     };
   };
 }
@@ -125,12 +131,13 @@ export default class HireDedicatedDeveloperDetail extends React.Component<HireDe
           advantages,
           contentSection,
           testimonials,
+          footerContent,
         },
       },
     } = this.props;
 
     return (
-      <Layout>
+      <Layout footerContent={footerContent.raw}>
         <SEO contentfulSeo={seo} />
         <Breadcrumb
           currentPageTitle={breadcrumbTitle || cardTitle}
