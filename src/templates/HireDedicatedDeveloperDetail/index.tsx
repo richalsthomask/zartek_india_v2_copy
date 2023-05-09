@@ -137,7 +137,7 @@ export default class HireDedicatedDeveloperDetail extends React.Component<HireDe
     } = this.props;
 
     return (
-      <Layout footerContent={footerContent.raw}>
+      <Layout footerContent={footerContent?.raw}>
         <SEO contentfulSeo={seo} />
         <Breadcrumb
           currentPageTitle={breadcrumbTitle || cardTitle}
