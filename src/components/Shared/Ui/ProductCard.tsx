@@ -1,4 +1,5 @@
 import { LazyImage } from "@/components/Helpers/LazyImage";
+import { Link } from "gatsby";
 import React from "react";
 
 interface ProductCardProps {
@@ -6,6 +7,7 @@ interface ProductCardProps {
   productTitle: string;
   productDescription: string;
   links: { iosLink?: string; androidLink: string; websiteLink: string };
+  slug?: string;
 }
 
 export const ProductCard: React.FC<ProductCardProps> = ({
@@ -13,6 +15,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   productDescription,
   productTitle,
   links,
+  slug,
 }) => {
   return (
     // <div className="col-lg-4 col-md-6 col-sm-12 grid-class">
@@ -117,9 +120,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           >
             {productDescription}
           </p>
-          <a className="btn btn-link" href="." role="button">
-            More Details
-          </a>
+          {slug ? (
+            <Link to={slug} className="btn btn-link" role="button">
+              More Details
+            </Link>
+          ) : null}
         </div>
       </div>
     </div>

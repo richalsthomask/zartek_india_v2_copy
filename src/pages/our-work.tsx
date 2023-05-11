@@ -1,8 +1,8 @@
 import { Portfolio } from "@/components/Portfolio";
 import { graphql, StaticQuery } from "gatsby";
-import React, { FC } from "react";
+import React from "react";
 
-const OurWork: FC = () => {
+const OurWork: React.FC = () => {
   return (
     <StaticQuery
       query={graphql`
@@ -29,6 +29,9 @@ const OurWork: FC = () => {
                 file {
                   url
                 }
+              }
+              detailPage {
+                slug
               }
             }
           }

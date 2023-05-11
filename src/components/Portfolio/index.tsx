@@ -27,7 +27,7 @@ export class Portfolio extends React.Component<PortfolioProps> {
         <div className="page-bottom pbottom-70">
           <div className="container">
             <div className="row" id="portfolio-content">
-              {works.map(({ id, description, links, title, icon }) => {
+              {works.map(({ id, description, links, title, icon, detailPage }) => {
                 return (
                   <ProductCard
                     imageSrc={icon.file.url}
@@ -39,6 +39,7 @@ export class Portfolio extends React.Component<PortfolioProps> {
                       websiteLink: links.websiteLink,
                       iosLink: links.appStoreLink,
                     }}
+                    slug={detailPage?.slug || ""}
                   />
                 );
               })}

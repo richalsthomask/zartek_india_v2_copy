@@ -24,6 +24,8 @@ exports.createPages = async ({ graphql, actions }) => {
     `./src/templates/SolutionDetail/MoreSolutionDetailModel/index.tsx`,
   );
 
+  const portfolioDetailTemplate = resolve("./src/templates/PortfolioDetail/index.tsx");
+
   const serviceContext = await graphql(`
     query {
       allContentfulServiceDataModel {
@@ -97,6 +99,16 @@ exports.createPages = async ({ graphql, actions }) => {
   const moreSolutionsWeOfferContext = await graphql(`
     query {
       allContentfulSubSolutionModel {
+        nodes {
+          slug
+        }
+      }
+    }
+  `);
+
+  const portfolioDetailContext = await graphql(`
+    query {
+      allContentfulPortfolioDetailPage {
         nodes {
           slug
         }
@@ -193,6 +205,16 @@ exports.createPages = async ({ graphql, actions }) => {
         slug,
       },
       component: moreSolutionComponentRichTextTemplate,
+    });
+  });
+
+  portfolioDetailContext.data.allContentfulPortfolioDetailPage.nodes.forEach(({ slug }) => {
+    createPage({
+      path: `${slug}`,
+      context: {
+        slug,
+      },
+      component: portfolioDetailTemplate,
     });
   });
 };
