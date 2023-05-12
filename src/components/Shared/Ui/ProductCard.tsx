@@ -122,7 +122,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           </p>
           {slug ? (
             <Link to={slug} className="btn btn-link" role="button">
-              More Details
+              <u>More Details</u>
             </Link>
           ) : null}
         </div>

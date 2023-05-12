@@ -176,10 +176,12 @@ export interface PortfolioDetailPage {
   releasedDate: string;
   content: Content;
   client: Client;
-  team: Team;
+  platforms: Platforms;
   services: Services;
   slug: string;
-
+  technology: {
+    technology: string;
+  };
   seo: SEOType;
 }
 export interface Content {
@@ -190,8 +192,8 @@ export interface Content {
 export interface Client {
   client: string;
 }
-export interface Team {
-  team: string;
+export interface Platforms {
+  platforms: string;
 }
 export interface Services {
   services: string;

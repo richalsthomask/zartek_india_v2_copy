@@ -43,7 +43,10 @@ export const query = graphql`
           metaAuthor
           metaKeywords
         }
-        releasedDate
+        technology {
+          technology
+        }
+
         content {
           raw
           references {
@@ -59,8 +62,8 @@ export const query = graphql`
         client {
           client
         }
-        team {
-          team
+        platforms {
+          platforms
         }
         services {
           services
@@ -87,6 +90,11 @@ const PortfolioDetailPage: React.FC<PortfolioProps> = ({ data, path }) => {
       [BLOCKS.HEADING_5]: (_, children) => <HeadingFive heading={children} />,
       [BLOCKS.HEADING_6]: (_, children) => <HeadingSix heading={children} />,
       [BLOCKS.UL_LIST]: (_, children) => <UnorderedListRT list={children} />,
+      [BLOCKS.QUOTE]: (_, childdren) => (
+        <div className="col-10 mx-auto mt-4">
+          <p className="text-center mt-3">{childdren}</p>
+        </div>
+      ),
       "embedded-entry-block": (node) => (
         <EmbeddedBlockUi
           node={node}
@@ -170,9 +178,9 @@ const PortfolioDetailPage: React.FC<PortfolioProps> = ({ data, path }) => {
                   </h6>
                 </div>
                 <div className="col-6">
-                  <h5>Team</h5>
+                  <h5>Platforms</h5>
                   <h6 style={{ whiteSpace: "pre" }}>
-                    {data.contentfulOursWorks.detailPage.team.team}
+                    {data.contentfulOursWorks.detailPage.platforms.platforms}
                   </h6>
                 </div>
                 <div className="col-6">
@@ -182,12 +190,9 @@ const PortfolioDetailPage: React.FC<PortfolioProps> = ({ data, path }) => {
                   </h6>
                 </div>
                 <div className="col">
-                  <h5>Date</h5>
+                  <h5>Technology</h5>
                   <h6 style={{ whiteSpace: "pre" }}>
-                    {new Date(data.contentfulOursWorks.detailPage.releasedDate).toLocaleDateString(
-                      "en",
-                      { month: "long", day: "2-digit", year: "numeric" },
-                    )}
+                    {data.contentfulOursWorks.detailPage.technology.technology}
                   </h6>
                 </div>
               </div>
