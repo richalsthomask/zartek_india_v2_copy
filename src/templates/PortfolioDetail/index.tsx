@@ -91,7 +91,7 @@ const PortfolioDetailPage: React.FC<PortfolioProps> = ({ data, path }) => {
       [BLOCKS.HEADING_6]: (_, children) => <HeadingSix heading={children} />,
       [BLOCKS.UL_LIST]: (_, children) => <UnorderedListRT list={children} />,
       [BLOCKS.QUOTE]: (_, childdren) => (
-        <div className="col-10 mx-auto mt-4">
+        <div className="col-lg-10 mx-auto mt-4">
           <p className="text-center mt-3">{childdren}</p>
         </div>
       ),
@@ -135,13 +135,13 @@ const PortfolioDetailPage: React.FC<PortfolioProps> = ({ data, path }) => {
                 />
                 <h3 className="mb-0">{data.contentfulOursWorks.title}</h3>
                 <p>{data.contentfulOursWorks.deliverables}</p>
-                <div className="d-flex justify-content-start app-links mt-3">
+                <div className="d-flex justify-content-start app-links mt-3 px-3">
                   {data.contentfulOursWorks.links?.appStoreLink && (
                     <a
                       href={data.contentfulOursWorks.links?.appStoreLink}
                       target="_blank"
                       rel="noreferrer"
-                      className="col-lg-2 col-md-3 col-sm-3 p-0 mx-2"
+                      className="p-0 mx-3"
                     >
                       <LazyImage height={24} width={24} src={"/images/app-store.png"} alt="store" />
                     </a>
@@ -151,7 +151,7 @@ const PortfolioDetailPage: React.FC<PortfolioProps> = ({ data, path }) => {
                       href={data.contentfulOursWorks.links?.playStoreLink}
                       target="_blank"
                       rel="noreferrer"
-                      className="col-lg-2 col-md-3 col-sm-3 p-0 mx-2"
+                      className="p-0 mx-3"
                     >
                       <LazyImage height={24} width={24} src={"/images/playstore.png"} alt="store" />
                     </a>
@@ -161,7 +161,7 @@ const PortfolioDetailPage: React.FC<PortfolioProps> = ({ data, path }) => {
                       href={data.contentfulOursWorks.links?.websiteLink}
                       target="_blank"
                       rel="noreferrer"
-                      className="col-lg-2 col-md-3 col-sm-3 p-0 mx-2"
+                      className="p-0 mx-3"
                     >
                       <LazyImage height={24} width={24} src={"/images/web.png"} alt="store" />
                     </a>
@@ -171,25 +171,25 @@ const PortfolioDetailPage: React.FC<PortfolioProps> = ({ data, path }) => {
             </div>
             <div className="col-xl-8 col-lg-9 col-sm-9 mt-5" id="work-details">
               <div className="row">
-                <div className="col-6">
+                <div className="col-md-6">
                   <h5>Client</h5>
                   <h6 style={{ whiteSpace: "pre" }}>
                     {data.contentfulOursWorks.detailPage.client.client}
                   </h6>
                 </div>
-                <div className="col-6">
+                <div className="col-md-6">
                   <h5>Platforms</h5>
                   <h6 style={{ whiteSpace: "pre" }}>
                     {data.contentfulOursWorks.detailPage.platforms.platforms}
                   </h6>
                 </div>
-                <div className="col-6">
+                <div className="col-md-6">
                   <h5>Services</h5>
                   <h6 style={{ whiteSpace: "pre" }}>
                     {data.contentfulOursWorks.detailPage.services.services}
                   </h6>
                 </div>
-                <div className="col">
+                <div className="col-md-6">
                   <h5>Technology</h5>
                   <h6 style={{ whiteSpace: "pre" }}>
                     {data.contentfulOursWorks.detailPage.technology.technology}
