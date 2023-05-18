@@ -35,7 +35,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     //               rel="noreferrer"
     //               className="col-lg-2 col-md-3 col-sm-3 p-0"
     //             >
-    //               <LazyImage height={24} width={24} src={"/images/app-store.png"} alt="store" />
+    //               <LazyImage height={24} width={24} src={"/images/app-store.svg"} alt="store" />
     //             </a>
     //           )}
     //           {links?.androidLink && (
@@ -45,7 +45,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     //               rel="noreferrer"
     //               className="col-lg-2 col-md-3 col-sm-3 p-0"
     //             >
-    //               <LazyImage height={24} width={24} src={"/images/playstore.png"} alt="store" />
+    //               <LazyImage height={24} width={24} src={"/images/google-play.svg"} alt="store" />
     //             </a>
     //           )}
     //           {links?.websiteLink && (
@@ -55,7 +55,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     //               rel="noreferrer"
     //               className="col-lg-2 col-md-3 col-sm-3 p-0"
     //             >
-    //               <LazyImage height={24} width={24} src={"/images/web.png"} alt="store" />
+    //               <LazyImage height={24} width={24} src={"/images/web.svg"} alt="store" />
     //             </a>
     //           )}
     //         </div>
@@ -86,7 +86,13 @@ export const ProductCard: React.FC<ProductCardProps> = ({
                     rel="noreferrer"
                     className="col-lg-2 col-md-3 col-sm-3 p-0 mx-2"
                   >
-                    <LazyImage height={24} width={24} src={"/images/app-store.png"} alt="store" />
+                    <LazyImage
+                      height={24}
+                      width={24}
+                      src={"/images/app-store.svg"}
+                      alt="store"
+                      classNameExtra="svg-icon"
+                    />
                   </a>
                 )}
                 {links?.androidLink && (
@@ -96,7 +102,13 @@ export const ProductCard: React.FC<ProductCardProps> = ({
                     rel="noreferrer"
                     className="col-lg-2 col-md-3 col-sm-3 p-0 mx-2"
                   >
-                    <LazyImage height={24} width={24} src={"/images/playstore.png"} alt="store" />
+                    <LazyImage
+                      height={24}
+                      width={24}
+                      src={"/images/google-play.svg"}
+                      alt="store"
+                      classNameExtra="svg-icon"
+                    />
                   </a>
                 )}
                 {links?.websiteLink && (
@@ -106,7 +118,13 @@ export const ProductCard: React.FC<ProductCardProps> = ({
                     rel="noreferrer"
                     className="col-lg-2 col-md-3 col-sm-3 p-0 mx-2"
                   >
-                    <LazyImage height={24} width={24} src={"/images/web.png"} alt="store" />
+                    <LazyImage
+                      height={24}
+                      width={24}
+                      src={"/images/web.svg"}
+                      alt="store"
+                      classNameExtra="svg-icon"
+                    />
                   </a>
                 )}
               </div>
@@ -121,8 +139,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             {productDescription}
           </p>
           {slug ? (
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
             <Link to={slug} className="btn btn-link" role="button">
-              <u>More Details</u>
+              <u>Success Story</u>
             </Link>
           ) : null}
         </div>

@@ -133,9 +133,9 @@ const PortfolioDetailPage: React.FC<PortfolioProps> = ({ data, path }) => {
                   alt="..."
                   className="img-fluid logo"
                 />
-                <h3 className="mb-0">{data.contentfulOursWorks.title}</h3>
+                <h3 className="mb-0 mt-1">{data.contentfulOursWorks.title}</h3>
                 <p>{data.contentfulOursWorks.deliverables}</p>
-                <div className="d-flex justify-content-start app-links mt-3 px-3">
+                <div className="d-flex justify-content-start app-links mt-2 px-1">
                   {data.contentfulOursWorks.links?.appStoreLink && (
                     <a
                       href={data.contentfulOursWorks.links?.appStoreLink}
@@ -143,7 +143,13 @@ const PortfolioDetailPage: React.FC<PortfolioProps> = ({ data, path }) => {
                       rel="noreferrer"
                       className="p-0 mx-3"
                     >
-                      <LazyImage height={24} width={24} src={"/images/app-store.png"} alt="store" />
+                      <LazyImage
+                        height={24}
+                        width={24}
+                        src={"/images/app-store.svg"}
+                        alt="store"
+                        classNameExtra="svg-icon"
+                      />
                     </a>
                   )}
                   {data.contentfulOursWorks.links?.playStoreLink && (
@@ -153,7 +159,13 @@ const PortfolioDetailPage: React.FC<PortfolioProps> = ({ data, path }) => {
                       rel="noreferrer"
                       className="p-0 mx-3"
                     >
-                      <LazyImage height={24} width={24} src={"/images/playstore.png"} alt="store" />
+                      <LazyImage
+                        height={24}
+                        width={24}
+                        src={"/images/google-play.svg"}
+                        alt="store"
+                        classNameExtra="svg-icon"
+                      />
                     </a>
                   )}
                   {data.contentfulOursWorks.links?.websiteLink && (
@@ -163,7 +175,13 @@ const PortfolioDetailPage: React.FC<PortfolioProps> = ({ data, path }) => {
                       rel="noreferrer"
                       className="p-0 mx-3"
                     >
-                      <LazyImage height={24} width={24} src={"/images/web.png"} alt="store" />
+                      <LazyImage
+                        height={24}
+                        width={24}
+                        src={"/images/web.svg"}
+                        alt="store"
+                        classNameExtra="svg-icon"
+                      />
                     </a>
                   )}
                 </div>
