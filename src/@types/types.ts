@@ -1,4 +1,5 @@
 import { viewPortOptions } from "@/components/Helpers/LazyImage";
+import { SEOType } from "@/components/SEO";
 
 export interface WelcomeAreaPropType {
   applets: AppletType[];
@@ -85,6 +86,9 @@ export interface OurWorkType {
     playStoreLink?: string;
   };
   icon: FileType;
+  detailPage?: {
+    slug: string;
+  };
 }
 
 export interface ServiceModelType {
@@ -154,3 +158,43 @@ export type onBoardedClient = {
     };
   };
 };
+
+export interface PortfolioDetailEntity {
+  deliverables: string;
+  icon: FileType;
+  title: string;
+  links: Links;
+  detailPage: PortfolioDetailPage;
+}
+
+export interface Links {
+  websiteLink: string;
+  appStoreLink: string;
+  playStoreLink: string;
+}
+export interface PortfolioDetailPage {
+  releasedDate: string;
+  content: Content;
+  client: Client;
+  platforms: Platforms;
+  services: Services;
+  slug: string;
+  technology: {
+    technology: string;
+  };
+  seo: SEOType;
+}
+export interface Content {
+  raw: string;
+  references?: any;
+}
+
+export interface Client {
+  client: string;
+}
+export interface Platforms {
+  platforms: string;
+}
+export interface Services {
+  services: string;
+}

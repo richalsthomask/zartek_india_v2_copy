@@ -1,5 +1,5 @@
 import { OurWorkType } from "@/@types/types";
-import React, { Component } from "react";
+import React from "react";
 import { Layout } from "../Layout";
 import SEO, { SEOType } from "../SEO";
 import { Breadcrumb } from "../Shared/Breadcrumb";
@@ -10,7 +10,7 @@ interface PortfolioProps {
   seo: SEOType;
 }
 
-export class Portfolio extends Component<PortfolioProps> {
+export class Portfolio extends React.Component<PortfolioProps> {
   render(): JSX.Element {
     const { works, seo } = this.props;
 
@@ -26,8 +26,8 @@ export class Portfolio extends Component<PortfolioProps> {
         />
         <div className="page-bottom pbottom-70">
           <div className="container">
-            <div className="row">
-              {works.map(({ id, description, links, title, icon }) => {
+            <div className="row" id="portfolio-content">
+              {works.map(({ id, description, links, title, icon, detailPage }) => {
                 return (
                   <ProductCard
                     imageSrc={icon.file.url}
@@ -39,6 +39,7 @@ export class Portfolio extends Component<PortfolioProps> {
                       websiteLink: links.websiteLink,
                       iosLink: links.appStoreLink,
                     }}
+                    slug={detailPage?.slug || ""}
                   />
                 );
               })}
