@@ -29,10 +29,10 @@ export default class HireDedicatedDevelopers extends React.Component<any> {
       <Layout footerContent={footerContent?.raw}>
         <SEO contentfulSeo={seo} />
         <Breadcrumb
-          currentPageTitle="Hire Dedicated Developers"
+          currentPageTitle="Hire Dedicated Developers in India"
           routes={[
             { path: "/", title: "Home" },
-            { path: "/hire-dedicated-developer/", title: "Hire Dedicated Developers in India" },
+            { path: "/hire-dedicated-developer/", title: "Hire Dedicated Developers" },
           ]}
         />
 
