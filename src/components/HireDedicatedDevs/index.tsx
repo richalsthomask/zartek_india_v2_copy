@@ -32,7 +32,7 @@ export default class HireDedicatedDevelopers extends React.Component<any> {
           currentPageTitle="Hire Dedicated Developers"
           routes={[
             { path: "/", title: "Home" },
-            { path: "/hire-dedicated-developer/", title: "Hire Dedicated Developers" },
+            { path: "/hire-dedicated-developer/", title: "Hire Dedicated Developers in India" },
           ]}
         />
 
