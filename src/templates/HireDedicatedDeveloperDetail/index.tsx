@@ -17,6 +17,7 @@ import {
 } from "@/components/Shared/RichtextUi/Headings";
 import { UnorderedListRT } from "@/components/Shared/RichtextUi/UnOrderedList";
 import TopClients from "@/components/Shared/TopClients";
+import { FrequentlyAskedQuestions } from "@/components/Shared/Ui/FAQs";
 import { Options } from "@contentful/rich-text-react-renderer";
 import { BLOCKS } from "@contentful/rich-text-types";
 import { Link, PageProps, graphql } from "gatsby";
@@ -46,7 +47,6 @@ export const query = graphql`
         }
         title
       }
-
       contentSection {
         title
         position
@@ -60,7 +60,6 @@ export const query = graphql`
         }
         learnMoreLink
       }
-
       testimonials {
         id
         userName
@@ -75,8 +74,13 @@ export const query = graphql`
         }
         rating
       }
-
-      # Footer Content
+      faQs {
+        id
+        question
+        answer {
+          answer
+        }
+      }
       footerContent {
         raw
       }
@@ -96,6 +100,7 @@ interface HireDedicatedDeveloperDetailProps extends PageProps {
       contentSection: any[];
       testimonials: any[];
       footerContent?: { raw: any };
+      faQs: any;
     };
   };
 }
@@ -132,6 +137,7 @@ export default class HireDedicatedDeveloperDetail extends React.Component<HireDe
           contentSection,
           testimonials,
           footerContent,
+          faQs,
         },
       },
     } = this.props;
@@ -181,6 +187,7 @@ export default class HireDedicatedDeveloperDetail extends React.Component<HireDe
         <HowToHire />
         <GetStarted />
         <AllClientsList />
+        {faQs?.length ? <FrequentlyAskedQuestions faQs={faQs} /> : null}
       </Layout>
     );
   }
