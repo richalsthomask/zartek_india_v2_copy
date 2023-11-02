@@ -1,7 +1,7 @@
 import FooterContentUi from "@/components/Helpers/FooterContent";
 import { useBaseURL } from "@/utils/hooks/useBaseUrl";
 import { Link } from "gatsby";
-import React, { FC } from "react";
+import React from "react";
 import { BrandLogo } from "../Header/Brandlogo";
 import { HelpfulLinks } from "./HelpfulLinks";
 import { Locations } from "./Locations";
@@ -10,7 +10,7 @@ interface FooterComponentProps {
   content?: any;
 }
 
-export const FooterComponent: FC<FooterComponentProps> = ({ content }) => {
+export const FooterComponent: React.FC<FooterComponentProps> = ({ content }) => {
   const url = useBaseURL();
 
   return (
@@ -85,6 +85,19 @@ export const FooterComponent: FC<FooterComponentProps> = ({ content }) => {
           </div>
         </div>
       </div>
+      <iframe
+        src="https://embeds.beehiiv.com/65b561d7-975b-4e00-b114-b7c0834d5c36"
+        data-test-id="beehiiv-embed"
+        width="100%"
+        title="beehiiv"
+        height="320"
+        style={{
+          borderRadius: "4px",
+          border: "2px solid #e5e7eb",
+          margin: "0",
+          backgroundColor: "transparent",
+        }}
+      ></iframe>
     </footer>
   );
 };
