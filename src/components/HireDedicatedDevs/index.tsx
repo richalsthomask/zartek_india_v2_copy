@@ -4,6 +4,7 @@ import SEO from "../SEO";
 import AllClientsList from "../Shared/AllClients";
 import { Breadcrumb } from "../Shared/Breadcrumb";
 import TopClients from "../Shared/TopClients";
+import { FrequentlyAskedQuestions } from "../Shared/Ui/FAQs";
 import DedicatedHireServices from "./dedicated-hire-service";
 import GetStarted from "./get-started";
 import HowToHire from "./how-to";
@@ -23,6 +24,7 @@ export default class HireDedicatedDevelopers extends React.Component<any> {
       contentSectionBottom,
       list,
       footerContent,
+      faQs,
     } = this.props;
 
     return (
@@ -47,6 +49,8 @@ export default class HireDedicatedDevelopers extends React.Component<any> {
           <DedicatedHireServices data={list} />
           <AllClientsList />
         </div>
+
+        {faQs?.length ? <FrequentlyAskedQuestions faQs={faQs} /> : null}
       </Layout>
     );
   }
