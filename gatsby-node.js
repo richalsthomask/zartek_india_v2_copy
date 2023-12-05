@@ -14,9 +14,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const serviceComponentTemplate = resolve(`./src/templates/ServiceDetail/index.tsx`);
   const trainingComponentTemplate = resolve(`./src/templates/TrainingDetail/index.tsx`);
   const blogComponentTemplate = resolve(`./src/templates/BlogDetail/index.tsx`);
-  const hireDedicatedDeveloperTemplate = resolve(
-    "./src/templates/HireDedicatedDeveloperDetail/index.tsx",
-  );
+  const hireDedicatedDeveloperTemplate = resolve("./src/templates/DedicatedDevs/index.tsx");
   const solutionComponentTemplate = resolve(`./src/templates/SolutionDetail/index.tsx`);
   const customePageComponentTemplate = resolve(`./src/templates/Custom/index.tsx`);
   const customePageComponentRichTextTemplate = resolve(`./src/templates/Custom/RichTextView.tsx`);

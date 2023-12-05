@@ -32,7 +32,7 @@ export const ServiceInfoCard: FC<ServiceInfoCardProps> = ({
     );
   };
 
-  if (routerLink.includes("http")) {
+  if (routerLink?.includes("http")) {
     return (
       <a href={routerLink} className={"home-services-item " + cardAdditionalClass}>
         <InnerContent />
