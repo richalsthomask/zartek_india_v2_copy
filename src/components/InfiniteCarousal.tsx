@@ -55,7 +55,7 @@ export default function InfiniteCarousal({
             style={{
               transform: `translateX(${scrollX}px)`,
               transitionDuration: resetAnimation ? "0ms" : "300ms",
-              gap: "5px",
+              // gap: "5px",
               minWidth: "300px",
               height: "120px",
               border: "2px solid #f4f8fb",
@@ -65,8 +65,8 @@ export default function InfiniteCarousal({
             className={`body bg-white d-flex flex-column align-items-center justify-content-center p-3`}
             key={index}
           >
-            <img src={item.image} alt={item.label} style={{ width: "100px" }} />
-            {item.label}
+            <img src={item.image} alt={item.label} style={{ width: "140px" }} />
+            {/* {item.label} */}
           </div>
         );
       })}
