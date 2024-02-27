@@ -16,7 +16,7 @@
     "clean": "gatsby clean",
     "local-build": "env-cmd -f .env gatsby build",
     "type-check": "tsc",
-    "lint": "eslint -c './.eslintrc' --fix './src/**/*.ts'",
+    "lint": "eslint -c .eslintrc --fix ./src/**/*.ts",
     "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\" --write",
     "postinstall": "husky install"
   },
