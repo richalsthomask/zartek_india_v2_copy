@@ -17,7 +17,7 @@ export default function InfiniteCarousalComponent({
         </div>
       </div>
       <div
-        style={{ maxWidth: "1300px", gap: "40px" }}
+        style={{ maxWidth: "1300px", gap: "30px" }}
         className="px-sm-4 px-lg-5 d-flex flex-column mx-auto"
       >
         <InfiniteCarousal items={partners.slice(0, 5)} className={className} />

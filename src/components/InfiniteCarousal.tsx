@@ -43,7 +43,7 @@ export default function InfiniteCarousal({
     <section
       style={{ gap: "30px", overflow: "hidden" }}
       className={
-        "py-2 w-100 mx-auto d-flex flex-row align-items-center " +
+        "py-3 w-100 mx-auto d-flex flex-row align-items-center " +
         (direction === "LEFT" ? "justify-content-start" : "justify-content-end") +
         " " +
         className
@@ -58,11 +58,11 @@ export default function InfiniteCarousal({
               gap: "5px",
               minWidth: "300px",
               height: "120px",
-              border: "1px solid #f4f8fb",
+              border: "2px solid #f4f8fb",
               borderRadius: "20px",
-              boxShadow: "0 4px 8px 0 #f4f8fb",
+              boxShadow: "0 6px 12px 1px #f4f8fb",
             }}
-            className={`body bg-white shadow-lg d-flex flex-column align-items-center justify-content-center p-3`}
+            className={`body bg-white d-flex flex-column align-items-center justify-content-center p-3`}
             key={index}
           >
             <img src={item.image} alt={item.label} style={{ width: "100px" }} />
