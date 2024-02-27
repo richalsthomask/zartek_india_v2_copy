@@ -16,6 +16,7 @@ import SEO, { SEOType } from "../SEO";
 import { WelcomeArea } from "../Shared/Ui/WelcomeArea";
 import OnBoardedClients from "./Clients";
 import Locations from "./Locations";
+import InfiniteCarousalComponent from "./InfiniteCarousalComponent";
 
 const ServicesOffered = loadable(() =>
   import("@/components/Shared/Ui/ServicesOffered").then((c) => c.ServicesOffered),
@@ -72,6 +73,7 @@ export default class HomePage extends React.Component<HomePageProps> {
         <Features features={featureArea} />
         <Testimonials testimonials={testimonials} />
         <Stats stats={statsContainer} />
+        <InfiniteCarousalComponent />
         <FrequentlyAskedQuestions faQs={faQs} />
         <Locations />
         <LatestBlogs />

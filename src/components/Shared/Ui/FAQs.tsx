@@ -8,7 +8,7 @@ interface FrequentlyAskedQuestionsProps {
 
 export const FrequentlyAskedQuestions: FC<FrequentlyAskedQuestionsProps> = ({ faQs }) => {
   return (
-    <section className="section background  faq">
+    <section className="section background faq">
       <div className="container">
         <div className="row">
           <div className="col-lg-12 col-md-12 col-sm-12">
