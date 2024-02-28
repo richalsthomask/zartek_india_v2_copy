@@ -5,7 +5,7 @@ import InfiniteCarousal from "../InfiniteCarousal";
 export default function InfiniteCarousalComponent({
   className,
 }: {
-  className: string;
+  className?: string;
 }): JSX.Element {
   return (
     <div className="section pbottom-70">
