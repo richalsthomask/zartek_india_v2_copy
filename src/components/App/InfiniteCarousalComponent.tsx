@@ -1,30 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { partners } from "@/data/partners";
 
-export default function InfiniteCarousalComponent({
-  className,
-}: {
-  className?: string;
-}): JSX.Element {
-  return (
-    <div className="section">
-      <div className="center-heading">
-        <h3 className="section-title">Partners</h3>
-      </div>
-      <div style={{ gap: "30px" }} className="px-sm-4 px-lg-5 d-flex flex-column mx-auto">
-        <InfiniteCarousal items={partners.slice(0, 5)} className={className} />
-        <InfiniteCarousal items={partners.slice(5, 11)} className={className} direction={"RIGHT"} />
-      </div>
-    </div>
-  );
-}
-
-interface InfiniteCarousalProps {
-  items: { label: string; image: string }[];
-  className?: string;
-  direction?: "LEFT" | "RIGHT";
-}
-
 function InfiniteCarousal({
   items,
   className,
@@ -32,17 +8,17 @@ function InfiniteCarousal({
 }: InfiniteCarousalProps): JSX.Element {
   const [scrollX, setScrollX] = useState(0);
   const [resetAnimation, setResetAnimation] = useState(false);
-  const [width, setWidth] = useState(window?.innerWidth);
+  const [width, setWidth] = useState(0);
   const cardWidth = width > 768 ? 300 : 200;
   useEffect(() => {
     const handleResize = () => {
       setWidth(window.innerWidth);
     };
 
-    window.addEventListener("resize", handleResize);
+    window?.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window?.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -104,4 +80,28 @@ function InfiniteCarousal({
       })}
     </section>
   );
+}
+
+export default function InfiniteCarousalComponent({
+  className,
+}: {
+  className?: string;
+}): JSX.Element {
+  return (
+    <div className="section">
+      <div className="center-heading">
+        <h3 className="section-title">Partners</h3>
+      </div>
+      <div style={{ gap: "30px" }} className="px-sm-4 px-lg-5 d-flex flex-column mx-auto">
+        <InfiniteCarousal items={partners.slice(0, 5)} className={className} />
+        <InfiniteCarousal items={partners.slice(5, 11)} className={className} direction={"RIGHT"} />
+      </div>
+    </div>
+  );
+}
+
+interface InfiniteCarousalProps {
+  items: { label: string; image: string }[];
+  className?: string;
+  direction?: "LEFT" | "RIGHT";
 }
