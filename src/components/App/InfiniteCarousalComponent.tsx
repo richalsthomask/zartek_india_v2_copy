@@ -44,12 +44,12 @@ function InfiniteCarousal({
       setScrollX(direction === "LEFT" ? 5 : -5);
       setTimeout(() => {
         setResetAnimation(false);
-      }, 2);
+      }, 100);
     }
   }, [resetAnimation, direction]);
   return (
     <section
-      style={{ gap: "30px", overflow: "hidden" }}
+      style={{ gap: "30px", overflow: "hidden", maxWidth: "1700px" }}
       className={
         "py-3 w-100 mx-auto d-flex flex-row align-items-center " +
         (direction === "LEFT" ? "justify-content-start" : "justify-content-end") +
@@ -57,7 +57,7 @@ function InfiniteCarousal({
         className
       }
     >
-      {[...items, ...items].map((item, index) => {
+      {[...items, ...items, ...items].map((item, index) => {
         return (
           <div
             style={{
@@ -92,7 +92,7 @@ export default function InfiniteCarousalComponent({
       <div className="center-heading">
         <h3 className="section-title">Partners</h3>
       </div>
-      <div style={{ gap: "30px" }} className="px-sm-4 px-lg-5 d-flex flex-column mx-auto">
+      <div style={{ gap: "30px" }} className="d-flex flex-column mx-auto">
         <InfiniteCarousal items={partners.slice(0, 5)} className={className} />
         <InfiniteCarousal items={partners.slice(5, 11)} className={className} direction={"RIGHT"} />
       </div>
