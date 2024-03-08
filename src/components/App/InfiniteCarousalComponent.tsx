@@ -94,7 +94,7 @@ export default function InfiniteCarousalComponent({
       </div>
       <div style={{ gap: "30px" }} className="d-flex flex-column mx-auto">
         <InfiniteCarousal items={partners.slice(0, 6)} className={className} />
-        <InfiniteCarousal items={partners.slice(5, 12)} className={className} direction={"RIGHT"} />
+        <InfiniteCarousal items={partners.slice(6, 12)} className={className} direction={"RIGHT"} />
       </div>
     </div>
   );
