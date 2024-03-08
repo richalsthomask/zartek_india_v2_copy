@@ -10,4 +10,5 @@ export const partners = [
   { label: "Intercom", image: "/partners/intercom-logo.png" },
   { label: "Collect.chat", image: "/partners/collectchat-logo.png" },
   { label: "Azure Microsoft", image: "/partners/microsoftazure-logo.png" },
+  { label: "RevenueCat", image: "/partners/revenuecat-logo.png" },
 ];
