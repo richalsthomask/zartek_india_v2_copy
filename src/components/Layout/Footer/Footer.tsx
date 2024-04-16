@@ -45,8 +45,8 @@ export const FooterComponent: React.FC<FooterComponentProps> = ({ content }) => 
               </p>
               <p>
                 Phone:
-                <a id="footer-phone-click" href="tel:+91 7736226886">
-                  (+91) 7736226886
+                <a id="footer-phone-click" href="tel:+91 8069647545">
+                  (+91) 8069647545
                 </a>
               </p>
               <p>

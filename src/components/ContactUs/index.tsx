@@ -58,7 +58,7 @@ const ContactUs: React.FC<ContactUsProps> = (props) => {
                     <i className="fa fa-phone"></i>
                     <div className="txt">
                       <span>
-                        <a href="tel:+91 9176107417">+91 9176107417</a>
+                        <a href="tel:+91 8069647545">+91 8069647545</a>
                       </span>
                     </div>
                   </div>
