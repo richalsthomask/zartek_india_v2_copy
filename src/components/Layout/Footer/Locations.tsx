@@ -29,6 +29,12 @@ export const Locations: FC = () => {
         </Link>
       </li>
       <li>
+        <Link to="/trivandrum/">
+          <i className="fa fa-angle-right"></i>
+          <span>Trivandrum</span>
+        </Link>
+      </li>
+      <li>
         <a href="https://www.zartek.ca" rel="noreferrer" target="_blank">
           <i className="fa fa-angle-right"></i>
           <span>Canada</span>
