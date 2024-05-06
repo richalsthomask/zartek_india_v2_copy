@@ -17,6 +17,12 @@ export const Locations: FC = () => {
         </Link>
       </li>
       <li>
+        <Link to="/chennai/">
+          <i className="fa fa-angle-right"></i>
+          <span>Chennai</span>
+        </Link>
+      </li>
+      <li>
         <Link to="/hyderabad/">
           <i className="fa fa-angle-right"></i>
           <span>Hyderabad</span>
