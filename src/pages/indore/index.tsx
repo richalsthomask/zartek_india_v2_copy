@@ -15,6 +15,7 @@ const Home: FC<PageProps> = () => {
                 snippet
               }
             }
+
             # SEO
             seo {
               metaTitle
@@ -23,6 +24,7 @@ const Home: FC<PageProps> = () => {
               metaAuthor
               metaKeywords
             }
+
             #     Welcome banner
             welcomeArea {
               backgroundImage {
@@ -120,6 +122,16 @@ const Home: FC<PageProps> = () => {
               }
             }
 
+            onBoardedClients {
+              id
+              clientName
+              clientBrandLogo {
+                file {
+                  url
+                }
+              }
+            }
+
             #FAQS
 
             faQs {
@@ -128,6 +140,10 @@ const Home: FC<PageProps> = () => {
               answer {
                 answer
               }
+            }
+
+            footerContent {
+              raw
             }
           }
         }
