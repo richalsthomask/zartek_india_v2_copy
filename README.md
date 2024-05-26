@@ -19,10 +19,10 @@
 
 <hr/>
 
-- <img src="https://emojis.slackmojis.com/emojis/images/1479745458/1383/typescript.png?1479745458" width=16 /> **Typescript** — Type Safe
+- <img src="https://emojis.slackmojis.com/emojis/images/1479745458/1383/typescript.png?1479745458" alt="typescript" width=16 /> **Typescript** — Type Safe
 - 📏 **ESLint** — Pluggable JavaScript linter
 - 💖 **Prettier** - Opinionated Code Formatter
-- <img src="https://pbs.twimg.com/profile_images/549561819010854912/AJonc96g.png" width="16"> **Husky** — Use git hooks with ease
+- <img src="https://pbs.twimg.com/profile_images/549561819010854912/AJonc96g.png" alt="husky" width="16"> **Husky** — Use git hooks with ease
 - 📄 **Commitizen** - Conventional commit messages CLI
 - 🚓 **Commitlint** - Lint commit messages
 - 🖌 **Renovate** - Dependency update tool
