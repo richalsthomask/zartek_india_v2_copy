@@ -47,16 +47,21 @@ function splitArrayInHalf(
     link: string;
     target?: string;
   }[],
+  url: string,
 ) {
   //checking if it is same page currently in use
-  const tempArray = array?.filter((val) => val.link !== window.location.pathname);
+  const tempArray = array?.filter((val) => val.link !== url);
   const midPoint = Math.ceil(tempArray.length / 2);
   const firstHalf = tempArray.slice(0, midPoint);
   const secondHalf = tempArray.slice(midPoint);
   return [firstHalf, secondHalf];
 }
 
-const Locations: React.FC = () => {
+interface LocationsProps {
+  url: string;
+}
+
+const Locations: React.FC<LocationsProps> = ({ url }) => {
   return (
     <div id="location-bg">
       <div className="container z-index">
@@ -69,7 +74,7 @@ const Locations: React.FC = () => {
           <div className="border" />
         </div>
         <div className="row align-items-start mt-5">
-          {splitArrayInHalf(locations).map((locationArray, index) => (
+          {splitArrayInHalf(locations, url).map((locationArray, index) => (
             <div key={index} className="col-xl-6 col-sm-6 col-md-6 col-lg-6 col-12 location">
               {locationArray?.map((location, locationIndex: number) => {
                 return location.target ? (
@@ -80,7 +85,7 @@ const Locations: React.FC = () => {
                     rel="noreferrer"
                     className="text-white"
                   >
-                    <p>
+                    <p className="row justify-items-center">
                       <span className="location-icon">
                         <img src="/images/location-icon.svg" style={{ width: "14px" }} alt="..." />
                       </span>
@@ -90,8 +95,8 @@ const Locations: React.FC = () => {
                     </p>
                   </a>
                 ) : (
-                  <Link to={location.link} className="text-white" key={locationIndex}>
-                    <p>
+                  <Link key={locationIndex} to={location.link} className="text-white">
+                    <p className="row justify-items-center">
                       <span className="location-icon">
                         <img src="/images/location-icon.svg" style={{ width: "14px" }} alt="..." />
                       </span>

@@ -136,7 +136,9 @@ const Home: FC<PageProps> = () => {
           }
         }
       `}
-      render={({ contentfulHomePage }) => <App contentfulHomePage={contentfulHomePage} />}
+      render={({ contentfulHomePage }) => (
+        <App contentfulHomePage={contentfulHomePage} url="/pune/" />
+      )}
     />
   );
 };

@@ -32,6 +32,7 @@ const Stats = loadable(() => import("./Stats").then((c) => c.Stats));
 const Testimonials = loadable(() => import("./Testimonials").then((c) => c.Testimonials));
 
 interface HomePageProps {
+  url: string;
   contentfulHomePage: {
     seo: SEOType;
     welcomeArea: WelcomeAreaPropType;
@@ -74,7 +75,7 @@ export default class HomePage extends React.Component<HomePageProps> {
         <Stats stats={statsContainer} />
         <InfiniteCarousalComponent />
         <FrequentlyAskedQuestions faQs={faQs} />
-        <Locations />
+        <Locations url={this.props.url} />
         <LatestBlogs />
       </Layout>
     );
