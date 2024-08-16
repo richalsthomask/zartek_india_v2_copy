@@ -66,7 +66,6 @@ export default class HomePage extends React.Component<HomePageProps> {
         <StructuredDataSnippetTag snippets={structuredDataSnippets} />
 
         <SEO contentfulSeo={seo} />
-
         <WelcomeArea welcomeArea={welcomeArea} />
         <ServicesOffered serviceProp={serviceArea} btnName={"SERVICES"} />
         {onBoardedClients ? <OnBoardedClients clients={onBoardedClients} /> : ""}
