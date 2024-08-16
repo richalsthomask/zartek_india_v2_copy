@@ -41,7 +41,13 @@ const locations = [
     target: "_blank",
   },
 ];
-function splitArrayInHalf(array) {
+function splitArrayInHalf(
+  array: {
+    label: string;
+    link: string;
+    target?: string;
+  }[],
+) {
   //checking if it is same page currently in use
   const tempArray = array?.filter((val) => val.link !== window.location.pathname);
   const midPoint = Math.ceil(tempArray.length / 2);
