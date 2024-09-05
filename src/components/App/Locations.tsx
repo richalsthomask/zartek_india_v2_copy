@@ -77,25 +77,14 @@ const Locations: React.FC<LocationsProps> = ({ url }) => {
           {splitArrayInHalf(locations, url).map((locationArray, index) => (
             <div key={index} className="col-xl-6 col-sm-6 col-md-6 col-lg-6 col-12 location">
               {locationArray?.map((location, locationIndex: number) => {
-                return location.target ? (
-                  <a
+                return (
+                  <Link
                     key={locationIndex}
-                    href={location.link}
+                    to={location.link}
                     target={location.target}
                     rel="noreferrer"
                     className="text-white"
                   >
-                    <p className="row justify-items-center">
-                      <span className="location-icon">
-                        <img src="/images/location-icon.svg" style={{ width: "14px" }} alt="..." />
-                      </span>
-                      <span>
-                        Mobile App Development Company in <strong>{location.label}</strong>
-                      </span>
-                    </p>
-                  </a>
-                ) : (
-                  <Link key={locationIndex} to={location.link} className="text-white">
                     <p className="row justify-items-center">
                       <span className="location-icon">
                         <img src="/images/location-icon.svg" style={{ width: "14px" }} alt="..." />

@@ -76,6 +76,7 @@ module.exports = {
       resolve: "gatsby-plugin-robots-txt",
       options: {
         sitemap: "https://www.zartek.in/sitemap.xml",
+        host: "https://www.zartek.in",
         policy: [{ userAgent: "*", Disallow: "/404" }],
       },
     },

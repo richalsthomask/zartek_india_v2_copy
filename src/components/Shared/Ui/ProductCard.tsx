@@ -80,8 +80,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             <div className="col">
               <div className="d-flex justify-content-end app-links">
                 {links?.iosLink && (
-                  <a
-                    href={links?.iosLink}
+                  <Link
+                    to={links?.iosLink}
                     target="_blank"
                     rel="noreferrer"
                     className="col-lg-2 col-md-3 col-sm-3 p-0 mx-2"
@@ -93,11 +93,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({
                       alt="store"
                       classNameExtra="svg-icon"
                     />
-                  </a>
+                  </Link>
                 )}
                 {links?.androidLink && (
-                  <a
-                    href={links?.androidLink}
+                  <Link
+                    to={links?.androidLink}
                     target="_blank"
                     rel="noreferrer"
                     className="col-lg-2 col-md-3 col-sm-3 p-0 mx-2"
@@ -109,11 +109,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({
                       alt="store"
                       classNameExtra="svg-icon"
                     />
-                  </a>
+                  </Link>
                 )}
                 {links?.websiteLink && (
-                  <a
-                    href={links?.websiteLink}
+                  <Link
+                    to={links?.websiteLink}
                     target="_blank"
                     rel="noreferrer"
                     className="col-lg-2 col-md-3 col-sm-3 p-0 mx-2"
@@ -125,7 +125,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
                       alt="store"
                       classNameExtra="svg-icon"
                     />
-                  </a>
+                  </Link>
                 )}
               </div>
             </div>

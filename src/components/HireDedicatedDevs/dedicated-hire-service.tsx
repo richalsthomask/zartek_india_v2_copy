@@ -40,7 +40,7 @@ const DedicatedHireServices: React.FC<DedicatedHireServicesProps> = ({ data }) =
                     className="btn btn-link ps-0 learn-more-btn"
                     role="button"
                   >
-                    <a>Learn more</a>
+                    <span>Learn more</span>
                   </Link>
                 </div>
               </div>

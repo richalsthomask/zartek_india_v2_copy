@@ -1,3 +1,4 @@
+import { Link } from "gatsby";
 import React from "react";
 
 const MoreServicesOffered: React.FC<{
@@ -19,14 +20,14 @@ const MoreServicesOffered: React.FC<{
           {serviceOption.map((option) => {
             return (
               <div className="col-xl-6 col-sm-6 col-md-6 col-lg-6 col-12 location" key={option.id}>
-                <a href={option.link} target="_blank" rel="noreferrer" className="text-white">
+                <Link to={option.link} target="_blank" rel="noreferrer" className="text-white">
                   <p>
                     <span className="location-icon">
                       <img src="/images/location-icon.svg" style={{ width: "14px" }} alt="..." />
                     </span>
                     <span>{option.title}</span>
                   </p>
-                </a>
+                </Link>
               </div>
             );
           })}

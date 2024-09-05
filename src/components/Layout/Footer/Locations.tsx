@@ -47,16 +47,16 @@ export const Locations: FC = () => {
         </Link>
       </li>
       <li>
-        <a href="https://www.zartek.ca" rel="noreferrer" target="_blank">
+        <Link to="https://www.zartek.ca" rel="noreferrer" target="_blank">
           <i className="fa fa-angle-right"></i>
           <span>Canada</span>
-        </a>
+        </Link>
       </li>
       <li>
-        <a rel="noreferrer" href="https://www.zartek.qa" target="_blank">
+        <Link rel="noreferrer" to="https://www.zartek.qa" target="_blank">
           <i className="fa fa-angle-right"></i>
           <span>Qatar</span>
-        </a>
+        </Link>
       </li>
     </ul>
   );

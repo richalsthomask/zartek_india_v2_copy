@@ -16,7 +16,7 @@ import {
 import { UnorderedListRT } from "@/components/Shared/RichtextUi/UnOrderedList";
 import { Options, documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS } from "@contentful/rich-text-types";
-import { PageProps, graphql } from "gatsby";
+import { Link, PageProps, graphql } from "gatsby";
 import React from "react";
 
 export const query = graphql`
@@ -137,8 +137,8 @@ const PortfolioDetailPage: React.FC<PortfolioProps> = ({ data, path }) => {
                 <p>{data.contentfulOursWorks.deliverables}</p>
                 <div className="d-flex justify-content-start app-links mt-2 px-1">
                   {data.contentfulOursWorks.links?.appStoreLink && (
-                    <a
-                      href={data.contentfulOursWorks.links?.appStoreLink}
+                    <Link
+                      to={data.contentfulOursWorks.links?.appStoreLink}
                       target="_blank"
                       rel="noreferrer"
                       className="p-0 mx-3"
@@ -150,11 +150,11 @@ const PortfolioDetailPage: React.FC<PortfolioProps> = ({ data, path }) => {
                         alt="store"
                         classNameExtra="svg-icon"
                       />
-                    </a>
+                    </Link>
                   )}
                   {data.contentfulOursWorks.links?.playStoreLink && (
-                    <a
-                      href={data.contentfulOursWorks.links?.playStoreLink}
+                    <Link
+                      to={data.contentfulOursWorks.links?.playStoreLink}
                       target="_blank"
                       rel="noreferrer"
                       className="p-0 mx-3"
@@ -166,11 +166,11 @@ const PortfolioDetailPage: React.FC<PortfolioProps> = ({ data, path }) => {
                         alt="store"
                         classNameExtra="svg-icon"
                       />
-                    </a>
+                    </Link>
                   )}
                   {data.contentfulOursWorks.links?.websiteLink && (
-                    <a
-                      href={data.contentfulOursWorks.links?.websiteLink}
+                    <Link
+                      to={data.contentfulOursWorks.links?.websiteLink}
                       target="_blank"
                       rel="noreferrer"
                       className="p-0 mx-3"
@@ -182,7 +182,7 @@ const PortfolioDetailPage: React.FC<PortfolioProps> = ({ data, path }) => {
                         alt="store"
                         classNameExtra="svg-icon"
                       />
-                    </a>
+                    </Link>
                   )}
                 </div>
               </div>

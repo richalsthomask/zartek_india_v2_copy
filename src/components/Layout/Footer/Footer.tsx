@@ -57,9 +57,9 @@ export const FooterComponent: React.FC<FooterComponentProps> = ({ content }) => 
               </p>
               <p>
                 <span>Follow Us On: </span>
-                <a
+                <Link
                   target="_blank"
-                  href="https://www.linkedin.com/company/zartek-tech"
+                  to="https://www.linkedin.com/company/zartek-tech"
                   rel="noreferrer"
                 >
                   <img
@@ -69,7 +69,7 @@ export const FooterComponent: React.FC<FooterComponentProps> = ({ content }) => 
                     height="16"
                     width="16"
                   />
-                </a>
+                </Link>
               </p>
               <p>
                 <Link to="/why-join-us/">Why Join Us</Link>

@@ -1,3 +1,4 @@
+import { Link } from "gatsby";
 import React from "react";
 
 interface HireDedicatedDevelopersServicesProps {
@@ -38,8 +39,8 @@ const HireDedicatedDevelopersServices: React.FC<HireDedicatedDevelopersServicesP
               <p>{data.content.content}</p>
 
               {data?.learnMoreLink ? (
-                <a
-                  href={data.learnMoreLink}
+                <Link
+                  to={data.learnMoreLink}
                   target="_blank"
                   rel="noreferrer"
                   className="btn btn-link p-0 mt-4 learn-more-btn"
@@ -47,7 +48,7 @@ const HireDedicatedDevelopersServices: React.FC<HireDedicatedDevelopersServicesP
                 >
                   Learn more{" "}
                   <img className="img-fluid svg-icon" alt="..." src="/img/arrow-icon.svg" />
-                </a>
+                </Link>
               ) : null}
             </div>
           </div>
